@@ -31,3 +31,6 @@ map('v', '<A-k>', ":move '<-2<CR>gv=gv")
 map('v', '<A-j>', ":move '>+1<CR>gv=gv")
 map('i', '<A-j>', "<C-c>:move .+1<CR>==gi")
 map('i', '<A-k>', "<C-c>:move .-2<CR>==gi")
+
+map('n', '<C-c>', 'yy') --Ctrl C copy whole line in normal mode
+map('v', '<C-c>', '"+y') --Ctrl C copy selection to clipboard in visual mode
