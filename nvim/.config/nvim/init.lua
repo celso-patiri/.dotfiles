@@ -34,14 +34,11 @@ vim.call('plug#begin')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-    --Fade background
-    Plug 'TaDaa/vimade'
+    Plug 'TaDaa/vimade' --Fade background
+    Plug 'Pocco81/TrueZen.nvim' --Focus mode
 
-    --Focus mode
-    Plug 'Pocco81/TrueZen.nvim'
-
-    --Multi cursor
-    Plug ('mg979/vim-visual-multi', { branch = 'master' })
+    Plug ('mg979/vim-visual-multi', { branch = 'master' }) --Multi cursor
+    Plug 'ur4ltz/surround.nvim' 
 
 vim.call('plug#end')
 
@@ -59,6 +56,8 @@ function map(mode, lhs, rhs, opts)
 end
 
 ---------------------------------------------------------------------------------------------------------
+--
+require("surround").setup{}
 
 --disable copilot by default
 vim.cmd('autocmd VimEnter * :Copilot disable')

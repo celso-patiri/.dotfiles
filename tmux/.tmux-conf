@@ -97,4 +97,5 @@ set-window-option -g window-status-format "#[bg=colour239,fg=colour237,noitalics
 # vim: set ft=tmux tw=0 nowrap:
 
 bind -n F11 run-shell "wmctrl -r 'Alacritty' -b toggle,fullscreen"
+
 set -sg escape-time 0
