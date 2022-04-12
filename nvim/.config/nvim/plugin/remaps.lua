@@ -40,3 +40,13 @@ map('v', '<C-c>', '"+y') --Ctrl C copy selection to clipboard in visual mode
 map('n', '<C-x>', 'dd') --Cut whole line in normal mode
 map('v', '<C-x>', 'd') --Cut selection in visual
 
+--n4. keep it centered
+map('n', 'n', 'nzzzv') 
+map('n', 'N', 'Nzzzv') 
+map('n', 'J', 'mzJ`z') 
+
+--n3. break undo
+map('i', ',', ',<c-g>u') 
+map('i', '.', '.<c-g>u') 
+map('i', '!', '!<c-g>u') 
+map('i', '?', '?<c-g>u') 

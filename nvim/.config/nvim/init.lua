@@ -34,9 +34,11 @@ vim.call('plug#begin')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+    --Screen
     Plug 'TaDaa/vimade' --Fade background
     Plug 'Pocco81/TrueZen.nvim' --Focus mode
 
+    --Code manipulation
     Plug ('mg979/vim-visual-multi', { branch = 'master' }) --Multi cursor
     Plug 'ur4ltz/surround.nvim' 
 
