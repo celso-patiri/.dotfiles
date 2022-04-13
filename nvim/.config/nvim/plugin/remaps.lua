@@ -1,5 +1,7 @@
 --ctrl + space for auto completion
 map('i', '<C-space>', 'coc#refresh()', { silent = true, expr = true })
+--ctril + l to accept suggestion
+map('i', '<C-l>', '<Right>')
 
 map('i', 'jk', '<ESC>')
 map('n', '<C-t>', ':NERDTreeToggle<CR>')
@@ -50,3 +52,4 @@ map('i', ',', ',<c-g>u')
 map('i', '.', '.<c-g>u') 
 map('i', '!', '!<c-g>u') 
 map('i', '?', '?<c-g>u') 
+

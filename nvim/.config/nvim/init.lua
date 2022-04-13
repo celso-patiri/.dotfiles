@@ -1,10 +1,21 @@
 ---------------------------------------------------------------------------------------------------------
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-    Plug('neoclide/coc.nvim', { branch= 'release' })
+
     Plug 'github/copilot.vim'
     Plug 'wakatime/vim-wakatime'
-    Plug 'dense-analysis/ale'
+
+    --Plug 'dense-analysis/ale'
+    Plug('neoclide/coc.nvim', { branch= 'release' })
+    
+    Plug 'leafgarland/typescript-vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'peitalin/vim-jsx-typescript'
+    Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
+    Plug 'jparise/vim-graphql'
+
+    Plug 'mattn/emmet-vim'
 
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
@@ -20,8 +31,6 @@ vim.call('plug#begin')
     Plug 'ryanoasis/vim-devicons'
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
-    Plug 'mxw/vim-jsx'
-    Plug 'pangloss/vim-javascript'
 
     --Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -58,15 +67,15 @@ function map(mode, lhs, rhs, opts)
 end
 
 ---------------------------------------------------------------------------------------------------------
---
+
 require("surround").setup{}
 
 --disable copilot by default
 vim.cmd('autocmd VimEnter * :Copilot disable')
 
---coc config
-vim.g['coc_global_extensions'] = {'coc-prettier', 'coc-pairs', 'coc-eslint', 'coc-json', 'coc-css', 'coc-tsserver'}
-vim.b['ale_fixers'] = {'prettier', 'eslint'}
+--syntax sync in JSX and TSX files
+vim.cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ')
+vim.cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ')
 
 --NerdCommenter - keep selection after tab
 vim.cmd('filetype plugin on')
