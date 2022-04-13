@@ -4,6 +4,7 @@ vim.call('plug#begin')
 
     Plug 'github/copilot.vim'
     Plug 'wakatime/vim-wakatime'
+    Plug 'tpope/vim-fugitive'
 
     --Plug 'dense-analysis/ale'
     Plug('neoclide/coc.nvim', { branch= 'release' })
@@ -19,7 +20,8 @@ vim.call('plug#begin')
 
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
-    Plug 'vim-airline/vim-airline'
+    --Plug 'vim-airline/vim-airline'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
 
     Plug 'christoomey/vim-tmux-navigator' 
@@ -98,7 +100,7 @@ set.incsearch = true
 set.relativenumber = true
 set.number = true
 
-set.signcolumn = 'yes'
+set.signcolumn = 'number'
 set.guicursor= 'i:block'
 
 --remove background

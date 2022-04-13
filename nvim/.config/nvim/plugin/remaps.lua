@@ -24,7 +24,8 @@ map('v', '<Tab>', '>gv')
 map('v', '<S-Tab>', '<gv')
 
 --Zen Mode
-map('n', '<leader>tz', '<cmd>TZAtaraxis<cr>')
+map('n', '<leader>tza', '<cmd>TZAtaraxis<cr>')
+map('n', '<leader>tzm', '<cmd>TZMinimalist<cr>')
 
 --Move lines up and down
 map('n', '<A-k>', ":move .-2<CR>==")
@@ -35,7 +36,7 @@ map('i', '<A-j>', "<C-c>:move .+1<CR>==gi")
 map('i', '<A-k>', "<C-c>:move .-2<CR>==gi")
 
 --Ctrl c
-map('n', '<C-c>', 'yy') --Ctrl C copy whole line in normal mode
+map('n', '<C-c>', 'yyV"+y') --Ctrl C copy whole line in normal mode
 map('v', '<C-c>', '"+y') --Ctrl C copy selection to clipboard in visual mode
 
 --Ctrl x
