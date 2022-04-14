@@ -10,17 +10,6 @@
     --'coc-lists'
 --}
 
---local set = vim.opt
-----coc recommendations
---set.backup = false
---set.writebackup = false
-
-----give more space for displaying messages
---set.cmdheight=2
-
-----Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
---set.updatetime=300
-
 ---- Highlight the symbol and its references when holding the cursor.
 --vim.cmd( "autocmd CursorHold * silent call CocActionAsync('highlight')" )
 

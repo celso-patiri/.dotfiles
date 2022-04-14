@@ -12,14 +12,14 @@ vim.call('plug#begin')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/nvim-cmp'
 
+    Plug 'norcalli/nvim-colorizer.lua'
+
     --sippets
     --vim-jsx-pretty
     Plug 'rafamadriz/friendly-snippets'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
 
-    --Plug 'mattn/emmet-vim'
-    Plug 'norcalli/nvim-colorizer.lua'
 
     --COC
     --Plug 'dense-analysis/ale'
@@ -116,11 +116,6 @@ set.number = true
 set.signcolumn = 'yes'
 set.guicursor= 'i:block'
 
---remove background
-vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
-vim.o.termguicolors = true
-vim.cmd [[silent! colorscheme snow]]
-
 --keep undo persistence
 vim.cmd[[
   if has('persistent_undo')      
@@ -128,3 +123,14 @@ vim.cmd[[
     set undodir=$HOME/.vim/undo
   endif     
 ]]
+
+----coc recommendations
+--set.backup = false
+--set.writebackup = false
+
+----give more space for displaying messages
+--set.cmdheight=2
+
+----Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+--set.updatetime=300
+
