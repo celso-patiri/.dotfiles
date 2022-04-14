@@ -23,6 +23,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'cmp_tabnine' },
         { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -31,13 +32,25 @@ cmp.setup({
     })
   })
 
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- lua = true
+	};
+	show_prediction_strength = false;
+})
 
 local remapArgs = { noremap=true, silent=true }
-
--- Setup lspconfig.
 local function config(_config)
+    local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return vim.tbl_deep_extend("force", {
-		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = capabilities,
 		on_attach = function()
             --map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
             map({}, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', remapArgs)
@@ -56,11 +69,14 @@ end
 
 
 require'lspconfig'.tsserver.setup( config() )
-require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "css", "javascript", "javascriptreact", "typescriptreact"}}) )
-require'lspconfig'.tailwindcss.setup{ config() }
-
 require'lspconfig'.eslint.setup{ config() }
 --vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
+require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "javascript", "javascriptreact", "typescriptreact"}}) )
+require'lspconfig'.cssls.setup( config( { filetypes = { "css", "scss", "javascript", "javascriptreact", "typescriptreact" }}) )
+require'lspconfig'.tailwindcss.setup{ config() }
+require'lspconfig'.graphql.setup{ config() }
+require'lspconfig'.dockerls.setup{ config() }
+
 
 --sumneko lua lsp--------------------------------------------------------------------------------------------------------
 local sumneko_root_path = '/home/driven/personal/lua-language-server'

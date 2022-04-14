@@ -11,15 +11,20 @@ vim.call('plug#begin')
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/nvim-cmp'
+    Plug ('tzachar/cmp-tabnine', {
+        [ 'do' ] = function ()
+            local pipe = io.popen("sh", "w")
+            pipe:write('./install.sh')
+            pipe:close()
+        end
+    })
 
     Plug 'norcalli/nvim-colorizer.lua'
 
     --sippets
-    --vim-jsx-pretty
     Plug 'rafamadriz/friendly-snippets'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
-
 
     --COC
     --Plug 'dense-analysis/ale'
@@ -32,8 +37,8 @@ vim.call('plug#begin')
     --Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
 
     --Plug 'ryanoasis/vim-devicons'
-    --FileTree 
-    --Plug 'scrooloose/nerdtree' 
+    --FileTree
+    --Plug 'scrooloose/nerdtree'
     --Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     --Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -44,9 +49,9 @@ vim.call('plug#begin')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
 
-    Plug 'christoomey/vim-tmux-navigator' 
+    Plug 'christoomey/vim-tmux-navigator'
     Plug 'preservim/nerdcommenter'
-    
+
     --Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -64,7 +69,7 @@ vim.call('plug#begin')
 
     --Code manipulation
     Plug ('mg979/vim-visual-multi', { branch = 'master' }) --Multi cursor
-    Plug 'ur4ltz/surround.nvim' 
+    Plug 'ur4ltz/surround.nvim'
 
 vim.call('plug#end')
 
@@ -83,7 +88,7 @@ end
 
 ---------------------------------------------------------------------------------------------------------
 
-require("surround").setup{}
+require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
 
 --disable copilot by default
 vim.cmd('autocmd VimEnter * :Copilot disable')
@@ -97,7 +102,6 @@ vim.cmd('filetype plugin on')
 
 --vim.g['NERDTreeIgnore'] = {'^node_modules$'}
 set.encoding = 'UTF-8'
-vim.cmd('colorscheme gruvbox')
 
 set.smarttab = true
 set.cindent = true
@@ -118,10 +122,10 @@ set.guicursor= 'i:block'
 
 --keep undo persistence
 vim.cmd[[
-  if has('persistent_undo')      
-    set undofile                
+  if has('persistent_undo')
+    set undofile
     set undodir=$HOME/.vim/undo
-  endif     
+  endif
 ]]
 
 ----coc recommendations
