@@ -53,4 +53,8 @@ local function config(_config)
 end
 
 require'lspconfig'.tsserver.setup( config() )
-require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "css", "javascript", "javascriptreact", "typescripttreact"}}) )
+require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "css", "javascript", "javascriptreact", "typescriptreact"}}) )
+require'lspconfig'.eslint.setup{ config() }
+--require'lspconfig'.tailwindcss.setup{ config() }
+
+--vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
