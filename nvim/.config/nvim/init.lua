@@ -12,7 +12,14 @@ vim.call('plug#begin')
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/nvim-cmp'
 
+    --sippets
+    --vim-jsx-pretty
+    Plug 'rafamadriz/friendly-snippets'
     Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+
+    --Plug 'mattn/emmet-vim'
+    Plug 'norcalli/nvim-colorizer.lua'
 
     --COC
     --Plug 'dense-analysis/ale'
@@ -29,9 +36,6 @@ vim.call('plug#begin')
     --Plug 'scrooloose/nerdtree' 
     --Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     --Plug 'Xuyuanp/nerdtree-git-plugin'
-
-    Plug 'mattn/emmet-vim'
-    Plug 'norcalli/nvim-colorizer.lua'
 
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
@@ -113,9 +117,9 @@ set.signcolumn = 'yes'
 set.guicursor= 'i:block'
 
 --remove background
---vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
+vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
 vim.o.termguicolors = true
---vim.cmd [[silent! colorscheme snow]]
+vim.cmd [[silent! colorscheme snow]]
 
 --keep undo persistence
 vim.cmd[[
