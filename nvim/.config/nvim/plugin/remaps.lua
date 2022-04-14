@@ -1,10 +1,10 @@
 --ctrl + space for auto completion
-map('i', '<C-space>', 'coc#refresh()', { silent = true, expr = true })
+--map('i', '<C-space>', 'coc#refresh()', { silent = true, expr = true })
 --ctril + l to accept suggestion
 map('i', '<C-l>', '<Right>')
 
 map('i', 'jk', '<ESC>')
-map('n', '<C-t>', ':NERDTreeToggle<CR>')
+--map('n', '<C-t>', ':NERDTreeToggle<CR>')
 map('v', '<C-q>', '<plug>NERDCommenterToggle', { noremap = false })
 map('n', '<C-q>', '<plug>NERDCommenterToggle', { noremap = false })
 

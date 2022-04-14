@@ -23,4 +23,6 @@ map('n', '<C-p>', '<cmd>Telescope find_files<cr>')
 map('n', '<leader>fb', '<cmd>Telescope find_buffers<cr>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 map('n', '<leader>fg', '<cmd>Telescope git_files<cr>')
+map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
+map('n', '<leader>fr', '<cmd>Telescope lsp_references<cr>')
 

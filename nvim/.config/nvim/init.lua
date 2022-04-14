@@ -6,34 +6,43 @@ vim.call('plug#begin')
     Plug 'wakatime/vim-wakatime'
     Plug 'tpope/vim-fugitive'
 
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/nvim-cmp'
+
+    Plug 'L3MON4D3/LuaSnip'
+
+    --COC
     --Plug 'dense-analysis/ale'
-    Plug('neoclide/coc.nvim', { branch= 'release' })
-    
-    Plug 'leafgarland/typescript-vim'
-    Plug 'pangloss/vim-javascript'
-    Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'peitalin/vim-jsx-typescript'
-    Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
-    Plug 'jparise/vim-graphql'
+    --Plug('neoclide/coc.nvim', { branch= 'release' })
+    --Plug 'leafgarland/typescript-vim'
+    --Plug 'pangloss/vim-javascript'
+    --Plug 'maxmellon/vim-jsx-pretty'
+    --Plug 'peitalin/vim-jsx-typescript'
+    --Plug 'jparise/vim-graphql'
+    --Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
+
+    --Plug 'ryanoasis/vim-devicons'
+    --FileTree 
+    --Plug 'scrooloose/nerdtree' 
+    --Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    --Plug 'Xuyuanp/nerdtree-git-plugin'
 
     Plug 'mattn/emmet-vim'
+    Plug 'norcalli/nvim-colorizer.lua'
 
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
-    --Plug 'vim-airline/vim-airline'
+
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'christoomey/vim-tmux-navigator' 
     Plug 'preservim/nerdcommenter'
-
-    --FileTree 
-    Plug 'scrooloose/nerdtree' 
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-
-
+    
     --Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -82,7 +91,7 @@ vim.cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ')
 --NerdCommenter - keep selection after tab
 vim.cmd('filetype plugin on')
 
-vim.g['NERDTreeIgnore'] = {'^node_modules$'}
+--vim.g['NERDTreeIgnore'] = {'^node_modules$'}
 set.encoding = 'UTF-8'
 vim.cmd('colorscheme gruvbox')
 
@@ -100,13 +109,13 @@ set.incsearch = true
 set.relativenumber = true
 set.number = true
 
-set.signcolumn = 'number'
+set.signcolumn = 'yes'
 set.guicursor= 'i:block'
 
 --remove background
-vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
+--vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
 vim.o.termguicolors = true
-vim.cmd [[silent! colorscheme snow]]
+--vim.cmd [[silent! colorscheme snow]]
 
 --keep undo persistence
 vim.cmd[[
