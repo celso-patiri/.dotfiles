@@ -6,6 +6,7 @@ vim.call('plug#begin')
     Plug 'wakatime/vim-wakatime'
     Plug 'tpope/vim-fugitive'
 
+    --Lsp and cmp
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -19,6 +20,7 @@ vim.call('plug#begin')
         end
     })
 
+    Plug 'simrat39/symbols-outline.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
 
     --sippets
@@ -26,9 +28,6 @@ vim.call('plug#begin')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
 
-    --COC
-    --Plug 'dense-analysis/ale'
-    --Plug('neoclide/coc.nvim', { branch= 'release' })
     --Plug 'leafgarland/typescript-vim'
     --Plug 'pangloss/vim-javascript'
     --Plug 'maxmellon/vim-jsx-pretty'
@@ -36,12 +35,7 @@ vim.call('plug#begin')
     --Plug 'jparise/vim-graphql'
     --Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
 
-    --Plug 'ryanoasis/vim-devicons'
-    --FileTree
-    --Plug 'scrooloose/nerdtree'
-    --Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    --Plug 'Xuyuanp/nerdtree-git-plugin'
-
+    --Themes
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
 
@@ -52,14 +46,18 @@ vim.call('plug#begin')
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'preservim/nerdcommenter'
 
-    --Telescope
+    --Tree sitter
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug ('nvim-treesitter/nvim-treesitter', {
-    ['do'] = function()
-      vim.cmd(':TSUpdate')
-    end
+        ['do'] = function()
+            vim.cmd(':TSUpdate<cr>')
+        end
     })
+    --Plug 'romgrk/nvim-treesitter-context'
+    Plug 'p00f/nvim-ts-rainbow'
+
+    --Telescope
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 

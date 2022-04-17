@@ -19,8 +19,10 @@ cmp.setup({
       --['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       --['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-l>'] = cmp.mapping.confirm({ select = true }),
     }),
+
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'cmp_tabnine' },
@@ -39,7 +41,7 @@ tabnine:setup({
 	sort = true;
 	run_on_every_keystroke = true;
 	snippet_placeholder = '..';
-	ignored_file_types = { -- default is not to ignore
+	ignored_file_types = {
 		-- lua = true
 	};
 	show_prediction_strength = false;
@@ -47,10 +49,8 @@ tabnine:setup({
 
 local remapArgs = { noremap=true, silent=true }
 local function config(_config)
-    local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return vim.tbl_deep_extend("force", {
-        capabilities = capabilities,
+        capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()) ,
 		on_attach = function()
             --map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
             map({}, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', remapArgs)
@@ -67,16 +67,36 @@ local function config(_config)
 	}, _config or {})
 end
 
-
 require'lspconfig'.tsserver.setup( config() )
-require'lspconfig'.eslint.setup{ config() }
 --vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
-require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "javascript", "javascriptreact", "typescriptreact"}}) )
-require'lspconfig'.cssls.setup( config( { filetypes = { "css", "scss", "javascript", "javascriptreact", "typescriptreact" }}) )
-require'lspconfig'.tailwindcss.setup{ config() }
-require'lspconfig'.graphql.setup{ config() }
-require'lspconfig'.dockerls.setup{ config() }
+require'lspconfig'.eslint.setup{ config() }
+--require'lspconfig'.graphql.setup{ config() }
+--require'lspconfig'.tailwindcss.setup{ config() }
+--require'lspconfig'.emmet_ls.setup( config( { filetypes = {"html", "javascript", "javascriptreact", "typescriptreact"}}) )
+--require'lspconfig'.dockerls.setup{ config() }
 
+--local function cssConfig()
+    --local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    --capabilities.textDocument.completion.completionItem.snippetSupport = true
+	--return vim.tbl_deep_extend("force", {
+        --capabilities = capabilities,
+		--on_attach = function()
+            ----map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            --map({}, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', remapArgs)
+            --map({}, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', remapArgs)
+            --map({}, 'n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', remapArgs)
+            --map({}, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', remapArgs)
+            --map({}, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', remapArgs)
+            --map({}, 'n', '<leader>]d', '<cmd>lua vim.diagnostic.goto_next()<CR>', remapArgs)
+            --map({}, 'n', '<leader>[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', remapArgs)
+
+            --map({}, 'n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', remapArgs)
+            --map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
+		--end,
+	--}, _config or {})
+--end
+
+--require'lspconfig'.cssls.setup( config( { filetypes = { "css", "scss", "javascript", "javascriptreact", "typescriptreact" }}) )
 
 --sumneko lua lsp--------------------------------------------------------------------------------------------------------
 local sumneko_root_path = '/home/driven/personal/lua-language-server'
@@ -111,6 +131,19 @@ require'lspconfig'.sumneko_lua.setup ( config( {
     },
 }) )
 --sumneko lua lsp--------------------------------------------------------------------------------------------------------
+
+local soArgs = {
+	-- whether to highlight the currently hovered symbol
+	-- disable if your cpu usage is higher than you want it
+	-- or you just hate the highlight
+	-- default: true
+	highlight_hovered_item = true,
+
+	-- whether to show outline guides
+	-- default: true
+	show_guides = true,
+}
+require("symbols-outline").setup(soArgs)
 
 --snippets
 local snippets_paths = function()
