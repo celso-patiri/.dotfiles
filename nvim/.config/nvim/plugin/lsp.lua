@@ -62,7 +62,7 @@ local function config(_config)
             map({}, 'n', '<leader>[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', remapArgs)
 
             map({}, 'n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', remapArgs)
-            map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
+            --map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
 		end,
 	}, _config or {})
 end

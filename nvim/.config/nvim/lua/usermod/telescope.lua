@@ -1,7 +1,7 @@
 local mappings = {}
 mappings.search_dotfiles = function()
-	require("telescope.builtin").find_files({
-		prompt_title = "< Dotfiles >",
+    require("telescope.builtin").find_files({
+        prompt_title = "< Dotfiles >",
 		cwd = '~/.dotfiles',
 		hidden = true,
 	})

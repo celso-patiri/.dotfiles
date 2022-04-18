@@ -1,7 +1,6 @@
----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-
     Plug 'github/copilot.vim'
     Plug 'wakatime/vim-wakatime'
     Plug 'tpope/vim-fugitive'
@@ -27,6 +26,7 @@ vim.call('plug#begin')
     Plug 'rafamadriz/friendly-snippets'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'windwp/nvim-autopairs'
 
     --Plug 'leafgarland/typescript-vim'
     --Plug 'pangloss/vim-javascript'
@@ -37,7 +37,14 @@ vim.call('plug#begin')
 
     --Themes
     Plug 'gruvbox-community/gruvbox'
-    Plug 'joshdick/onedark.vim'
+    --Plug 'joshdick/onedark.vim'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'sainnhe/sonokai'
+    Plug 'sainnhe/edge'
+    Plug 'navarasu/onedark.nvim'
+    Plug 'pacokwon/onedarkhc.vim'
+    Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'rafalbromirski/vim-aurora'
 
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
@@ -57,13 +64,16 @@ vim.call('plug#begin')
     --Plug 'romgrk/nvim-treesitter-context'
     Plug 'p00f/nvim-ts-rainbow'
 
+    --Prettier
+    Plug 'sbdchd/neoformat'
+
     --Telescope
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     --Screen
     Plug 'TaDaa/vimade' --Fade background
-    Plug 'Pocco81/TrueZen.nvim' --Focus mode
+    --Plug 'Pocco81/TrueZen.nvim' --Focus mode
 
     --Code manipulation
     Plug ('mg979/vim-visual-multi', { branch = 'master' }) --Multi cursor
@@ -95,6 +105,11 @@ vim.cmd('autocmd VimEnter * :Copilot disable')
 vim.cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ')
 vim.cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ')
 
+--Prettier auto format
+vim.cmd('autocmd BufWritePre,InsertLeave *.{js,jsx,ts,tsx} Neoformat prettier ')
+--vim.cmd('let g:neoformat_try_node_exe = 1 ')
+
+
 --NerdCommenter - keep selection after tab
 vim.cmd('filetype plugin on')
 
@@ -116,7 +131,7 @@ set.relativenumber = true
 set.number = true
 
 set.signcolumn = 'yes'
-set.guicursor= 'i:block'
+--set.guicursor= 'i:block'
 
 --keep undo persistence
 vim.cmd[[
@@ -125,14 +140,11 @@ vim.cmd[[
     set undodir=$HOME/.vim/undo
   endif
 ]]
-
 ----coc recommendations
---set.backup = false
---set.writebackup = false
-
+set.backup = false
+set.writebackup = false
 ----give more space for displaying messages
---set.cmdheight=2
-
+set.cmdheight=2
 ----Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
---set.updatetime=300
+set.updatetime=300
 

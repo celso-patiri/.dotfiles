@@ -23,8 +23,11 @@ map('n', '<C-p>', '<cmd>Telescope git_files<cr>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
-map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
+map('n', '<leader>fdi', '<cmd>Telescope diagnostics<cr>')
 map('n', '<leader>fr', '<cmd>Telescope lsp_references<cr>')
+map('n', '<leader>fds', '<cmd>Telescope lsp_document_symbols<cr>')
+
+map('n', '<leader>do', ':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor({}))<cr>')
 
 map('n', '<leader>dot', ':lua require("usermod.telescope").search_dotfiles()<CR>')
-map('n', '<leader>fc', ':lua require("usermod.telescope").current_buffer()<CR>')
+map('n', '<leader>fcb', ':lua require("usermod.telescope").current_buffer()<CR>')
