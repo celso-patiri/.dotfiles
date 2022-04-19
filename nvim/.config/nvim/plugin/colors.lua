@@ -14,11 +14,10 @@ require("transparent").setup({
 --vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')
 vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
-vim.cmd([[silent! colorscheme sonokai]])
+vim.cmd([[silent! colorscheme gruvbox]])
 
 map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
 
---onedark
 --require('onedark').setup {
 --style = 'darker' --[ dark, darker, cool, deep, warm, warmer ]
 --}

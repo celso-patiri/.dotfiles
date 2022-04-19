@@ -7,6 +7,7 @@ Plug("tpope/vim-fugitive")
 
 --Lsp
 Plug("neovim/nvim-lspconfig")
+--Plug("williamboman/nvim-lsp-installer")
 Plug("glepnir/lspsaga.nvim")
 Plug("SmiteshP/nvim-gps")
 Plug("j-hui/fidget.nvim")
@@ -40,10 +41,11 @@ Plug("norcalli/nvim-colorizer.lua")
 --Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
 
 --Themes
---Plug 'ellisonleao/gruvbox.nvim'
-Plug("gruvbox-community/gruvbox")
+Plug("ellisonleao/gruvbox.nvim")
+--Plug("gruvbox-community/gruvbox")
 Plug("sainnhe/gruvbox-material")
 Plug("sainnhe/sonokai")
+Plug("tanvirtin/monokai.nvim")
 Plug("sainnhe/edge")
 Plug("navarasu/onedark.nvim")
 Plug("bluz71/vim-nightfly-guicolors")
@@ -51,7 +53,6 @@ Plug("shaunsingh/nord.nvim")
 Plug("EdenEast/nightfox.nvim")
 Plug("Mofiqul/dracula.nvim")
 Plug("folke/tokyonight.nvim", { branch = "main" })
-
 Plug("nvim-lualine/lualine.nvim")
 Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
