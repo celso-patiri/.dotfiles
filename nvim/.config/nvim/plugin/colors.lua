@@ -1,50 +1,59 @@
+--Specific theme customizations
+--vim.g.tokyonight_style = "night"
+--vim.cmd([[
+--let g:edge_style = 'neon'
+--let g:edge_better_performance = 1
+--let g:gruvbox_invert_selection='0'
+--let g:gruvbox_contrast_dark = 'hard'
+--]])
+
 --remove background
---vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none')
+require("transparent").setup({
+	enable = true,
+})
+--vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')
 vim.opt.termguicolors = true
---vim.cmd [[silent! colorscheme snow]]
+vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
+vim.cmd([[silent! colorscheme sonokai]])
 
-vim.cmd('colorscheme sonokai')
+map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
 
+--onedark
 --require('onedark').setup {
-    --style = 'darker' --[ dark, darker, cool, deep, warm, warmer ]
+--style = 'darker' --[ dark, darker, cool, deep, warm, warmer ]
 --}
 --require('onedark').load()
 
---highlight Normal guibg=none
-vim.cmd[[
-    let g:edge_style = 'neon'
-    let g:edge_better_performance = 1
-
-    let g:gruvbox_invert_selection='0'
-    let g:gruvbox_contrast_dark = 'hard'
-
-    highlight ColorColumn ctermbg=0 guibg=grey
+--highlight ColorColumn ctermbg=0 guibg=grey
+--hi Normal guibg=none ctermbg=none
+vim.cmd([[
     hi ColorColumn guibg=none
     hi SignColumn guibg=none
     hi CursorLineNR guibg=None
     hi CursorLineNR guibg=None
 
+    hi LineNr guibg=none
     highlight LineNr guifg=#5eacd3
 
     highlight netrwDir guifg=#5eacd3
     highlight qfFileName guifg=#aed75f
     hi TelescopeBorder guifg=#5eacd3
-]]
 
-vim.cmd[[
+]])
+
+vim.cmd([[
       let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
       let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-]]
+]])
 
-require 'colorizer'.setup {
-  'css';
-  'javascript';
-  'javascriptreact';
-  'typescriptreact';
-  'scss';
-  'yaml';
-  html = {
-    mode = 'foreground';
-  }
-}
-
+require("colorizer").setup({
+	"css",
+	"javascript",
+	"javascriptreact",
+	"typescriptreact",
+	"scss",
+	"yaml",
+	html = {
+		mode = "foreground",
+	},
+})
