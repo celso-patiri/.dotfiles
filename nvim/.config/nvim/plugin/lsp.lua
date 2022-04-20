@@ -74,7 +74,7 @@ require("lspconfig").eslint.setup({ config() })
 require("lspconfig").jsonls.setup(config({
 	settings = {
 		json = {
-			schemas = require("usermod.json-lsp-config"),
+			schemas = require("user.json-lsp-config"),
 		},
 	},
 	setup = {

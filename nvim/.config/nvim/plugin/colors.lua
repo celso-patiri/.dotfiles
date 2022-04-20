@@ -15,6 +15,7 @@ require("transparent").setup({
 vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 vim.cmd([[silent! colorscheme sonokai]])
+-- vim.opt.background = "dark"
 
 map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
 

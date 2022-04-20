@@ -11,7 +11,7 @@ Plug("christoomey/vim-tmux-navigator")
 --Lsp
 Plug("neovim/nvim-lspconfig")
 --Plug("williamboman/nvim-lsp-installer")
-Plug("glepnir/lspsaga.nvim")
+-- Plug("glepnir/lspsaga.nvim")
 Plug("SmiteshP/nvim-gps")
 Plug("j-hui/fidget.nvim")
 
@@ -45,18 +45,18 @@ Plug("norcalli/nvim-colorizer.lua")
 --Plug ( 'styled-components/vim-styled-components', { branchs= 'main' } )
 
 --Themes
+-- Plug("sainnhe/edge")
+-- Plug("navarasu/onedark.nvim")
+-- Plug("EdenEast/nightfox.nvim")
 Plug("ellisonleao/gruvbox.nvim")
---Plug("gruvbox-community/gruvbox")
 Plug("sainnhe/gruvbox-material")
 Plug("sainnhe/sonokai")
 Plug("tanvirtin/monokai.nvim")
-Plug("sainnhe/edge")
-Plug("navarasu/onedark.nvim")
 Plug("bluz71/vim-nightfly-guicolors")
 Plug("shaunsingh/nord.nvim")
-Plug("EdenEast/nightfox.nvim")
 Plug("Mofiqul/dracula.nvim")
 Plug("folke/tokyonight.nvim", { branch = "main" })
+
 Plug("nvim-lualine/lualine.nvim")
 Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
@@ -115,25 +115,21 @@ end
 require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
 
 --smart comments
-vim.cmd("filetype plugin on")
+-- vim.cmd("filetype plugin on")
 require("nvim-treesitter.configs").setup({ context_commentstring = { enable = true } })
 
 --disable copilot by default
 vim.cmd("autocmd VimEnter * :Copilot disable")
 
 --syntax sync in JSX and TSX files
-vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ")
-vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ")
+-- vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ")
+-- vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ")
 
 --Prettier auto format
 vim.cmd("autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat prettier ")
 vim.cmd("autocmd BufWritePre *.lua Neoformat stylua")
---vim.cmd('let g:neoformat_try_node_exe = 1 ')
+-- vim.cmd('let g:neoformat_try_node_exe = 1 ') -- check .conf for prettier on project
 
---NerdCommenter - keep selection after tab
-vim.cmd("filetype plugin on")
-
---vim.g['NERDTreeIgnore'] = {'^node_modules$'}
 set.encoding = "UTF-8"
 -- set.mouse = "a"
 
@@ -154,13 +150,6 @@ set.number = true
 set.signcolumn = "yes"
 --set.guicursor= 'i:block'
 
---keep undo persistence
-vim.cmd([[
-  if has('persistent_undo')
-    set undofile
-    set undodir=$HOME/.vim/undo
-  endif
-]])
 ----coc recommendations
 set.backup = false
 set.writebackup = false
@@ -168,3 +157,11 @@ set.writebackup = false
 set.cmdheight = 2
 ----Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
 set.updatetime = 300
+
+--keep undo persistence
+vim.cmd([[
+if has('persistent_undo')
+    set undofile
+    set undodir=$HOME/.vim/undo
+    endif
+    ]])
