@@ -1,4 +1,4 @@
--- Setup nvim-cmp.
+--Setup nvim-cmp.
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 local cmp = require("cmp")
 
@@ -96,6 +96,7 @@ cmp.setup({
 			vim_item.menu = ({
 				luasnip = "[Luasnip]",
 				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 				cmp_tabnine = "[Tabnine]",
@@ -111,6 +112,7 @@ cmp.setup({
 
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "cmp_tabnine" },
 	}, {

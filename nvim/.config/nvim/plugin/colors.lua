@@ -1,11 +1,11 @@
 --Specific theme customizations
 --vim.g.tokyonight_style = "night"
---vim.cmd([[
---let g:edge_style = 'neon'
---let g:edge_better_performance = 1
---let g:gruvbox_invert_selection='0'
---let g:gruvbox_contrast_dark = 'hard'
---]])
+vim.cmd([[
+    "let g:edge_style = 'neon'
+    "let g:edge_better_performance = 1
+    "let g:gruvbox_invert_selection='0'
+    "let g:gruvbox_contrast_dark = 'hard'
+]])
 
 --remove background
 require("transparent").setup({
@@ -14,7 +14,7 @@ require("transparent").setup({
 --vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')
 vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
-vim.cmd([[silent! colorscheme gruvbox]])
+vim.cmd([[silent! colorscheme sonokai]])
 
 map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
 

@@ -1,9 +1,12 @@
 --------------------------------------------------------------------------------------------------------
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
+
 Plug("github/copilot.vim")
 Plug("wakatime/vim-wakatime")
 Plug("tpope/vim-fugitive")
+Plug("lewis6991/gitsigns.nvim")
+Plug("christoomey/vim-tmux-navigator")
 
 --Lsp
 Plug("neovim/nvim-lspconfig")
@@ -14,9 +17,10 @@ Plug("j-hui/fidget.nvim")
 
 --cmp
 Plug("hrsh7th/cmp-nvim-lsp")
+Plug("hrsh7th/nvim-cmp")
+Plug("hrsh7th/cmp-nvim-lua")
 Plug("hrsh7th/cmp-buffer")
 Plug("hrsh7th/cmp-path")
-Plug("hrsh7th/nvim-cmp")
 Plug("tzachar/cmp-tabnine", {
 	["do"] = function()
 		local pipe = io.popen("sh", "w")
@@ -57,9 +61,6 @@ Plug("nvim-lualine/lualine.nvim")
 Plug("kyazdani42/nvim-web-devicons")
 Plug("kyazdani42/nvim-tree.lua")
 
-Plug("christoomey/vim-tmux-navigator")
-Plug("preservim/nerdcommenter")
-
 --Tree sitter
 Plug("nvim-lua/popup.nvim")
 Plug("nvim-lua/plenary.nvim")
@@ -86,10 +87,12 @@ Plug("ellisonleao/glow.nvim", { branchinit = "main" })
 
 --Code manipulation and utils
 Plug("mg979/vim-visual-multi", { branch = "master" }) --Multi cursor
+Plug("andymass/vim-matchup")
 Plug("windwp/nvim-autopairs")
 Plug("ur4ltz/surround.nvim")
 Plug("tpope/vim-surround")
-Plug("andymass/vim-matchup")
+Plug("JoosepAlviste/nvim-ts-context-commentstring")
+Plug("numToStr/Comment.nvim")
 --Plug 'tpope/vim-sleuth'
 
 vim.call("plug#end")
@@ -111,6 +114,10 @@ end
 
 require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
 
+--smart comments
+vim.cmd("filetype plugin on")
+require("nvim-treesitter.configs").setup({ context_commentstring = { enable = true } })
+
 --disable copilot by default
 vim.cmd("autocmd VimEnter * :Copilot disable")
 
@@ -119,8 +126,8 @@ vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ")
 vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ")
 
 --Prettier auto format
-vim.cmd("autocmd BufWritePre,InsertLeave *.{js,jsx,ts,tsx} Neoformat prettier ")
-vim.cmd("autocmd BufWritePre,InsertLeave *.lua Neoformat stylua")
+vim.cmd("autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat prettier ")
+vim.cmd("autocmd BufWritePre *.lua Neoformat stylua")
 --vim.cmd('let g:neoformat_try_node_exe = 1 ')
 
 --NerdCommenter - keep selection after tab
@@ -128,6 +135,7 @@ vim.cmd("filetype plugin on")
 
 --vim.g['NERDTreeIgnore'] = {'^node_modules$'}
 set.encoding = "UTF-8"
+-- set.mouse = "a"
 
 set.smarttab = true
 set.cindent = true
