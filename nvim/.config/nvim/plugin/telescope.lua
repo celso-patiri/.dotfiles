@@ -31,5 +31,5 @@ map(
 	':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor({}))<cr>'
 )
 
-map("n", "<leader>dot", ':lua require("user.telescope").search_dotfiles()<CR>')
-map("n", "<leader>fcb", ':lua require("user.telescope").current_buffer()<CR>')
+map("n", "<leader>dot", ':lua require("user.telescope-functions").search_dotfiles()<CR>')
+map("n", "<leader>fcb", ':lua require("user.telescope-functions").current_buffer()<CR>')
