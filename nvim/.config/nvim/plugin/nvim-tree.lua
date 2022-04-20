@@ -34,7 +34,14 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	open_on_setup_file = false,
 	open_on_tab = false,
 	sort_by = "name",
-	update_cwd = false,
+
+	--Project.nvim config
+	update_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+		ignore_list = {},
+	},
 
 	view = {
 		width = 30,
@@ -69,11 +76,6 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	hijack_directories = {
 		enable = true,
 		auto_open = true,
-	},
-	update_focused_file = {
-		enable = false,
-		update_cwd = false,
-		ignore_list = {},
 	},
 	ignore_ft_on_setup = {},
 	system_open = {

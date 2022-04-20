@@ -1,5 +1,15 @@
 ---@diagnostic disable: discard-returns
+
 require("user.plugins")
+require("impatient")
+
+--smart comments
+-- vim.cmd("filetype plugin on")
+require("nvim-treesitter.configs").setup({ context_commentstring = { enable = true } })
+
+require("user.lsp.init")
+require("user.bufferline")
+require("user.toggleterm")
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -16,31 +26,25 @@ end
 
 ---------------------------------------------------------------------------------------------------------
 
-require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
-
---smart comments
--- vim.cmd("filetype plugin on")
-require("nvim-treesitter.configs").setup({ context_commentstring = { enable = true } })
-
---disable copilot by default
-vim.cmd("autocmd VimEnter * :Copilot disable")
+-- disable copilot by default -- redundant since packer lazy loads copilot
+-- vim.cmd("autocmd VimEnter * :Copilot disable")
 
 --syntax sync in JSX and TSX files
 -- vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ")
 -- vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ")
 
 --Prettier auto format
-vim.cmd("autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat prettier ")
-vim.cmd("autocmd BufWritePre *.lua Neoformat stylua")
+-- vim.cmd("autocmd BufWritePre *.{js,jsx,ts,tsx} Neoformat prettier ")
+-- vim.cmd("autocmd BufWritePre *.lua Neoformat stylua")
 -- vim.cmd('let g:neoformat_try_node_exe = 1 ') -- check .conf for prettier on project
 
 set.encoding = "UTF-8"
--- set.mouse = "a"
+set.mouse = "a"
 
 set.smarttab = true
 set.cindent = true
-set.tabstop = 4
-set.shiftwidth = 4
+set.tabstop = 2
+set.shiftwidth = 2
 set.expandtab = true --always uses spaces instead of tab characters
 set.scrolloff = 8
 
@@ -61,6 +65,7 @@ set.writebackup = false
 set.cmdheight = 2
 ----Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
 set.updatetime = 300
+vim.cmd("let g:cursorhold_updatetime = 100")
 
 --keep undo persistence
 vim.cmd([[

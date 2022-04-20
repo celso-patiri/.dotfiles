@@ -41,11 +41,35 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
-	use("github/copilot.vim")
+	use({ "github/copilot.vim", opt = true, cmd = "Copilot" })
 	use("wakatime/vim-wakatime")
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
+	use("akinsho/toggleterm.nvim")
 	-- use("christoomey/vim-tmux-navigator")
+
+	--performance/fix
+	use("lewis6991/impatient.nvim")
+	use("antoinemadec/FixCursorHold.nvim")
+
+	use("kyazdani42/nvim-web-devicons")
+	use("kyazdani42/nvim-tree.lua")
+	use("nvim-lualine/lualine.nvim")
+
+	--Testing
+	use("akinsho/bufferline.nvim")
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	})
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({ show_hidden = true })
+		end,
+	})
 
 	--Lsp
 	--use("williamboman/nvim-lsp-installer")
@@ -53,6 +77,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("SmiteshP/nvim-gps")
 	use("j-hui/fidget.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -89,10 +114,7 @@ return packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
 	use({ "folke/tokyonight.nvim", branch = "main" })
-
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
-	use("nvim-lualine/lualine.nvim")
+	use("martinsione/darkplus.nvim")
 
 	--Tree sitter
 	use("nvim-lua/popup.nvim")
@@ -102,7 +124,7 @@ return packer.startup(function(use)
 	--use 'romgrk/nvim-treesitter-context'
 
 	--Prettier
-	use("sbdchd/neoformat")
+	-- use("sbdchd/neoformat")
 
 	--Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -111,13 +133,18 @@ return packer.startup(function(use)
 	--Screen
 	use("TaDaa/vimade") --Fade background
 	use("xiyaowong/nvim-transparent")
-	use({ "ellisonleao/glow.nvim", branchinit = "main" }) -- markdown reader
+	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
 
 	--Code manipulation and utils
 	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
 	use("andymass/vim-matchup")
 	use("windwp/nvim-autopairs")
-	use("ur4ltz/surround.nvim")
+	use({
+		"ur4ltz/surround.nvim",
+		config = function()
+			require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
+		end,
+	})
 	use("tpope/vim-surround")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("numToStr/Comment.nvim")

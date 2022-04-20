@@ -67,5 +67,11 @@ map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>", opts)
-map("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<A-l>", ":bnext<CR>", opts)
+map("v", "<A-l>", ":bnext<CR>", opts)
+map("n", "<A-h>", ":bprevious<CR>", opts)
+map("v", "<A-h>", ":bprevious<CR>", opts)
+
+--bufferline
+map("n", "<C-w>", ":bdelete<cr>")
+map("n", "<A-w>", ":BufferLinePick<cr>")

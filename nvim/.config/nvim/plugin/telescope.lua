@@ -10,11 +10,16 @@ require("telescope").setup({
 			overrride_file_sorter = true,
 		},
 	},
+	pickers = {
+		find_files = { hidden = true },
+	},
 })
 require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("projects")
 
 map("n", "<leader>fg", ':lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > ")})<CR>')
-map("n", "<leader>fw", ':lua require("telescope.builtin").live_grep()<CR>')
+map("n", "<leader>fw", ':lua require("telescope.builtin").live_grep({})<CR>')
+map("n", "<leader>fp", "<cmd>Telescope projects<cr>")
 --map('n', '<leader>fw', ':lua require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })<CR>')
 
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>")
