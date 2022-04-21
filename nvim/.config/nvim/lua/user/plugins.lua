@@ -59,12 +59,6 @@ return packer.startup(function(use)
 	--Testing
 	use("akinsho/bufferline.nvim")
 	use({
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({})
-		end,
-	})
-	use({
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("project_nvim").setup({ show_hidden = true })
