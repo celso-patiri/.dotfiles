@@ -24,9 +24,9 @@ map("i", "<C-S>", "<C-C>:update<CR>", opts)
 --tab, shift+tab ident support
 map("n", "<Tab>", ">>_")
 map("n", "<S-Tab>", "<<_")
-map("i", "<S-Tab>", "<C-D>")
 map("v", "<Tab>", ">gv")
 map("v", "<S-Tab>", "<gv")
+-- map("i", "<S-Tab>", "<C-D>")
 
 --Move text up and down
 map("n", "<A-k>", ":move .-2<CR>==", opts)
@@ -73,5 +73,9 @@ map("n", "<A-h>", ":bprevious<CR>", opts)
 map("v", "<A-h>", ":bprevious<CR>", opts)
 
 --bufferline
-map("n", "<C-w>", ":bdelete<cr>")
-map("n", "<A-w>", ":BufferLinePick<cr>")
+map("n", "<C-w>", ":bdelete<cr>", opts)
+map("n", "<A-w>", ":BufferLinePick<cr>", opts)
+
+--toggle terminal
+map("n", "<C-]>", ":lua HORIZONTAL_TOGGLE()<cr>", opts)
+map("n", "<C-A-]>", ":lua LAZYGIT_TOGGLE()<cr>", opts)

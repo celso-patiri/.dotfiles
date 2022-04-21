@@ -54,7 +54,8 @@ return packer.startup(function(use)
 
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("nvim-lualine/lualine.nvim")
+	-- use("nvim-lualine/lualine.nvim")
+	use("tamton-aquib/staline.nvim")
 
 	--Testing
 	use("akinsho/bufferline.nvim")
@@ -69,7 +70,7 @@ return packer.startup(function(use)
 	--use("williamboman/nvim-lsp-installer")
 	-- use("glepnir/lspsaga.nvim")
 	use("neovim/nvim-lspconfig")
-	use("SmiteshP/nvim-gps")
+	-- use("SmiteshP/nvim-gps")
 	use("j-hui/fidget.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 

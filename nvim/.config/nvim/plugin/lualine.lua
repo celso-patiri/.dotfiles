@@ -1,32 +1,47 @@
-require("nvim-gps").setup()
-local gps = require("nvim-gps")
+require("staline").setup({
 
-require("lualine").setup({
-	options = {
-		icons_enabled = true,
-		theme = "gruvbox-material",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = {},
-		always_divide_middle = true,
-		globalstatus = false,
+	defaults = {
+		left_separator = "",
+		right_separator = "",
+		cool_symbol = " ", -- Change this to override defult OS icon.
+		full_path = false,
+		mod_symbol = "  ",
+		lsp_client_symbol = " ",
+		line_column = "[%l/%L] :%c 並%p%% ", -- `:h stl` to see all flags.
+
+		fg = "#000000", -- Foreground text color.
+		bg = "none", -- Default background is transparent.
+		inactive_color = "#303030",
+		inactive_bgcolor = "none",
+		true_colors = false, -- true lsp colors.
+		font_active = "none", -- "bold", "italic", "bold,italic", etc
+		branch_symbol = " ",
+	},
+	mode_colors = {
+		n = "#2bbb4f",
+		i = "#986fec",
+		c = "#e27d60",
+		v = "#4799eb", -- etc..
+	},
+	mode_icons = {
+		n = " ",
+		i = " ",
+		c = " ",
+		v = " ", -- etc..
 	},
 	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename", { gps.get_location, cond = gps.is_available } },
-		lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		left = { "- ", "-mode", "left_sep_double", " ", "branch" },
+		mid = { "file_name" },
+		right = { "cool_symbol", "right_sep_double", "-line_column" },
 	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
+	special_table = {
+		NvimTree = { "NvimTree", " " },
+		packer = { "Packer", " " }, -- etc
 	},
-	tabline = {},
-	extensions = {},
+	lsp_symbols = {
+		Error = " ",
+		Info = " ",
+		Warn = " ",
+		Hint = "",
+	},
 })
