@@ -19,6 +19,17 @@ vim.g.nvim_tree_icons = {
 	},
 }
 
+require("nvim-web-devicons").setup({
+	override = {
+		["test.js"] = {
+			icon = "ﭧ",
+			color = "#cbcb41",
+			name = "JavascriptTest",
+		},
+	},
+	default = true,
+})
+
 local nvim_tree_config = require("nvim-tree.config")
 local tree_cb = nvim_tree_config.nvim_tree_callback
 

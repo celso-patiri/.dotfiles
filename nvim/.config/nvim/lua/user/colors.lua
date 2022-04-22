@@ -17,13 +17,7 @@ vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
 map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
-
 vim.cmd([[silent! colorscheme gruvbox-material]])
-
---require('onedark').setup {
---style = 'darker' --[ dark, darker, cool, deep, warm, warmer ]
---}
---require('onedark').load()
 
 --highlight ColorColumn ctermbg=0 guibg=grey
 --hi Normal guibg=none ctermbg=none

@@ -1,7 +1,7 @@
+vim.g.mapleader = " "
+
 local opts = { noremap = true, silent = true }
 
---ctrl + space for auto completion
---map('i', '<C-space>', 'coc#refresh()', { silent = true, expr = true })
 --ctril + l to accept suggestion
 map("i", "<C-l>", "<Right>")
 
@@ -26,7 +26,6 @@ map("n", "<Tab>", ">>_")
 map("n", "<S-Tab>", "<<_")
 map("v", "<Tab>", ">gv")
 map("v", "<S-Tab>", "<gv")
--- map("i", "<S-Tab>", "<C-D>")
 
 --Move text up and down
 map("n", "<A-k>", ":move .-2<CR>==", opts)

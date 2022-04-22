@@ -18,21 +18,21 @@ require("staline").setup({
 		branch_symbol = " ",
 	},
 	mode_colors = {
-		n = "#2bbb4f",
+		n = "#5eacd3",
 		i = "#986fec",
 		c = "#e27d60",
-		v = "#4799eb", -- etc..
+		v = "#2bbb4f", -- etc..
 	},
 	mode_icons = {
-		n = " ",
-		i = " ",
-		c = " ",
-		v = " ", -- etc..
+		n = " NORMAL ",
+		i = " INSERT",
+		c = " COMMAND",
+		v = " VISUAL", -- etc..
 	},
 	sections = {
-		left = { "- ", "-mode", "left_sep_double", " ", "branch" },
-		mid = { "file_name" },
-		right = { "cool_symbol", "right_sep_double", "-line_column" },
+		left = { "- ", "-mode", "left_sep_double", "cool_symbol", "cwd", "branch", "file_name" },
+		mid = { "lsp" },
+		right = { "right_sep_double", "-line_column" },
 	},
 	special_table = {
 		NvimTree = { "NvimTree", " " },
