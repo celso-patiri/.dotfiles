@@ -7,6 +7,5 @@ table.insert(runtime_path, "lua/?/init.lua")
 local M = {}
 M.root = sumneko_root_path
 M.binary = sumneko_binary
-M.runtime = runtime_path
+M.lua_runtime = runtime_path
 return M
-

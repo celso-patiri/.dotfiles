@@ -5,7 +5,7 @@ end
 
 toggleterm.setup({
 	size = 10,
-	open_mapping = [[<c-\>]],
+	open_mapping = [[<leader><c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
@@ -46,6 +46,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 local horizontal = Terminal:new({ size = 10, direction = "horizontal" })
+local float = Terminal:new({ size = 10, direction = "float" })
+
+function FLOAT_TOGGLE()
+	float:toggle()
+end
 
 function HORIZONTAL_TOGGLE()
 	horizontal:toggle()

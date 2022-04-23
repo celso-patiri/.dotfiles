@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local opts = { noremap = true, silent = true }
 
 --ctril + l to accept suggestion
@@ -41,6 +39,9 @@ map("v", "p", '"_dP', opts)
 --Ctrl c
 map("n", "<C-c>", 'yyV"+y', opts) --Ctrl C copy whole line in normal mode
 map("v", "<C-c>", '"+y', opts) --Ctrl C copy selection to clipboard in visual mode
+--Ctrl x
+map("n", "<C-x>", 'yyV"+d', opts) --Ctrl C copy whole line in normal mode
+map("v", "<C-x>", '"+d', opts) --Ctrl C copy whole line in normal mode
 
 --n4. keep it centered
 map("n", "n", "nzzzv", opts)
@@ -77,4 +78,10 @@ map("n", "<A-w>", ":BufferLinePick<cr>", opts)
 
 --toggle terminal
 map("n", "<C-]>", ":lua HORIZONTAL_TOGGLE()<cr>", opts)
+map("n", "<C-Bslash>", ":lua FLOAT_TOGGLE()<cr>", opts)
 map("n", "<C-A-]>", ":lua LAZYGIT_TOGGLE()<cr>", opts)
+
+--treehopper
+map("v", "<leader>l", ":lua require('tsht').nodes()<CR>", opts)
+map("n", "<leader>l", "v:lua require('tsht').nodes()<CR>", opts)
+map("o", "<leader>l", "<C-u>:lua require('tsht').nodes()<CR>", { silent = true, noremap = false })

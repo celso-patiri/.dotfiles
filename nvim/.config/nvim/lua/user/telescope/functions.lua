@@ -14,4 +14,14 @@ mappings.current_buffer = function()
 	})
 end
 
+mappings.bookmarks = function()
+	require("telescope").extensions.bookmarks.bookmarks(require("telescope.themes").get_dropdown({
+		layout_config = {
+			width = 0.8,
+			height = 0.8,
+		},
+		previewer = false,
+	}))
+end
+
 return mappings

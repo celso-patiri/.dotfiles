@@ -3,7 +3,6 @@ if not status_ok then
 	return
 end
 
---smart comments - jsx/tsx context
 comment.setup({
 
 	--smart comments - jsx/tsx context
@@ -24,13 +23,28 @@ comment.setup({
 	end,
 
 	--default settings-----------------------------------------------------------------
+	---Lines to be ignored while comment/uncomment.
+	---Could be a regex string or a function that returns a regex string.
+	---Example: Use '^$' to ignore empty lines
+	---@type string|fun():string
+	ignore = "^$",
+
+	---LHS of toggle mappings in NORMAL + VISUAL mode
+	toggler = {
+		line = "gcc", ---Line-comment toggle keymap
+		block = "gbc", ---Block-comment toggle keymap
+	},
 
 	---LHS of operator-pending mappings in NORMAL + VISUAL mode
-	---@type table
 	opleader = {
-		---Line-comment keymap
-		line = "gc",
-		---Block-comment keymap
-		block = "gb",
+		line = "gc", ---Line-comment keymap
+		block = "gb", ---Block-comment keymap
+	},
+
+	---LHS of extra mappings
+	extra = {
+		above = "gcO", ---Add comment on the line above
+		below = "gco", ---Add comment on the line below
+		eol = "gcA", ---Add comment at the end of line
 	},
 })

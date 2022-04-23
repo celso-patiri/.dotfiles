@@ -14,11 +14,13 @@ local set = vim.opt
 --set.guicursor= 'i:block'
 
 --visual-multi-cursors
--- vim.g["VM_default_mappings"] = 0
--- vim.cmd([[
---   let g:VM_maps  = {}
---   let g:VM_maps['Find Under'] = '<C-d>'
--- ]])
+vim.g["VM_default_mappings"] = 0
+vim.g["VM_mouse_mappings"] = 1
+vim.cmd([[
+	let g:VM_maps = {}
+  let g:VM_maps["Select Cursor Up"] = "<C-S-Up>" 
+  let g:VM_maps["Select Cursor Down"] = "<C-S-Down>" 
+]])
 
 set.encoding = "UTF-8"
 set.mouse = "a"
@@ -60,11 +62,13 @@ vim.opt.laststatus = 2
 vim.opt.showtabline = 2
 set.showmode = false
 
-vim.api.nvim_create_autocmd("TermOpen", {
+vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
 	callback = function()
-		vim.opt_local.laststatus = 0
-		vim.opt_local.showtabline = 0
+		vim.cmd("setlocal formatoptions-=cro")
 	end,
-	desc = "Disable lualine on terminal",
+	desc = "Stop comment continuation on line below",
 })
+
+--fix extra space at the bottom on start
+vim.cmd("resize+1")

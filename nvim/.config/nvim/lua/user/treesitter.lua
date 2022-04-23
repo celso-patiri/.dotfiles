@@ -44,3 +44,6 @@ require("nvim-treesitter.configs").setup({
 })
 
 --------------------------------------------------------------------------------------------------------------------
+
+require("user.treesitter.text-objects")
+require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }

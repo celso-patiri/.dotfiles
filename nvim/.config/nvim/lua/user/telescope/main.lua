@@ -1,3 +1,5 @@
+local bookmarks = require("user.telescope.bookmarks")
+
 require("telescope").setup({
 	defaults = {
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
@@ -9,6 +11,7 @@ require("telescope").setup({
 			override_generic_sorter = false,
 			overrride_file_sorter = true,
 		},
+		bookmarks = bookmarks.config,
 	},
 	pickers = {
 		find_files = { hidden = true },
@@ -31,7 +34,7 @@ map("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+-- map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", opts)
 map("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>", opts)
@@ -44,7 +47,8 @@ map(
 	opts
 )
 
-map("n", "<leader>dot", ':lua require("user.telescope-functions").search_dotfiles()<CR>', opts)
-map("n", "<leader>fcb", ':lua require("user.telescope-functions").current_buffer()<CR>', opts)
+map("n", "<leader>dot", ':lua require("user.telescope.functions").search_dotfiles()<CR>', opts)
+map("n", "<leader>fcb", ':lua require("user.telescope.functions").current_buffer()<CR>', opts)
+map("n", "<leader>fbm", ':lua require("user.telescope.functions").bookmarks()<CR>', opts)
 map("n", "<leader>fcs", ':lua require("telescope.builtin").colorscheme()<CR>', opts)
 map("n", "<leader>fco", ':lua require("telescope.builtin").commands()<CR>', opts)

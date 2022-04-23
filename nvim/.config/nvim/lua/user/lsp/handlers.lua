@@ -30,7 +30,6 @@ end
 local function lsp_keymaps(bufnr)
 	local map = vim.api.nvim_buf_set_keymap
 	local opts = { noremap = true, silent = true }
-	--map({}, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", remapArgs)
 	map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	map(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
@@ -51,7 +50,6 @@ M.setup = function()
 		signs = {
 			active = signs,
 		},
-
 		virtual_text = true,
 		update_in_insert = true,
 		underline = true,
@@ -65,41 +63,32 @@ M.setup = function()
 			prefix = "",
 		},
 	}
+
 	vim.diagnostic.config(config)
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	-- 	border = "rounded",
+	-- })
+	--
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	-- 	border = "rounded",
+	-- })
 
-	local soArgs = {
-		-- whether to highlight the currently hovered symbol
+	require("symbols-outline").setup({
 		-- disable if your cpu usage is higher than you want it
-		-- or you just hate the highlight
-		-- default: true
 		highlight_hovered_item = true,
-
 		-- whether to show outline guides
-		-- default: true
 		show_guides = true,
-	}
-	require("symbols-outline").setup(soArgs)
-
+	})
 	require("fidget").setup({})
 end
 
 M.config = function(_config)
 	return vim.tbl_deep_extend("force", {
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-		on_attach = function(client, bufnr)
-			if client.name == "tsserver" then
-				client.resolved_capabilities.document_formatting = false
-				client.resolved_capabilities.document_range_formatting = false
-			end
 
-			if client.name == "sumneko_lua" then
+		on_attach = function(client, bufnr)
+			if client.name == "tsserver" or client.name == "sumneko_lua" then -- resolve null_ls formating conflict
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 			end

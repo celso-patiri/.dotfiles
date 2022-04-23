@@ -51,28 +51,29 @@ return packer.startup(function(use)
 	--performance/fix
 	use("lewis6991/impatient.nvim")
 	use("antoinemadec/FixCursorHold.nvim")
+	use({
+		"luukvbaal/stabilize.nvim",
+		config = function()
+			require("stabilize").setup()
+		end,
+	})
 
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	-- use("nvim-lualine/lualine.nvim")
-	use("tamton-aquib/staline.nvim")
-
-	--Testing
 	use("akinsho/bufferline.nvim")
-	use({
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup({ show_hidden = true })
-		end,
-	})
+	use("nvim-lualine/lualine.nvim")
+	-- use("tamton-aquib/staline.nvim")
 
 	--Lsp
 	--use("williamboman/nvim-lsp-installer")
 	-- use("glepnir/lspsaga.nvim")
+	-- use("arkav/lualine-lsp-progress")
 	use("neovim/nvim-lspconfig")
-	-- use("SmiteshP/nvim-gps")
-	use("j-hui/fidget.nvim")
+	use("SmiteshP/nvim-gps")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("j-hui/fidget.nvim")
+	use("nvim-lua/lsp-status.nvim")
+	use({ "stevearc/dressing.nvim" })
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -100,23 +101,37 @@ return packer.startup(function(use)
 	--Themes
 	use("sainnhe/edge")
 	-- use("navarasu/onedark.nvim")
+	use("olimorris/onedarkpro.nvim")
 	use("ful1e5/onedark.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("ellisonleao/gruvbox.nvim")
 	use("sainnhe/gruvbox-material")
 	use("sainnhe/sonokai")
-	use("tanvirtin/monokai.nvim")
 	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
 	use({ "folke/tokyonight.nvim", branch = "main" })
 	use("martinsione/darkplus.nvim")
 
 	--Tree sitter
+	--use 'romgrk/nvim-treesitter-context'
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use("nvim-treesitter/nvim-treesitter-textobjects")
+	use({
+		"romgrk/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context.config").setup({ enable = true })
+		end,
+	})
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup({})
+		end,
+	})
 	use("p00f/nvim-ts-rainbow")
-	--use 'romgrk/nvim-treesitter-context'
+	use("mfussenegger/nvim-ts-hint-textobject")
 
 	--Prettier
 	-- use("sbdchd/neoformat")
@@ -124,6 +139,13 @@ return packer.startup(function(use)
 	--Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-fzy-native.nvim")
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({ show_hidden = true })
+		end,
+	})
+	use("dhruvmanila/telescope-bookmarks.nvim")
 
 	--Screen
 	use("TaDaa/vimade") --Fade background

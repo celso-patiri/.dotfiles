@@ -1,6 +1,7 @@
----@diagnostic disable: discard-returns
-
+--@diagnostic disable: discard-returns
 -----------------------------------------------------------------------------------------------------------
+
+vim.g.mapleader = " "
 
 function map(mode, lhs, rhs, opts)
 	local options = { noremap = true }
@@ -19,17 +20,17 @@ require("user.lsp.init")
 require("user.treesitter")
 require("user.cmp")
 
-require("user.telescope")
+require("user.telescope.main")
 require("user.nvim-tree")
 require("user.toggleterm")
 
 require("user.bufferline")
-require("user.staline")
+require("user.lualine")
 require("user.gitsigns")
 
 require("user.autopair")
 require("user.comment")
 
 require("user.colors")
-require("user.settings")
 require("user.remaps")
+require("user.settings")
