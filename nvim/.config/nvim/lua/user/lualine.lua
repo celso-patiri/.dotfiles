@@ -1,5 +1,3 @@
-require("nvim-gps").setup()
-
 local gps = require("nvim-gps")
 
 -- local colors = {
@@ -15,7 +13,6 @@ local gps = require("nvim-gps")
 -- }
 
 local addIconToMode = function(str)
-	print(str)
 	if str == "NORMAL" then
 		return " NORMAL"
 	end
@@ -25,13 +22,21 @@ local addIconToMode = function(str)
 	if str == "COMMAND" then
 		return " COMMAND"
 	end
-	if str == "VISUAL" then
-		return " VISUAL"
-	end
 	if str == "TERMINAL" then
 		return " TERMINAL"
 	end
+	if str == "VISUAL" or string.find(str, "V-") then
+		return " " .. str
+	end
 	return str
+end
+
+local function handleTerminalName(str)
+	if string.find(str, "toggleterm") then
+		return " ToggleTerm"
+	else
+		return str
+	end
 end
 
 local config = {
@@ -45,17 +50,10 @@ local config = {
 		globalstatus = false,
 	},
 	sections = {
-		lualine_a = {
-			{
-				"mode",
-				fmt = function(str)
-					return addIconToMode(str)
-				end,
-			},
-		},
+		lualine_a = { { "mode", fmt = addIconToMode } },
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
-			"filename",
+			{ "filename", fmt = handleTerminalName },
 			{ gps.get_location, cond = gps.is_available },
 			"diagnostics",
 		},

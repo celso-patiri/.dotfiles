@@ -11,6 +11,12 @@ for _, sign in ipairs(signs) do
 	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
+local buf_map = function(bufnr, mode, lhs, rhs, opts)
+	vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+		silent = true,
+	})
+end
+
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
 	if client.resolved_capabilities.document_highlight then
@@ -28,21 +34,20 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-	local map = vim.api.nvim_buf_set_keymap
 	local opts = { noremap = true, silent = true }
-	map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	map(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-	map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	map(bufnr, "n", "<leader>]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-	map(bufnr, "n", "<leader>[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	map(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
-	map(bufnr, "n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_map(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	buf_map(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	buf_map(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+	buf_map(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	buf_map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	buf_map(bufnr, "n", "<leader>]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	buf_map(bufnr, "n", "<leader>[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+	buf_map(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
+	buf_map(bufnr, "n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
-	map(bufnr, "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	buf_map(bufnr, "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	--map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
 
 M.setup = function()
@@ -88,7 +93,7 @@ M.config = function(_config)
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			if client.name == "tsserver" or client.name == "sumneko_lua" then -- resolve null_ls formating conflict
+			if client.name == "sumneko_lua" then -- resolve null_ls formatting conflict
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 			end
@@ -97,6 +102,27 @@ M.config = function(_config)
 			lsp_highlight_document(client)
 		end,
 	}, _config or {})
+end
+
+M.tsconfig = function()
+	return {
+		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+
+		on_attach = function(client, bufnr)
+			client.resolved_capabilities.document_formatting = false
+			client.resolved_capabilities.document_range_formatting = false
+
+			local ts_utils = require("nvim-lsp-ts-utils")
+			ts_utils.setup({})
+			ts_utils.setup_client(client)
+			buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+			buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
+			buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+
+			lsp_keymaps(bufnr)
+			lsp_highlight_document(client)
+		end,
+	}
 end
 
 return M

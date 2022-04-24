@@ -16,7 +16,9 @@ vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
-map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNR guifg=#5eacd3<cr>")
+-- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
+vim.cmd('let g:sonokai_style = "default"')
+
 vim.cmd([[silent! colorscheme sonokai]])
 
 --highlight ColorColumn ctermbg=0 guibg=grey

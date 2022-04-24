@@ -15,6 +15,7 @@ end
 
 require("user.plugins")
 require("impatient")
+require("user.colors")
 
 require("user.lsp.init")
 require("user.treesitter")
@@ -31,6 +32,5 @@ require("user.gitsigns")
 require("user.autopair")
 require("user.comment")
 
-require("user.colors")
 require("user.remaps")
 require("user.settings")

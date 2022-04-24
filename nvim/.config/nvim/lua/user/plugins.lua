@@ -63,16 +63,23 @@ return packer.startup(function(use)
 	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
 	-- use("tamton-aquib/staline.nvim")
+	use("rcarriga/nvim-notify")
 
 	--Lsp
 	--use("williamboman/nvim-lsp-installer")
 	-- use("glepnir/lspsaga.nvim")
 	-- use("arkav/lualine-lsp-progress")
 	use("neovim/nvim-lspconfig")
-	use("SmiteshP/nvim-gps")
+	use({
+		"SmiteshP/nvim-gps",
+		config = function()
+			require("nvim-gps").setup()
+		end,
+	})
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("j-hui/fidget.nvim")
-	use("nvim-lua/lsp-status.nvim")
+	-- use("nvim-lua/lsp-status.nvim")
 	use({ "stevearc/dressing.nvim" })
 
 	--cmp
@@ -96,17 +103,18 @@ return packer.startup(function(use)
 	--use 'maxmellon/vim-jsx-pretty'
 	--use 'peitalin/vim-jsx-typescript'
 	--use 'jparise/vim-graphql'
-	--use ( 'styled-components/vim-styled-components', { branchs= 'main' } )
+	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
 
 	--Themes
-	use("sainnhe/edge")
 	-- use("navarasu/onedark.nvim")
-	use("olimorris/onedarkpro.nvim")
-	use("ful1e5/onedark.nvim")
-	use("EdenEast/nightfox.nvim")
-	use("ellisonleao/gruvbox.nvim")
+	-- use("EdenEast/nightfox.nvim")
+	use("sainnhe/edge")
 	use("sainnhe/gruvbox-material")
 	use("sainnhe/sonokai")
+	use("sainnhe/everforest")
+	use("olimorris/onedarkpro.nvim")
+	use("ful1e5/onedark.nvim")
+	use("ellisonleao/gruvbox.nvim")
 	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
 	use({ "folke/tokyonight.nvim", branch = "main" })

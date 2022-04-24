@@ -14,6 +14,7 @@ require("telescope").setup({
 		bookmarks = bookmarks.config,
 	},
 	pickers = {
+		live_grep = { hidden = true },
 		find_files = { hidden = true },
 	},
 })

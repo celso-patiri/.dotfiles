@@ -73,7 +73,7 @@ map("n", "<A-h>", ":bprevious<CR>", opts)
 map("v", "<A-h>", ":bprevious<CR>", opts)
 
 --bufferline
-map("n", "<C-w>", ":bdelete<cr>", opts)
+map("n", "<leader><C-w>", ":bdelete<cr>", opts)
 map("n", "<A-w>", ":BufferLinePick<cr>", opts)
 
 --toggle terminal
@@ -85,3 +85,6 @@ map("n", "<C-A-]>", ":lua LAZYGIT_TOGGLE()<cr>", opts)
 map("v", "<leader>l", ":lua require('tsht').nodes()<CR>", opts)
 map("n", "<leader>l", "v:lua require('tsht').nodes()<CR>", opts)
 map("o", "<leader>l", "<C-u>:lua require('tsht').nodes()<CR>", { silent = true, noremap = false })
+
+--transparent toggle
+map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNr guifg=#5eacd3<cr>", opts)
