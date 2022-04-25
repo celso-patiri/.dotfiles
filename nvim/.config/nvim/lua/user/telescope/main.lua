@@ -41,12 +41,12 @@ map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", opts)
 map("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>", opts)
 map("n", "<leader>fds", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 
-map(
-	"n",
-	"<leader>do",
-	':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor({}))<cr>',
-	opts
-)
+-- map(
+-- 	"n",
+-- 	"<leader>do",
+-- 	':lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_cursor({}))<cr>',
+-- 	opts
+-- )
 
 map("n", "<leader>dot", ':lua require("user.telescope.functions").search_dotfiles()<CR>', opts)
 map("n", "<leader>fcb", ':lua require("user.telescope.functions").current_buffer()<CR>', opts)
