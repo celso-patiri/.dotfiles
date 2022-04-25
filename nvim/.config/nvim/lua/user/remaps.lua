@@ -42,6 +42,9 @@ map("v", "<C-c>", '"+y', opts) --Ctrl C copy selection to clipboard in visual mo
 --Ctrl x
 map("n", "<C-x>", 'yyV"+d', opts) --Ctrl C copy whole line in normal mode
 map("v", "<C-x>", '"+d', opts) --Ctrl C copy whole line in normal mode
+--Ctrl a
+map("n", "<C-a>", "ggVG", opts) --Ctrl C copy whole line in normal mode
+map("v", "<C-a>", "gg<esc>VG", opts) --Ctrl C copy whole line in normal mode
 
 --n4. keep it centered
 map("n", "n", "nzzzv", opts)

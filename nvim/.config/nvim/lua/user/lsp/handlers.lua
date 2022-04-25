@@ -46,10 +46,9 @@ local function lsp_keymaps(bufnr)
 	buf_map(bufnr, "n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
 	buf_map(bufnr, "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	--map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
+	buf_map(bufnr, "n", "<leader>do", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
-
 M.setup = function()
 	local config = {
 		signs = {
@@ -118,6 +117,8 @@ M.tsconfig = function()
 			buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
 			buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
 			buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+
+			buf_map(bufnr, "n", "<A-O>", ":TSLspImportAll<CR>:TSLspOrganize<CR>") -- auto import and organize_imports
 
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)

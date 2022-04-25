@@ -4,7 +4,8 @@ vim.cmd([[
     "let g:edge_style = 'neon'
     "let g:edge_better_performance = 1
     "let g:gruvbox_invert_selection='0'
-    "let g:gruvbox_contrast_dark = 'hard'
+    "let g:gruvbox_contrast_dark = 'soft'
+     let g:everforest_background = 'hard'
 ]])
 
 --remove background

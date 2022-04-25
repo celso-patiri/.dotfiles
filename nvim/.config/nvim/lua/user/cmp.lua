@@ -123,6 +123,8 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "cmp_tabnine" },
+		--testing
+		{ name = "nvim_lsp_signature_help" },
 	}, {
 		{ name = "buffer" },
 		{ name = "path" },
