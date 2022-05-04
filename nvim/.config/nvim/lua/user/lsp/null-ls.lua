@@ -15,8 +15,6 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
-		formatting.codespell,
-		diagnostics.codespell,
 		-- diagnostics.eslint_d,
 		-- code_actions.eslint_d,
 	},
@@ -37,11 +35,11 @@ null_ls.setup({
 		--map({}, 'n', '<leader>do', '<cmd>lua vim.lsp.buf.code_action()<CR>', remapArgs)
 		-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
-		if client.resolved_capabilities.document_formatting then
+		if client.supports_method("textDocument/formatting") then
 			vim.cmd([[
             augroup LspFormatting
                 autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
             augroup END
             ]])
 		end

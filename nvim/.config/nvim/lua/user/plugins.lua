@@ -2,6 +2,7 @@ local fn = vim.fn
 
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
 		"git",
@@ -79,7 +80,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("j-hui/fidget.nvim")
 	-- use("nvim-lua/lsp-status.nvim")
-	use({ "stevearc/dressing.nvim" })
+	-- use({ "stevearc/dressing.nvim" })
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -157,7 +158,7 @@ return packer.startup(function(use)
 	use("dhruvmanila/telescope-bookmarks.nvim")
 
 	--Screen
-	use("TaDaa/vimade") --Fade background
+	-- use("TaDaa/vimade") --Fade background
 	use("xiyaowong/nvim-transparent")
 	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
 

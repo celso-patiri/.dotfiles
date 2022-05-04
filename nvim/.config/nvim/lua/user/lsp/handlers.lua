@@ -19,7 +19,7 @@ end
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.supports_method("textDocument/documentHighlight") then
 		vim.api.nvim_exec(
 			[[
         augroup lsp_document_highlight
@@ -42,13 +42,14 @@ local function lsp_keymaps(bufnr)
 	buf_map(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	buf_map(bufnr, "n", "<leader>]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	buf_map(bufnr, "n", "<leader>[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	buf_map(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
+	buf_map(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 	buf_map(bufnr, "n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
 	buf_map(bufnr, "n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	buf_map(bufnr, "n", "<leader>do", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 end
+
 M.setup = function()
 	local config = {
 		signs = {
@@ -87,16 +88,36 @@ M.setup = function()
 	require("fidget").setup({})
 end
 
+-- nvim 0.8
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(clients)
+			-- filter out clients that you don't want to use
+			return vim.tbl_filter(function(client)
+				return client.name ~= "sumneko_lua" and client.name ~= "tsserver"
+			end, clients)
+		end,
+		bufnr = bufnr,
+	})
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 M.config = function(_config)
 	return vim.tbl_deep_extend("force", {
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			if client.name == "sumneko_lua" then -- resolve null_ls formatting conflict
-				client.resolved_capabilities.document_formatting = false
-				client.resolved_capabilities.document_range_formatting = false
+			if client.supports_method("textDocument/formatting") then -- removes formatting capabilities from lsp
+				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function()
+						lsp_formatting(bufnr)
+					end,
+				})
 			end
-
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)
 		end,
@@ -108,9 +129,6 @@ M.tsconfig = function()
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			client.resolved_capabilities.document_formatting = false
-			client.resolved_capabilities.document_range_formatting = false
-
 			local ts_utils = require("nvim-lsp-ts-utils")
 			ts_utils.setup({})
 			ts_utils.setup_client(client)
@@ -119,6 +137,15 @@ M.tsconfig = function()
 			buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
 
 			buf_map(bufnr, "n", "<A-O>", ":TSLspImportAll<CR>:TSLspOrganize<CR>") -- auto import and organize_imports
+
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					lsp_formatting(bufnr)
+				end,
+			})
 
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)

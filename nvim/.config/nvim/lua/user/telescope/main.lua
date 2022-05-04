@@ -7,10 +7,10 @@ require("telescope").setup({
 		prompt_prefix = " 🔭 > ",
 	},
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			overrride_file_sorter = true,
-		},
+		-- fzy_native = {
+		-- 	override_generic_sorter = false,
+		-- 	overrride_file_sorter = true,
+		-- },
 		bookmarks = bookmarks.config,
 	},
 	pickers = {
@@ -18,7 +18,7 @@ require("telescope").setup({
 		find_files = { hidden = true },
 	},
 })
-require("telescope").load_extension("fzy_native")
+-- require("telescope").load_extension("fzy_native")
 require("telescope").load_extension("projects")
 
 local opts = { noremap = true, silent = true }
