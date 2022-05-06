@@ -36,7 +36,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	auto_reload_on_write = true,
 	disable_netrw = false,
-	hide_root_folder = false,
+	-- hide_root_folder = false,
 	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
@@ -62,7 +62,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
-		auto_resize = true,
+		-- auto_resize = true,
 		mappings = {
 			custom_only = false,
 			list = {
@@ -122,7 +122,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 			global = false,
 		},
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 			resize_window = false,
 			window_picker = {
 				enable = true,

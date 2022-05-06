@@ -133,6 +133,7 @@ return packer.startup(function(use)
 			require("treesitter-context.config").setup({ enable = true })
 		end,
 	})
+
 	use({
 		"folke/twilight.nvim",
 		config = function()
@@ -157,7 +158,6 @@ return packer.startup(function(use)
 	use("dhruvmanila/telescope-bookmarks.nvim")
 
 	--Screen
-	use("TaDaa/vimade") --Fade background
 	use("xiyaowong/nvim-transparent")
 	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
 

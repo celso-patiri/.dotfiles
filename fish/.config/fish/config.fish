@@ -3,5 +3,6 @@ if status is-interactive
 end
 
 set fish_greeting ""
+alias vim nvim
 
 oh-my-posh init fish --config ~/.posh-config.json| source

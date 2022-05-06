@@ -12,13 +12,14 @@ vim.cmd([[
 require("transparent").setup({
 	enable = false,
 })
+
 --vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')
 vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
 -- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
-vim.cmd('let g:sonokai_style = "default"')
+vim.cmd('let g:sonokai_style = "shusia"')
 
 vim.cmd([[silent! colorscheme sonokai]])
 

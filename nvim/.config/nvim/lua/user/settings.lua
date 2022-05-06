@@ -34,6 +34,7 @@ set.scrolloff = 8
 
 set.hidden = true
 set.swapfile = false
+set.autochdir = true --auto cd
 
 set.incsearch = true
 set.relativenumber = true
@@ -57,10 +58,10 @@ vim.cmd([[
     endif
 ]])
 
---staline
+--bufferline
+-- vim.opt.showtabline = 2
 vim.opt.laststatus = 2
-vim.opt.showtabline = 2
-set.showmode = false
+set.showmode = true
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
@@ -72,3 +73,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 --fix extra space at the bottom on start
 vim.cmd("resize+1")
+
+--neovide
+if vim.g.neovide == true then
+	vim.o.guifont = "Hack Nerd Font:h12"
+	vim.g["neovide_transparency"] = 0.95
+	vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+end

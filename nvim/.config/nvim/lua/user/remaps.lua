@@ -37,8 +37,9 @@ map("i", "<A-k>", "<C-c>:move .-2<CR>==gi", opts)
 map("v", "p", '"_dP', opts)
 
 --Ctrl c
-map("n", "<C-c>", 'yyV"+y', opts) --Ctrl C copy whole line in normal mode
-map("v", "<C-c>", '"+y', opts) --Ctrl C copy selection to clipboard in visual mode
+map("n", "<C-y>", 'yyV"+y', opts) --Ctrl C copy whole line in normal mode
+map("v", "<C-y>", '"+y', opts) --Ctrl C copy selection to clipboard in visual mode
+map("i", "<C-y>", '<esc>"+y', opts) --Ctrl C copy selection to clipboard in visual mode
 --Ctrl x
 map("n", "<C-x>", 'yyV"+d', opts) --Ctrl C copy whole line in normal mode
 map("v", "<C-x>", '"+d', opts) --Ctrl C copy whole line in normal mode
@@ -91,3 +92,14 @@ map("o", "<leader>l", "<C-u>:lua require('tsht').nodes()<CR>", { silent = true, 
 
 --transparent toggle
 map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNr guifg=#5eacd3<cr>", opts)
+
+--disable arrows
+map("n", "<Up>", "<nop>", opts)
+map("n", "<Left>", "<nop>", opts)
+map("n", "<Right>", "<nop>", opts)
+map("n", "<Down>", "<nop>", opts)
+
+--neovide
+map("n", "<C-V>", '"+p', opts)
+map("v", "<C-V>", '"+p', opts)
+map("i", "<C-V>", '<esc>"+p', opts)
