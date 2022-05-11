@@ -78,8 +78,9 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("j-hui/fidget.nvim")
+	use("folke/trouble.nvim")
 	-- use("nvim-lua/lsp-status.nvim")
-	use({ "stevearc/dressing.nvim" })
+	-- use({ "stevearc/dressing.nvim" })
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -112,6 +113,7 @@ return packer.startup(function(use)
 	-- use("ellisonleao/gruvbox.nvim")
 	-- use("wadackel/vim-dogrun")
 	use({ "gruvbox-community/gruvbox" })
+	use("marko-cerovac/material.nvim")
 	use("sainnhe/edge")
 	use("sainnhe/sonokai")
 	use("olimorris/onedarkpro.nvim")
@@ -122,7 +124,6 @@ return packer.startup(function(use)
 	use("martinsione/darkplus.nvim")
 
 	--Tree sitter
-	--use 'romgrk/nvim-treesitter-context'
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -130,7 +131,7 @@ return packer.startup(function(use)
 	use({
 		"romgrk/nvim-treesitter-context",
 		config = function()
-			require("treesitter-context.config").setup({ enable = true })
+			require("treesitter-context").setup()
 		end,
 	})
 

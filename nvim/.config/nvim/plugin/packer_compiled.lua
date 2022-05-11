@@ -137,11 +137,6 @@ _G.packer_plugins = {
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/home/celso/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
-  },
   edge = {
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/edge",
@@ -184,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/home/celso/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nord.nvim"] = {
     loaded = true,
@@ -242,7 +242,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
-    config = { "\27LJ\2\nV\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\venable\2\nsetup\30treesitter-context.config\frequire\0" },
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23treesitter-context\frequire\0" },
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
@@ -315,7 +315,7 @@ _G.packer_plugins = {
     url = "https://github.com/luukvbaal/stabilize.nvim"
   },
   ["surround.nvim"] = {
-    config = { "\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\19mappings_style\rsandwich\vprefix\14<leader>s\nsetup\rsurround\frequire\0" },
+    config = { "\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vprefix\14<leader>s\19mappings_style\rsandwich\nsetup\rsurround\frequire\0" },
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/surround.nvim",
     url = "https://github.com/ur4ltz/surround.nvim"
@@ -349,6 +349,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/celso/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["twilight.nvim"] = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
@@ -384,30 +389,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: project.nvim
-time([[Config for project.nvim]], true)
-try_loadstring("\27LJ\2\nN\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16show_hidden\2\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
-time([[Config for project.nvim]], false)
 -- Config for: stabilize.nvim
 time([[Config for stabilize.nvim]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
 time([[Config for stabilize.nvim]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
--- Config for: surround.nvim
-time([[Config for surround.nvim]], true)
-try_loadstring("\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\19mappings_style\rsandwich\vprefix\14<leader>s\nsetup\rsurround\frequire\0", "config", "surround.nvim")
-time([[Config for surround.nvim]], false)
--- Config for: nvim-treesitter-context
-time([[Config for nvim-treesitter-context]], true)
-try_loadstring("\27LJ\2\nV\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\venable\2\nsetup\30treesitter-context.config\frequire\0", "config", "nvim-treesitter-context")
-time([[Config for nvim-treesitter-context]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\nN\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16show_hidden\2\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
 -- Config for: nvim-gps
 time([[Config for nvim-gps]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rnvim-gps\frequire\0", "config", "nvim-gps")
 time([[Config for nvim-gps]], false)
+-- Config for: nvim-treesitter-context
+time([[Config for nvim-treesitter-context]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
+time([[Config for nvim-treesitter-context]], false)
+-- Config for: surround.nvim
+time([[Config for surround.nvim]], true)
+try_loadstring("\27LJ\2\nf\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\vprefix\14<leader>s\19mappings_style\rsandwich\nsetup\rsurround\frequire\0", "config", "surround.nvim")
+time([[Config for surround.nvim]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
+time([[Config for twilight.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

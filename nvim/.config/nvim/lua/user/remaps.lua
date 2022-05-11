@@ -91,7 +91,7 @@ map("n", "<leader>l", "v:lua require('tsht').nodes()<CR>", opts)
 map("o", "<leader>l", "<C-u>:lua require('tsht').nodes()<CR>", { silent = true, noremap = false })
 
 --transparent toggle
-map("n", "<leader>tr", ":TransparentToggle<cr>:hi LineNr guifg=#5eacd3<cr>", opts)
+map("n", "<leader>tra", ":TransparentToggle<cr>:hi LineNr guifg=#5eacd3<cr>", opts)
 
 --disable arrows
 map("n", "<Up>", "<nop>", opts)
@@ -103,3 +103,9 @@ map("n", "<Down>", "<nop>", opts)
 map("n", "<C-V>", '"+p', opts)
 map("v", "<C-V>", '"+p', opts)
 map("i", "<C-V>", '<esc>"+p', opts)
+
+--trouble
+map("n", "<leader>tro", ":Trouble<cr>", opts)
+map("n", "<leader>trw", ":Trouble workspace_diagnostics<cr>", opts)
+map("n", "<leader>trd", ":Trouble document_diagnostics<cr>", opts)
+map("n", "gR", ":Trouble lsp_references<cr>", opts)
