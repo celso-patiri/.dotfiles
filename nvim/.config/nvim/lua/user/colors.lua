@@ -19,10 +19,10 @@ vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
 -- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
-vim.g.sonokai_style = "andromeda"
+vim.g.sonokai_style = "default"
 vim.g.material_style = "palenight"
 
-vim.cmd([[silent! colorscheme sonokai]])
+vim.cmd([[silent! colorscheme nord]])
 
 --highlight ColorColumn ctermbg=0 guibg=grey
 --hi Normal guibg=none ctermbg=none
