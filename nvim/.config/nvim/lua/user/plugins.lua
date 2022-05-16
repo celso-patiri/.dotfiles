@@ -107,11 +107,11 @@ return packer.startup(function(use)
 
 	--Themes
 	-- use("navarasu/onedark.nvim")
+	-- use({ "folke/tokyonight.nvim", branch = "main" })
+	-- use("ellisonleao/gruvbox.nvim")
 	-- use("EdenEast/nightfox.nvim")
 	use("sainnhe/gruvbox-material")
 	use("sainnhe/everforest")
-	-- use("ellisonleao/gruvbox.nvim")
-	use("wadackel/vim-dogrun")
 	use({ "gruvbox-community/gruvbox" })
 	use("marko-cerovac/material.nvim")
 	use("sainnhe/edge")
@@ -120,7 +120,6 @@ return packer.startup(function(use)
 	use("ful1e5/onedark.nvim")
 	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
-	use({ "folke/tokyonight.nvim", branch = "main" })
 	use("martinsione/darkplus.nvim")
 
 	--Tree sitter

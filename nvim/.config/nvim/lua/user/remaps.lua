@@ -81,9 +81,9 @@ map("n", "<leader><C-w>", ":bdelete<cr>", opts)
 map("n", "<A-w>", ":BufferLinePick<cr>", opts)
 
 --toggle terminal
-map("n", "<C-]>", ":lua HORIZONTAL_TOGGLE()<cr>", opts)
+--map("n", "<C-]>", ":lua HORIZONTAL_TOGGLE()<cr>", opts)
+--map("n", "<C-A-]>", ":lua LAZYGIT_TOGGLE()<cr>", opts)
 map("n", "<C-Bslash>", ":lua FLOAT_TOGGLE()<cr>", opts)
-map("n", "<C-A-]>", ":lua LAZYGIT_TOGGLE()<cr>", opts)
 
 --treehopper
 map("v", "<leader>l", ":lua require('tsht').nodes()<CR>", opts)
