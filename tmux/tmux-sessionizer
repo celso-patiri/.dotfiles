@@ -11,17 +11,12 @@ if [[ -z $session ]]; then
 fi
 
 session_name=$(basename "$session" | tr . _)
-tmux_running=$(pgrep tmux)
-
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-fi
 
 if ! tmux has-session -t "$session_name" 2> /dev/null; then
     tmux new-session -ds "$session_name" -c "$session"
 fi
 
-if ! [[ -z $tmux_running ]]; then
+if ! pgrep -x 'tmux' > /dev/null; then
     tmux attach-session -t $session_name
 fi
 

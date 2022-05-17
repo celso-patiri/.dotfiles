@@ -421,9 +421,8 @@ colors:
 #   - (Windows) powershell
 shell:
   program: /usr/bin/zsh
-#  args:
-#    - --login
-
+  # args:
+  #   - .zshrc
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

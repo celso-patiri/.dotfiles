@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #["passion",'oxide,"headline"]
 ZSH_THEME="oxide"
 
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -78,9 +79,6 @@ plugins=(
     zsh-vi-mode
 )
 
-
-# User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -97,23 +95,21 @@ export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 bindkey -s ^f "tmux-sessionizer\n"
 
-# Example aliases
+setxkbmap -layout us,br
+setxkbmap -option 'grp:win_space_toggle'
+
 alias vim="nvim"
 alias vimf='nvim $(fzf)'
+alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
 export PATH=/home/celso/.cargo/bin:$PATH
 export PATH=/home/celso/.dotfiles/tmux/:$PATH
 export PATH=/home/celso/.local/bin/:$PATH
 
-alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
-
+source ~/.fzf/shell/key-bindings.zsh
+source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source $ZSH/oh-my-zsh.sh
