@@ -78,7 +78,6 @@ plugins=(
     zsh-vi-mode
 )
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -117,3 +116,5 @@ export PATH=/home/celso/.local/bin/:$PATH
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source $ZSH/oh-my-zsh.sh
