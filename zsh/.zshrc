@@ -103,7 +103,6 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 
 bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^o "tmux-sessionizer\n"
 
 # Example aliases
 alias vim="nvim"
