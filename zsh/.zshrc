@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
+export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-#["passion","headline"]
+#["passion",'oxide,"headline"]
 ZSH_THEME="oxide"
 
 # Set list of themes to pick from when loading at random
@@ -75,6 +75,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-nvm
+    zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,12 +102,18 @@ export EDITOR='nvim'
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^o "tmux-sessionizer\n"
+
 # Example aliases
 alias vim="nvim"
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=/home/celso/.local/kitty.app/bin:$PATH
+alias vimf='nvim $(fzf)'
+
 export PATH=/home/celso/.cargo/bin:$PATH
+export PATH=/home/celso/.dotfiles/tmux/:$PATH
+export PATH=/home/celso/.local/bin/:$PATH
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

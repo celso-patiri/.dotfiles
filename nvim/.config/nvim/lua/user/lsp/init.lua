@@ -18,6 +18,7 @@ lspconfig.eslint.setup(handlers.config())
 --lspconfig.graphql.setup{ handlers.config() }
 -- lspconfig.tailwindcss.setup({ handlers.config() })
 lspconfig.dockerls.setup({ handlers.config() })
+lspconfig.bashls.setup({ handlers.config() })
 
 --jsonlsp---------------------------------------------------------------------------------------------------------------
 lspconfig.jsonls.setup(handlers.config({

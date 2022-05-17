@@ -99,13 +99,11 @@ map("n", "<Left>", "<nop>", opts)
 map("n", "<Right>", "<nop>", opts)
 map("n", "<Down>", "<nop>", opts)
 
---neovide
-map("n", "<C-V>", '"+p', opts)
-map("v", "<C-V>", '"+p', opts)
-map("i", "<C-V>", '<esc>"+p', opts)
-
 --trouble
 map("n", "<leader>tro", ":Trouble<cr>", opts)
 map("n", "<leader>trw", ":Trouble workspace_diagnostics<cr>", opts)
 map("n", "<leader>trd", ":Trouble document_diagnostics<cr>", opts)
 map("n", "gR", ":Trouble lsp_references<cr>", opts)
+
+--tmux-sessionizer
+map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
