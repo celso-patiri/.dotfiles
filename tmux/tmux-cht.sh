@@ -8,7 +8,8 @@ read -p "Enter Query: " query
 
 if grep -qs "$selected" ~/.tmux-cht-languages; then
     query=`echo $query | tr ' ' '+'`
-    echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done
+    # echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done
+    curl -s cht.sh/$selected/$query | less
 else
     curl -s cht.sh/$selected~$query | less
 fi

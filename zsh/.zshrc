@@ -96,6 +96,7 @@ export EDITOR='nvim'
 # export ARCHFLAGS="-arch x86_64"
 
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "fzf-history-widget\n"
 
 setxkbmap -layout us,br
 setxkbmap -option 'grp:win_space_toggle'

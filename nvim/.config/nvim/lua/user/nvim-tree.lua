@@ -19,6 +19,7 @@ vim.g.nvim_tree_icons = {
 	},
 }
 
+-- 
 require("nvim-web-devicons").setup({
 	override = {
 		["test.js"] = {
