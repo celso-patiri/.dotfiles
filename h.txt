@@ -1,0 +1,176 @@
+    1  echo $SHELL
+   11  git clone https://github.com/neovim/neovim\n
+   44  sudo make install\n
+   46  sudo apt-get install -y stow
+   47  sudo apt-get update -y
+   50  sudo apt-get install -y stow
+   54  git clone https://github.com/celso-patiri/.dotfiles.git
+  102  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin\n
+  104  echo $SHELL
+  120  echo $PATH
+  290  cargo install alacritty\n
+  309  sudo apt-get install --reinstall gnome-terminal\n
+  316  sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /home/celso/.cargo/bin/alacritty
+  318  sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /home/celso/.cargo/bin/alacritty
+  319  sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /home/celso/.cargo/bin/alacritty 1
+  344  echo $ZSH_CUSTOM
+  350  echo $ZSH_CUSTOM
+  394  echo $SHELL
+  396  echo $SHELL
+  398  echo $SHELL
+  408  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n
+  409  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting\n
+  419  git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm\n
+  422  nvm install tc
+  423  nvm install rc
+  425  nvm install node
+  428  sudo apt-get install tmux\n
+  452  sudo apt-get install wmctrl
+  454  sudo snap install notion-snap\n
+  455  sudo apt install snapd
+  456  sudo snap install notion-snap\n
+  462  echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+  463  sudo apt update\n
+  464  sudo apt install notion-app-enhanced\n
+  487  sudo apt update\n
+  488  sudo apt install software-properties-common
+  489  sudo add-apt-repository --yes --update ppa:ansible/ansible
+  490  sudo apt install ansible
+  503  echo $SHELL
+  523  sudo apt install i3
+  526  sudo apt remove i3
+  529  cargo install stylua\n
+  530  npm install -g rustywind
+  531  sudo npm install -g rustywind
+  543  sudo npm install -g rustywind\n\n
+  545  sudo npm install -g prettier\n
+  548  git clone  --depth=1 https://github.com/sumneko/lua-language-server\n
+  549  apt list --installed gcc-10*\napt list --installed g++-10\napt list --installed libstdc++-10*
+  550  sudo apt-get update\napt list libstdc++-10*\napt list gcc-10*\napt list g++-10*
+  551  sudo add-apt-repository ppa:ubuntu-toolchain-r/test\nsudo apt-get update
+  552  The standard installation of gcc and g++ does not come with the latest versions of the libraries, so if you want to take advantage of the features offered by the new C++ standards (C++17 and C++20 as the time of writing) you have to manually switch libraries.\n\nSpecifically, you have to make sure that the libraries gcc and libstdc++ are upgraded to their latest versions. As the time of writing, those are the followings:\n\ngcc-10\ngcc-10-base\ngcc-10-doc\ng++-10\nlibstdc++-10-dev\nlibstdc++-10-doc\nOn Ubuntu that is rather trivial. First, look if they are already installed :\n\napt list --installed gcc-10*\napt list --installed g++-10\napt list --installed libstdc++-10*\nIf not, first check if they are available to apt:\n\nsudo apt-get update\napt list libstdc++-10*\napt list gcc-10*\napt list g++-10*\nIf you do not find the packages, you might need to run the following commands to add the Ubuntu Toolchain repository:\n\nsudo add-apt-repository ppa:ubuntu-toolchain-r/test\nsudo apt-get update\nOnce updated the apt, you can install them with the following command:\n\nsudo apt install gcc-10 gcc-10-base gcc-10-doc g++-10\nsudo apt install libstdc++-10-dev libstdc++-10-doc 
+  554  sudo apt install gcc-10 gcc-10-base gcc-10-doc g++-10\nsudo apt install libstdc++-10-dev libstdc++-10-doc 
+  555  apt-get install ninja-build
+  556  sudo apt-get install ninja-build
+  563  ./compile/install.sh
+  569  sudo npm install -g emmet-ls\n
+  570  npm install -g dockerfile-language-server-nodejs\n
+  571  npm install -g @tailwindcss/language-server\n
+  572  npm install -g graphql-language-service-cli\n
+  608  sudo apt-get install fzf
+  620  git commit -m "changes in clean PopOS install"
+  642  git clone https://github.com/celso-patiri/14-BootStore.git
+  658  wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme\n
+  670  wget https://github.com/Daivasmara/daivasmara.zsh-theme/blob/master/daivasmara.zsh-theme
+  780  sudo apt-get uninstall fzf\n
+  781  sudo apt-get remove fzf\n
+  786  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n
+  791  ./install
+  830  git clone https://github.com/jeffreytse/zsh-vi-mode
+  982  echo $SHELL
+ 1001  sudo apt-get install ripgrep
+ 1013  wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+ 1014  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list\n\n
+ 1015  sudo apt-get update\n
+ 1016  sudo apt-get install -y mongodb-org
+ 1017  sudo apt-get install -y libssl1.1
+ 1018  sudo apt-get update -y
+ 1019  sudo apt-get install -y libssl1.1
+ 1020  wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb\n
+ 1022  sudo apt-get install -y mongodb-org
+ 1023  sudo apt update
+ 1024  sudo apt-get autoremove
+ 1025  sudo apt-get update
+ 1026  sudo apt-key list
+ 1027  cd /etc/apt/trusted.gpg
+ 1028  cd /etc/apt/
+ 1031  sudo apt-key export E2C63C11 | sudo gpg --dearmour -o /usr/share/keyrings/mongodb.gpg
+ 1032  echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb.gpg]  https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+ 1033  sudo apt update
+ 1034  sudo apt-key del E2C63C11
+ 1035  sudo apt-get update\n
+ 1036  sudo apt-get install -y mongodb-org
+ 1037  apt list installed
+ 1038  apt list --installed
+ 1039  sudo apt remove libssl1.1
+ 1040  sudo apt-get install -y mongodb-org
+ 1041  apt search libssl
+ 1042  sudo apt install libssl1.1
+ 1043  sudo apt install libssl1.1=1.1.0-2ubuntu4.3\n
+ 1044  wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1-1ubuntu2.1\~18.04.16_amd64.deb
+ 1047  sudo apt-get install -y mongodb-org
+ 1098  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh\n
+ 1109  heroku plugins:install heroku-repo
+ 1163  echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \\n    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+ 1164  sudo apt-get update
+ 1165  sudo apt-get install insomnia
+ 1264  sudo apt install i3
+ 1296  curl cht.sh/javascript/:learn+array+slice
+ 1297  curl cht.sh/javascript/array+slice
+ 1299  echo "teste"
+ 1316  echo "teste"
+ 2119  apt-get install neofetch -y
+ 2120  sudo apt-get install neofetch -y
+ 2123  git clone https://github.com/davatorium/rofi.git
+ 2141  apt install rofi\n
+ 2142  sudo apt install rofi\n
+ 2204  wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/libplayerctl2_2.0.1-1_amd64.deb\n
+ 2205  wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/playerctl_2.0.1-1_amd64.deb\n
+ 2209  sudo apt-get install feh
+ 2231  sudo apt install pulseaudio-module-bluetooth \n
+ 2232  sudo apt install pulseaudio-module-bluetooth
+ 2237  sudo apt install pulseaudio-module-bluetooth
+ 2239  sudo apt-get install bluez-tools
+ 2246  bt-adapter discover
+ 2247  bt-adapter -d
+ 2255  bt-adapter -d
+ 2261  sudo apt-get update\nsudo apt-get install pulseaudio
+ 2265  sudo apt install pavucontrol
+ 2267  sudo apt update
+ 2268  sudo apt install pulseaudio-equalizer
+ 2269  sudo apt install pulseaudio
+ 2279  sudo apt install pulseaudio-module-bluetooth
+ 2280  bt-adapter -l
+ 2281  bt-adapter -c
+ 2282  bt-adapter -i
+ 2284  bt-adapter -i
+ 2285  bt-adapter -l
+ 2286  bt-adapter -c 
+ 2287  bt-adapter -h
+ 2288  bt-adapter -d
+ 2295  bt-adapter -d
+ 2296  bt-adapter -c AC:12:2F:DF:BC:C0
+ 2297  bt-adapter -h
+ 2298  bt-adapter -i
+ 2304  bt-adapter -d
+ 2328  sudo apt-get install lxappearence
+ 2329  sudo apt-get install lxappearance
+ 2347  sudo apt-get install compton
+ 2365  curl https://wakatime.com/api/v1/users/celsopatiri/all_time_since_today
+ 2366  sudo apt-get install i3blocks
+ 2447  curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - \n
+ 2448  echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list\n
+ 2449  sudo apt-get update && sudo apt-get install spotify-client\n
+ 2635  git clone https://github.com/celso-patiri/14-BootStore.git
+ 2655  sudo apt install ./zoom_amd64.deb
+ 2661  sudo apt install htop
+ 2684  echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/io.elementary.appcenter-daemon.desktop\n
+ 2687  sudo apt install brightnessctl
+ 2707  history 0 | uniq -c | awk 'apt'
+ 2708  history 0 | uniq | awk 'apt'
+ 2709  history 0 | uniq | awk 'apt' 
+ 2710  history 0 | uniq | grep /apt/
+ 2711  history 0 | uniq | grep apt
+ 2712  history 0 | uniq | grep apt|echo
+ 2713  history 0 | uniq | grep "apt|echo"
+ 2714  history 0 | uniq | grep "apt"
+ 2715  history 0 | uniq | grep "(apt)|(echo)|(clone)"
+ 2716  history 0 | uniq | grep "(apt|echo|clone)"
+ 2717  history 0 | uniq | grep -E "(apt|echo|clone)"
+ 2718  history 0 | uniq -c | grep -E "(apt|echo|clone)"
+ 2719  history 0 | uniq | grep -E "(apt|echo|clone)"
+ 2732  history 0 | uniq | grep -E "(apt|echo|clone|wget)"
+ 2741  sudo apt install john
+ 2743  history 0 | unique | grep -E "(apt|echo|clone|wget)"
+ 2744  history 0 | grep -E "(apt|echo|clone|wget)"
+ 2745  history 0 | grep -E "(apt|echo|clone|wget)" > h.txt
