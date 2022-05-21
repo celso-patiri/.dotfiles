@@ -10,7 +10,7 @@ vim.cmd([[
 
 --remove background
 require("transparent").setup({
-	enable = false,
+	enable = true,
 })
 
 --vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')

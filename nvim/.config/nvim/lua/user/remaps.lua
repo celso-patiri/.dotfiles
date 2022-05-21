@@ -15,9 +15,9 @@ map("v", "<C-A-q>", "gb", { noremap = false })
 map("n", "<esc>", ":noh<cr><esc>", opts)
 
 --save on ctrl+s
-map("n", "<C-S>", ":update<CR>", opts)
-map("v", "<C-S>", "<C-C>:update<CR>", opts)
-map("i", "<C-S>", "<C-C>:update<CR>", opts)
+map("n", "<C-S>", ":w<CR>", opts)
+map("v", "<C-S>", "<C-C>:w<CR>", opts)
+map("i", "<C-S>", "<C-C>:w<CR>", opts)
 
 --tab, shift+tab ident support
 map("n", "<Tab>", ">>_")
