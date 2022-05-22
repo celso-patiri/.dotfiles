@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 #["passion",'oxide,"headline"]
-ZSH_THEME="oxide"
+ZSH_THEME="spaceship"
 
 
 # Set list of themes to pick from when loading at random

@@ -413,22 +413,22 @@ bindsym $mod+$i3-wm.binding.settings exec $i3-wm.program.settings
 
 ## Modify // Display Settings // <> d ##
 set_from_resource $i3-wm.binding.display i3-wm.binding.display d
-set_from_resource $i3-wm.program.display i3-wm.program.display gnome-control-center --class=floating_window display
+set_from_resource $i3-wm.program.display i3-wm.program.display gnome-control-center display
 bindsym $mod+$i3-wm.binding.display exec $i3-wm.program.display
 
 ## Modify // Wifi Settings // <> w ##
 set_from_resource $i3-wm.binding.wifi i3-wm.binding.wifi w
-set_from_resource $i3-wm.program.wifi i3-wm.program.wifi gnome-control-center --class=floating_window wifi
+set_from_resource $i3-wm.program.wifi i3-wm.program.wifi gnome-control-center wifi
 bindsym $mod+$i3-wm.binding.wifi exec $i3-wm.program.wifi
 
 ## Modify // Bluetooth Settings // <> b ##
 set_from_resource $i3-wm.binding.bluetooth i3-wm.binding.bluetooth b
-set_from_resource $i3-wm.program.bluetooth i3-wm.program.bluetooth gnome-control-center --class=floating_window bluetooth
+set_from_resource $i3-wm.program.bluetooth i3-wm.program.bluetooth gnome-control-center bluetooth
 bindsym $mod+$i3-wm.binding.bluetooth exec $i3-wm.program.bluetooth
 
 ## Modify // Sound Settings // <> s ##
 set_from_resource $i3-wm.binding.sound i3-wm.binding.sound s
-set_from_resource $i3-wm.program.sound i3-wm.program.sound gnome-control-center --class=floating_window sound
+set_from_resource $i3-wm.program.sound i3-wm.program.sound gnome-control-center sound
 bindsym $mod+$i3-wm.binding.sound exec $i3-wm.program.sound
 
 ## Launch // File Browser // <><Shift> n ##
@@ -531,7 +531,7 @@ gaps inner $i3-wm.gaps.inner.size
 gaps outer $i3-wm.gaps.outer.size
 
 # Only enable gaps on a workspace when there is at least one container
-set_from_resource $i3-wm.gaps.smart i3-wm.gaps.smart on
+set_from_resource $i3-wm.gaps.smart i3-wm.gaps.smart inverse_outer
 smart_gaps $i3-wm.gaps.smart
 
 # Enable popup during fullscreen
@@ -601,7 +601,7 @@ set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspa
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
 # Sets i3 font for dialogs
-set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
+set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 10
 font $i3-wm.font
 
 ###############################################################################
@@ -609,7 +609,7 @@ font $i3-wm.font
 ###############################################################################
 
 set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
-set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 13, Material Design Icons 13
+set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 10, Material Design Icons 10
 set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
 set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
 set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
