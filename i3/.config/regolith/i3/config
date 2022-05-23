@@ -356,6 +356,9 @@ workspace_layout $i3-wm.workspace.layout
 # Session Management
 ###############################################################################
 
+## Session // Set wallpaper // <><Shift> w ##
+bindsym $mod+Shift+w exec --no-startup-id feh --randomize --bg-fill ~/Pictures/nord/* 
+
 ## Session // Exit App // <><Shift> q ##
 set_from_resource $i3-wm.binding.exit_app i3-wm.binding.exit_app Shift+q
 bindsym $mod+$i3-wm.binding.exit_app [con_id="__focused__"] kill
@@ -674,3 +677,4 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
+
