@@ -678,3 +678,6 @@ exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
 
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/nord/* 
+
+
