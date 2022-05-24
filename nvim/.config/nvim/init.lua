@@ -23,7 +23,7 @@ require("user.cmp")
 
 require("user.telescope.main")
 require("user.nvim-tree")
-require("user.toggleterm")
+-- require("user.toggleterm")
 
 -- require("user.bufferline")
 require("user.lualine")

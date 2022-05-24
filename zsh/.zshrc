@@ -110,6 +110,7 @@ export PATH=/home/celso/.cargo/bin:$PATH
 export PATH=/home/celso/.dotfiles/tmux/:$PATH
 export PATH=/home/celso/.local/bin/:$PATH
 export PATH=/home/celso/.local/share/flatpak/exports/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh

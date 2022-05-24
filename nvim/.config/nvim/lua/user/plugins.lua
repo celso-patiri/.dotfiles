@@ -45,8 +45,6 @@ return packer.startup(function(use)
 	use("wakatime/vim-wakatime")
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
-	use("akinsho/toggleterm.nvim")
-	-- use("christoomey/vim-tmux-navigator")
 
 	--performance/fix
 	use("lewis6991/impatient.nvim")
@@ -62,7 +60,6 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
-	-- use("tamton-aquib/staline.nvim")
 
 	--Lsp
 	--use("williamboman/nvim-lsp-installer")
@@ -80,7 +77,6 @@ return packer.startup(function(use)
 	use("j-hui/fidget.nvim")
 	use("folke/trouble.nvim")
 	-- use("nvim-lua/lsp-status.nvim")
-	-- use({ "stevearc/dressing.nvim" })
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -133,18 +129,15 @@ return packer.startup(function(use)
 			require("treesitter-context").setup()
 		end,
 	})
-
-	use({
-		"folke/twilight.nvim",
-		config = function()
-			require("twilight").setup({})
-		end,
-	})
 	use("p00f/nvim-ts-rainbow")
 	use("mfussenegger/nvim-ts-hint-textobject")
 
-	--Prettier
-	-- use("sbdchd/neoformat")
+	-- use({
+	-- 	"folke/twilight.nvim",
+	-- 	config = function()
+	-- 		require("twilight").setup({})
+	-- 	end,
+	-- })
 
 	--Telescope
 	use("nvim-telescope/telescope.nvim")

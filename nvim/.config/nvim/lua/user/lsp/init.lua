@@ -5,9 +5,8 @@ end
 
 local handlers = require("user.lsp.handlers")
 
-lspconfig.emmet_ls.setup(
-	handlers.config({ filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" } })
-)
+-- lspconfig.emmet_ls.setup( handlers.config({ filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" } })
+-- )
 lspconfig.cssls.setup(handlers.config({ filetypes = { "css", "scss" } }))
 
 lspconfig.tsserver.setup(handlers.tsconfig())
