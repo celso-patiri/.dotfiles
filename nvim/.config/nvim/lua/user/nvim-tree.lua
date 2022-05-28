@@ -1,24 +1,3 @@
-vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "",
-		staged = "S",
-		unmerged = "",
-		renamed = "➜",
-		deleted = "",
-		untracked = "U",
-		ignored = "◌",
-	},
-	folder = {
-		default = "",
-		open = "",
-		empty = "",
-		empty_open = "",
-		symlink = "",
-	},
-}
-
 -- 
 require("nvim-web-devicons").setup({
 	override = {
@@ -26,6 +5,11 @@ require("nvim-web-devicons").setup({
 			icon = "ﭧ",
 			color = "#cbcb41",
 			name = "JavascriptTest",
+		},
+		["test.ts"] = {
+			icon = "ﭧ",
+			color = "#cbcb41",
+			name = "TypeScriptTest",
 		},
 	},
 	default = true,
@@ -56,7 +40,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	},
 
 	view = {
-		width = 30,
+		width = 35,
 		height = 30,
 		side = "left",
 		preserve_window_proportions = false,
@@ -81,6 +65,28 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 				corner = "└ ",
 				edge = "│ ",
 				none = "  ",
+			},
+		},
+		icons = {
+			glyphs = {
+				default = "",
+				symlink = "",
+				git = {
+					unstaged = "",
+					staged = "S",
+					unmerged = "",
+					renamed = "➜",
+					deleted = "",
+					untracked = "U",
+					ignored = "◌",
+				},
+				folder = {
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+				},
 			},
 		},
 	},
@@ -112,7 +118,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	},
 	git = {
 		enable = true,
-		ignore = true,
+		ignore = false,
 		timeout = 400,
 	},
 

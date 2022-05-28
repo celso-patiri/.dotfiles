@@ -102,21 +102,28 @@ return packer.startup(function(use)
 	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
 
 	--Themes
-	-- use("navarasu/onedark.nvim")
-	-- use({ "folke/tokyonight.nvim", branch = "main" })
-	-- use("ellisonleao/gruvbox.nvim")
+	-- use("martinsione/darkplus.nvim")
 	-- use("EdenEast/nightfox.nvim")
+	-- use("olimorris/onedarkpro.nvim")
+	-- use("ful1e5/onedark.nvim")
+
+	use("shaunsingh/nord.nvim")
 	use("sainnhe/gruvbox-material")
 	use("sainnhe/everforest")
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
+	use("savq/melange")
+
 	use({ "gruvbox-community/gruvbox" })
-	use("marko-cerovac/material.nvim")
-	use("sainnhe/edge")
 	use("sainnhe/sonokai")
-	use("olimorris/onedarkpro.nvim")
-	use("ful1e5/onedark.nvim")
-	use("shaunsingh/nord.nvim")
 	use("Mofiqul/dracula.nvim")
-	use("martinsione/darkplus.nvim")
+
+	use({ "folke/tokyonight.nvim", branch = "main" })
+	use("marko-cerovac/material.nvim")
+	use("rebelot/kanagawa.nvim")
+	use("Shatur/neovim-ayu")
 
 	--Tree sitter
 	use("nvim-lua/popup.nvim")

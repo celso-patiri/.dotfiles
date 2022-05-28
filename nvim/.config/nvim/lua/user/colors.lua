@@ -1,13 +1,3 @@
---Specific theme customizations
---vim.g.tokyonight_style = "night"
-vim.cmd([[
-    "let g:edge_style = 'neon'
-    "let g:edge_better_performance = 1
-    "let g:gruvbox_invert_selection='0'
-    "let g:gruvbox_contrast_dark = 'soft'
-     let g:everforest_background = 'hard'
-]])
-
 --remove background
 require("transparent").setup({
 	enable = true,
@@ -18,11 +8,16 @@ vim.opt.termguicolors = true
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
+--Theme specific customizations
 -- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
-vim.g.sonokai_style = "andromeda"
+vim.g.sonokai_style = "atlantis"
 vim.g.material_style = "palenight"
+vim.g.gruvbox_invert_selection = "0"
+vim.g.gruvbox_contrast_dark = "soft"
+vim.g.everforest_background = "hard"
+vim.g.tokyonight_style = "night"
 
-vim.cmd([[silent! colorscheme nord]])
+vim.cmd([[silent! colorscheme melange]])
 
 --highlight ColorColumn ctermbg=0 guibg=grey
 --hi Normal guibg=none ctermbg=none

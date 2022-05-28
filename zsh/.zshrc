@@ -101,6 +101,7 @@ setxkbmap -layout us,br
 setxkbmap -option 'grp:win_space_toggle'
 
 alias vim="nvim"
+alias v="nvim"
 alias vimf='nvim $(fzf)'
 alias src='source ~/.zshrc'
 
