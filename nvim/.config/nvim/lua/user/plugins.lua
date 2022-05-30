@@ -106,6 +106,8 @@ return packer.startup(function(use)
 	-- use("EdenEast/nightfox.nvim")
 	-- use("olimorris/onedarkpro.nvim")
 	-- use("ful1e5/onedark.nvim")
+	-- use("Rigellute/rigel")
+	-- use("savq/melange")
 
 	use("shaunsingh/nord.nvim")
 	use("sainnhe/gruvbox-material")
@@ -114,7 +116,7 @@ return packer.startup(function(use)
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use("savq/melange")
+	use("shaunsingh/moonlight.nvim")
 
 	use({ "gruvbox-community/gruvbox" })
 	use("sainnhe/sonokai")

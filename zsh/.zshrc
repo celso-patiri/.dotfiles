@@ -104,6 +104,7 @@ alias vim="nvim"
 alias v="nvim"
 alias vimf='nvim $(fzf)'
 alias src='source ~/.zshrc'
+alias vit='f() {touch $1; nvim $1};f'
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
