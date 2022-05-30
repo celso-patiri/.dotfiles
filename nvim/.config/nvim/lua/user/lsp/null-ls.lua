@@ -16,6 +16,7 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.rustywind,
+		formatting.markdownlint,
 		-- diagnostics.eslint_d,
 		-- code_actions.eslint_d,
 	},

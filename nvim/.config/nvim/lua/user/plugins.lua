@@ -65,6 +65,7 @@ return packer.startup(function(use)
 	--use("williamboman/nvim-lsp-installer")
 	-- use("glepnir/lspsaga.nvim")
 	-- use("arkav/lualine-lsp-progress")
+	-- use("nvim-lua/lsp-status.nvim")
 	use("neovim/nvim-lspconfig")
 	use({
 		"SmiteshP/nvim-gps",
@@ -76,7 +77,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("j-hui/fidget.nvim")
 	use("folke/trouble.nvim")
-	-- use("nvim-lua/lsp-status.nvim")
+	use("simrat39/symbols-outline.nvim")
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -91,17 +92,7 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 
-	use("simrat39/symbols-outline.nvim")
-	use("norcalli/nvim-colorizer.lua")
-
-	--use 'leafgarland/typescript-vim'
-	--use 'pangloss/vim-javascript'
-	--use 'maxmellon/vim-jsx-pretty'
-	--use 'peitalin/vim-jsx-typescript'
-	--use 'jparise/vim-graphql'
-	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
-
-	--Themes
+	--Themes ----------------------------
 	-- use("martinsione/darkplus.nvim")
 	-- use("EdenEast/nightfox.nvim")
 	-- use("olimorris/onedarkpro.nvim")
@@ -109,23 +100,24 @@ return packer.startup(function(use)
 	-- use("Rigellute/rigel")
 	-- use("savq/melange")
 
-	use("shaunsingh/nord.nvim")
-	use("sainnhe/gruvbox-material")
-	use("sainnhe/everforest")
+	-- use("shaunsingh/nord.nvim")
+	-- use("sainnhe/gruvbox-material")
+	-- use("sainnhe/everforest")
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 	})
-	use("shaunsingh/moonlight.nvim")
+	-- use("shaunsingh/moonlight.nvim")
 
-	use({ "gruvbox-community/gruvbox" })
-	use("sainnhe/sonokai")
-	use("Mofiqul/dracula.nvim")
+	-- use({ "gruvbox-community/gruvbox" })
+	-- use("sainnhe/sonokai")
+	-- use("Mofiqul/dracula.nvim")
 
-	use({ "folke/tokyonight.nvim", branch = "main" })
-	use("marko-cerovac/material.nvim")
-	use("rebelot/kanagawa.nvim")
-	use("Shatur/neovim-ayu")
+	-- use({ "folke/tokyonight.nvim", branch = "main" })
+	-- use("marko-cerovac/material.nvim")
+	-- use("rebelot/kanagawa.nvim")
+	-- use("Shatur/neovim-ayu")
+	--Themes ----------------------------
 
 	--Tree sitter
 	use("nvim-lua/popup.nvim")
@@ -141,27 +133,21 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("mfussenegger/nvim-ts-hint-textobject")
 
-	-- use({
-	-- 	"folke/twilight.nvim",
-	-- 	config = function()
-	-- 		require("twilight").setup({})
-	-- 	end,
-	-- })
-
 	--Telescope
 	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-fzy-native.nvim")
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
 	use({
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("project_nvim").setup({ show_hidden = true })
 		end,
 	})
-	use("dhruvmanila/telescope-bookmarks.nvim")
 
 	--Screen
 	use("xiyaowong/nvim-transparent")
-	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
 
 	--Code manipulation and utils
 	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
@@ -176,7 +162,36 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("numToStr/Comment.nvim")
-	--use 'tpope/vim-sleuth'
+
+	use("norcalli/nvim-colorizer.lua")
+
+	--use 'leafgarland/typescript-vim'
+	--use 'pangloss/vim-javascript'
+	--use 'maxmellon/vim-jsx-pretty'
+	--use 'peitalin/vim-jsx-typescript'
+	--use 'jparise/vim-graphql'
+	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
+
+	--markdown
+	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({
+		"vimwiki/vimwiki",
+		config = function()
+			vim.g.vimwiki_list = {
+				{
+					path = "/home/celso/Documents/vimwiki",
+					syntax = "markdown",
+					ext = ".md",
+				},
+			}
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

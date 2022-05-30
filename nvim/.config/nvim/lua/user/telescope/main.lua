@@ -1,25 +1,22 @@
-local bookmarks = require("user.telescope.bookmarks")
-
 require("telescope").setup({
 	defaults = {
-		file_sorter = require("telescope.sorters").get_fzy_sorter,
 		file_ignore_patterns = { "node_modules", ".git/", ".png", ".ico", ".jpg" },
-		prompt_prefix = " 🔭 > ",
+		prompt_prefix = "  > ",
 	},
 	extensions = {
-		fzy_native = {
-			override_generic_sorter = false,
-			overrride_file_sorter = true,
+		fzf = {
+			fuzzy = true, -- false will only do exact matching
+			override_generic_sorter = true, -- override the generic sorter
+			override_file_sorter = true, -- override the file sorter
+			case_mode = "smart_case", --  "ignore_case" | "respect_case" |"smart_case"
 		},
-		bookmarks = bookmarks.config,
 	},
 	pickers = {
 		live_grep = { hidden = true },
 		find_files = { hidden = true },
 	},
 })
-require("telescope").load_extension("fzy_native")
-require("telescope").load_extension("projects")
+require("telescope").load_extension("fzf")
 
 local opts = { noremap = true, silent = true }
 

@@ -8,7 +8,7 @@ require("nvim-web-devicons").setup({
 		},
 		["test.ts"] = {
 			icon = "ﭧ",
-			color = "#cbcb41",
+			color = "#007acc",
 			name = "TypeScriptTest",
 		},
 	},
