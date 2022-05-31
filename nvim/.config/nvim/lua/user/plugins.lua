@@ -156,7 +156,14 @@ return packer.startup(function(use)
 	use({
 		"ur4ltz/surround.nvim",
 		config = function()
-			require("surround").setup({ mappings_style = "sandwich", prefix = "<leader>s" })
+			require("surround").setup({
+				mappings_style = "sandwich",
+				prefix = "<leader>s",
+				pairs = {
+					nestable = { p = { "(", ")" }, b = { "[", "]" }, B = { "{", "}" }, c = { "<", ">" } },
+					linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, a = { "*", "*" } },
+				},
+			})
 		end,
 	})
 	use("tpope/vim-surround")
@@ -192,6 +199,7 @@ return packer.startup(function(use)
 			}
 		end,
 	})
+	use("tools-life/taskwiki")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

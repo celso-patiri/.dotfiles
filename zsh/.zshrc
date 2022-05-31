@@ -103,8 +103,10 @@ setxkbmap -option 'grp:win_space_toggle'
 alias vim="nvim"
 alias v="nvim"
 alias vimf='nvim $(fzf)'
+alias vimw='nvim +VimwikiIndex'
 alias src='source ~/.zshrc'
 alias vit='f() {touch $1; nvim $1};f'
+alias tasc="rm ~/.task/*.task"
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
