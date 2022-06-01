@@ -17,7 +17,10 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.rustywind,
 		formatting.markdownlint,
-		-- diagnostics.eslint_d,
+		null_ls.builtins.formatting.codespell.with({
+			filetypes = { "markdown", "vimwiki" },
+		}),
+		null_ls.builtins.code_actions.gitsigns,
 		-- code_actions.eslint_d,
 	},
 	on_attach = function(client, bufnr)

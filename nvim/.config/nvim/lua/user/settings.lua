@@ -27,8 +27,8 @@ set.mouse = "a"
 
 set.smarttab = true
 set.cindent = true
-set.tabstop = 4
-set.shiftwidth = 4
+set.tabstop = 2
+set.shiftwidth = 2
 set.expandtab = true --always uses spaces instead of tab characters
 set.scrolloff = 8
 

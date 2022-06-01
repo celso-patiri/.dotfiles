@@ -103,16 +103,14 @@ return packer.startup(function(use)
 	-- use("shaunsingh/nord.nvim")
 	-- use("sainnhe/gruvbox-material")
 	-- use("sainnhe/everforest")
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-	})
 	-- use("shaunsingh/moonlight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- use({ "gruvbox-community/gruvbox" })
 	-- use("sainnhe/sonokai")
 	-- use("Mofiqul/dracula.nvim")
 
+	-- use("tiagovla/tokyodark.nvim")
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
 	-- use("marko-cerovac/material.nvim")
 	-- use("rebelot/kanagawa.nvim")
@@ -148,29 +146,42 @@ return packer.startup(function(use)
 
 	--Screen
 	use("xiyaowong/nvim-transparent")
+	use({
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup({
+				window = {
+					width = 135,
+				},
+			})
+		end,
+	})
 
 	--Code manipulation and utils
 	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
 	use("andymass/vim-matchup")
 	use("windwp/nvim-autopairs")
-	use({
-		"ur4ltz/surround.nvim",
-		config = function()
-			require("surround").setup({
-				mappings_style = "sandwich",
-				prefix = "<leader>s",
-				pairs = {
-					nestable = { p = { "(", ")" }, b = { "[", "]" }, B = { "{", "}" }, c = { "<", ">" } },
-					linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' }, a = { "*", "*" } },
-				},
-			})
-		end,
-	})
 	use("tpope/vim-surround")
+	use("tpope/vim-repeat")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("numToStr/Comment.nvim")
 
-	use("norcalli/nvim-colorizer.lua")
+	-- use({
+	-- 	"norcalli/nvim-colorizer.lua",
+	-- 	config = function()
+	-- 		require("colorizer").setup({
+	-- 			"css",
+	-- 			"javascript",
+	-- 			"javascriptreact",
+	-- 			"typescriptreact",
+	-- 			"scss",
+	-- 			"yaml",
+	-- 			html = {
+	-- 				mode = "foreground",
+	-- 			},
+	-- 		})
+	-- 	end,
+	use({ "rrethy/vim-hexokinase", run = "make hexokinase" })
 
 	--use 'leafgarland/typescript-vim'
 	--use 'pangloss/vim-javascript'

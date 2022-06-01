@@ -10,13 +10,12 @@ local handlers = require("user.lsp.handlers")
 lspconfig.cssls.setup(handlers.config({ filetypes = { "css", "scss" } }))
 
 lspconfig.tsserver.setup(handlers.tsconfig())
-lspconfig.eslint.setup(handlers.config())
+-- lspconfig.eslint.setup(handlers.config())
 
 --lspconfig.graphql.setup{ handlers.config() }
 -- lspconfig.tailwindcss.setup({ handlers.config() })
 lspconfig.dockerls.setup({ handlers.config() })
 lspconfig.bashls.setup({ handlers.config() })
-lspconfig.sqlls.setup({ handlers.config() })
 
 --jsonlsp---------------------------------------------------------------------------------------------------------------
 lspconfig.jsonls.setup(handlers.config({

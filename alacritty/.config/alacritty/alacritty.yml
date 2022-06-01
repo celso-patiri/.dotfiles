@@ -161,8 +161,9 @@ font:
 # Colors (Tomorrow Night)
 colors:
   primary:
-    # background: "#2e3440"
-    background: "#303446" #catppuccin -> frappe
+    # background: "#2e3440" #nord
+    #catppuccin -> frappe
+    background: "#303446"
     foreground: "#d8dee9"
     dim_foreground: "#a5abb6"
   cursor:

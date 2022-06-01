@@ -105,5 +105,8 @@ map("n", "<leader>trw", ":Trouble workspace_diagnostics<cr>", opts)
 map("n", "<leader>trd", ":Trouble document_diagnostics<cr>", opts)
 map("n", "gR", ":Trouble lsp_references<cr>", opts)
 
+--zen mode
+map("n", "<leader>Z", ":ZenMode<cr>", opts)
+
 --tmux-sessionizer
 map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)

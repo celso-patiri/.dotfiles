@@ -185,11 +185,6 @@ _G.packer_plugins = {
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/celso/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
   ["nvim-gps"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rnvim-gps\frequire\0" },
     loaded = true,
@@ -279,12 +274,6 @@ _G.packer_plugins = {
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/stabilize.nvim",
     url = "https://github.com/luukvbaal/stabilize.nvim"
   },
-  ["surround.nvim"] = {
-    config = { "\27LJ\2\n­\2\0\0\6\0\26\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\r\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\4=\4\14\0035\4\16\0005\5\15\0=\5\17\0045\5\18\0=\5\19\0045\5\20\0=\5\21\0045\5\22\0=\5\23\4=\4\24\3=\3\25\2B\0\2\1K\0\1\0\npairs\vlinear\6a\1\3\0\0\6*\6*\6d\1\3\0\0\6\"\6\"\6t\1\3\0\0\6`\6`\6q\1\0\0\1\3\0\0\6'\6'\rnestable\1\0\0\6c\1\3\0\0\6<\6>\6B\1\3\0\0\6{\6}\6b\1\3\0\0\6[\6]\6p\1\0\0\1\3\0\0\6(\6)\1\0\2\vprefix\14<leader>s\19mappings_style\rsandwich\nsetup\rsurround\frequire\0" },
-    loaded = true,
-    path = "/home/celso/.local/share/nvim/site/pack/packer/start/surround.nvim",
-    url = "https://github.com/ur4ltz/surround.nvim"
-  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
@@ -315,10 +304,20 @@ _G.packer_plugins = {
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-hexokinase"] = {
+    loaded = true,
+    path = "/home/celso/.local/share/nvim/site/pack/packer/start/vim-hexokinase",
+    url = "https://github.com/rrethy/vim-hexokinase"
+  },
   ["vim-matchup"] = {
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/celso/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -336,38 +335,44 @@ _G.packer_plugins = {
     url = "https://github.com/wakatime/vim-wakatime"
   },
   vimwiki = {
-    config = { '\27LJ\2\nt\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\3\vsyntax\rmarkdown\bext\b.md\tpath"/home/celso/Documents/vimwiki\17vimwiki_list\6g\bvim\0' },
+    config = { '\27LJ\2\nt\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\3\bext\b.md\tpath"/home/celso/Documents/vimwiki\vsyntax\rmarkdown\17vimwiki_list\6g\bvim\0' },
     loaded = true,
     path = "/home/celso/.local/share/nvim/site/pack/packer/start/vimwiki",
     url = "https://github.com/vimwiki/vimwiki"
+  },
+  ["zen-mode.nvim"] = {
+    config = { "\27LJ\2\nX\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\1\nwidth\3‡\1\nsetup\rzen-mode\frequire\0" },
+    loaded = true,
+    path = "/home/celso/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: surround.nvim
-time([[Config for surround.nvim]], true)
-try_loadstring("\27LJ\2\n­\2\0\0\6\0\26\0\0296\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\r\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\4=\4\14\0035\4\16\0005\5\15\0=\5\17\0045\5\18\0=\5\19\0045\5\20\0=\5\21\0045\5\22\0=\5\23\4=\4\24\3=\3\25\2B\0\2\1K\0\1\0\npairs\vlinear\6a\1\3\0\0\6*\6*\6d\1\3\0\0\6\"\6\"\6t\1\3\0\0\6`\6`\6q\1\0\0\1\3\0\0\6'\6'\rnestable\1\0\0\6c\1\3\0\0\6<\6>\6B\1\3\0\0\6{\6}\6b\1\3\0\0\6[\6]\6p\1\0\0\1\3\0\0\6(\6)\1\0\2\vprefix\14<leader>s\19mappings_style\rsandwich\nsetup\rsurround\frequire\0", "config", "surround.nvim")
-time([[Config for surround.nvim]], false)
--- Config for: stabilize.nvim
-time([[Config for stabilize.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
-time([[Config for stabilize.nvim]], false)
--- Config for: vimwiki
-time([[Config for vimwiki]], true)
-try_loadstring('\27LJ\2\nt\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\3\vsyntax\rmarkdown\bext\b.md\tpath"/home/celso/Documents/vimwiki\17vimwiki_list\6g\bvim\0', "config", "vimwiki")
-time([[Config for vimwiki]], false)
--- Config for: project.nvim
-time([[Config for project.nvim]], true)
-try_loadstring("\27LJ\2\nN\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16show_hidden\2\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
-time([[Config for project.nvim]], false)
--- Config for: nvim-treesitter-context
-time([[Config for nvim-treesitter-context]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
-time([[Config for nvim-treesitter-context]], false)
 -- Config for: nvim-gps
 time([[Config for nvim-gps]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rnvim-gps\frequire\0", "config", "nvim-gps")
 time([[Config for nvim-gps]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+try_loadstring("\27LJ\2\nX\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\1\nwidth\3‡\1\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time([[Config for zen-mode.nvim]], false)
+-- Config for: stabilize.nvim
+time([[Config for stabilize.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14stabilize\frequire\0", "config", "stabilize.nvim")
+time([[Config for stabilize.nvim]], false)
+-- Config for: nvim-treesitter-context
+time([[Config for nvim-treesitter-context]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
+time([[Config for nvim-treesitter-context]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\nN\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16show_hidden\2\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
+-- Config for: vimwiki
+time([[Config for vimwiki]], true)
+try_loadstring('\27LJ\2\nt\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\3\bext\b.md\tpath"/home/celso/Documents/vimwiki\vsyntax\rmarkdown\17vimwiki_list\6g\bvim\0', "config", "vimwiki")
+time([[Config for vimwiki]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
