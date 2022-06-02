@@ -106,6 +106,9 @@ alias vimf='nvim $(fzf)'
 alias vimw='nvim +VimwikiIndex +ZenMode'
 alias src='source ~/.zshrc'
 alias vit='f() {touch $1; nvim $1};f'
+
+# alias gpush='git add .; git commit -m "$(date)"; git push;'
+alias gpush='~/.dotfiles/push'
 alias tasc="rm ~/.task/*.task"
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake

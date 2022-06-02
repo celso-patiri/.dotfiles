@@ -98,13 +98,13 @@ return packer.startup(function(use)
 	-- use("olimorris/onedarkpro.nvim")
 	-- use("ful1e5/onedark.nvim")
 	-- use("Rigellute/rigel")
-	-- use("savq/melange")
-
-	-- use("shaunsingh/nord.nvim")
-	-- use("sainnhe/gruvbox-material")
-	-- use("sainnhe/everforest")
 	-- use("shaunsingh/moonlight.nvim")
+
+	use("shaunsingh/nord.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("sainnhe/gruvbox-material")
+	-- use("sainnhe/everforest")
+	-- use("savq/melange")
 
 	-- use({ "gruvbox-community/gruvbox" })
 	-- use("sainnhe/sonokai")
@@ -112,8 +112,8 @@ return packer.startup(function(use)
 
 	-- use("tiagovla/tokyodark.nvim")
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
-	-- use("marko-cerovac/material.nvim")
-	-- use("rebelot/kanagawa.nvim")
+	use("marko-cerovac/material.nvim")
+	use("rebelot/kanagawa.nvim")
 	-- use("Shatur/neovim-ayu")
 	--Themes ----------------------------
 

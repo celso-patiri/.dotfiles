@@ -13,6 +13,8 @@ map("v", "<C-A-q>", "gb", { noremap = false })
 
 --Map 'esc' to 'noh' to remove highlight after search
 map("n", "<esc>", ":noh<cr><esc>", opts)
+--Map ZZ to write quit all buffers
+map("n", "ZZ", ":wqa<cr>", opts)
 
 --save on ctrl+s
 map("n", "<C-S>", ":w<CR>", opts)
