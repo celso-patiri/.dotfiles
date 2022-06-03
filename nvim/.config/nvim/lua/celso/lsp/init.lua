@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-local handlers = require("user.lsp.handlers")
+local handlers = require("celso.lsp.handlers")
 
 -- lspconfig.emmet_ls.setup( handlers.config({ filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" } })
 -- )
@@ -21,7 +21,7 @@ lspconfig.bashls.setup({ handlers.config() })
 lspconfig.jsonls.setup(handlers.config({
 	settings = {
 		json = {
-			schemas = require("user.lsp.settings.json-lsp-schemas"),
+			schemas = require("celso.lsp.settings.json-lsp-schemas"),
 		},
 	},
 	init_options = {
@@ -31,7 +31,7 @@ lspconfig.jsonls.setup(handlers.config({
 --jsonlsp---------------------------------------------------------------------------------------------------------------
 
 --sumneko lua lsp--------------------------------------------------------------------------------------------------------
-local sumneko = require("user.lsp.settings.sumneko-lsp")
+local sumneko = require("celso.lsp.settings.sumneko-lsp")
 lspconfig.sumneko_lua.setup(handlers.config({
 	cmd = { sumneko.binary, "-E", sumneko.root .. "/main.lua" },
 	settings = {
@@ -50,4 +50,4 @@ lspconfig.sumneko_lua.setup(handlers.config({
 
 handlers.setup()
 
-require("user.lsp.null-ls")
+require("celso.lsp.null-ls")

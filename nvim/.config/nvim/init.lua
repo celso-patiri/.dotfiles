@@ -13,22 +13,22 @@ end
 
 ---------------------------------------------------------------------------------------------------------
 
-require("user.plugins")
+require("celso.plugins")
 require("impatient")
-require("user.colors")
+require("celso.colors")
 
-require("user.lsp.init")
-require("user.treesitter.treesitter")
-require("user.cmp")
+require("celso.lsp.init")
+require("celso.treesitter.treesitter")
+require("celso.cmp")
 
-require("user.telescope.main")
-require("user.nvim-tree")
+require("celso.telescope.main")
+require("celso.nvim-tree")
 
-require("user.lualine")
-require("user.gitsigns")
+require("celso.lualine")
+require("celso.gitsigns")
 
-require("user.autopair")
-require("user.comment")
+require("celso.autopair")
+require("celso.comment")
 
-require("user.remaps")
-require("user.settings")
+require("celso.remaps")
+require("celso.settings")
