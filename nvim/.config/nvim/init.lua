@@ -18,15 +18,12 @@ require("impatient")
 require("user.colors")
 
 require("user.lsp.init")
-require("user.treesitter")
+require("user.treesitter.treesitter")
 require("user.cmp")
 
 require("user.telescope.main")
 require("user.nvim-tree")
-require("user.markdown")
--- require("user.toggleterm")
 
--- require("user.bufferline")
 require("user.lualine")
 require("user.gitsigns")
 

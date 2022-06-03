@@ -18,7 +18,7 @@ vim.g.gruvbox_contrast_dark = "soft"
 vim.g.everforest_background = "hard"
 vim.g.tokyonight_style = "night"
 
-vim.cmd([[silent! colorscheme material]])
+vim.cmd([[silent! colorscheme catppuccin]])
 
 --highlight ColorColumn ctermbg=0 guibg=grey
 --hi Normal guibg=none ctermbg=none

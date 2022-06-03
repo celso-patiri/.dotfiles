@@ -72,11 +72,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 --fix extra space at the bottom on start
-vim.cmd("resize+1")
+-- vim.cmd("resize+1")
 
---neovide
-if vim.g.neovide == true then
-	vim.o.guifont = "Hack Nerd Font:h12"
-	vim.g["neovide_transparency"] = 0.95
-	vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
-end
+--Markdown
+vim.g.vimwiki_markdown_link_ext = 1 -- Makes vimwiki mardown links as [text](text.md)
+vim.g.mkdp_browser = "/usr/bin/firefox"
+vim.g.mkdp_refresh_slow = 0 --default is 0 -> set to 1 so preview will refresh only on save for performance

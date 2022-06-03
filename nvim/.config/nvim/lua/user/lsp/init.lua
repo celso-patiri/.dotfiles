@@ -7,13 +7,13 @@ local handlers = require("user.lsp.handlers")
 
 -- lspconfig.emmet_ls.setup( handlers.config({ filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" } })
 -- )
-lspconfig.cssls.setup(handlers.config({ filetypes = { "css", "scss" } }))
+-- lspconfig.cssls.setup(handlers.config({ filetypes = { "css", "scss" } }))
 
 lspconfig.tsserver.setup(handlers.tsconfig())
 -- lspconfig.eslint.setup(handlers.config())
 
 --lspconfig.graphql.setup{ handlers.config() }
--- lspconfig.tailwindcss.setup({ handlers.config() })
+lspconfig.tailwindcss.setup({ handlers.config() })
 lspconfig.dockerls.setup({ handlers.config() })
 lspconfig.bashls.setup({ handlers.config() })
 
