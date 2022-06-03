@@ -1,4 +1,5 @@
 local set = vim.opt
+
 --syntax sync in JSX and TSX files
 -- vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart ")
 -- vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear ")
@@ -72,7 +73,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 --fix extra space at the bottom on start
--- vim.cmd("resize+1")
+vim.cmd("resize+1")
 
 --Markdown
 vim.g.vimwiki_markdown_link_ext = 1 -- Makes vimwiki mardown links as [text](text.md)
