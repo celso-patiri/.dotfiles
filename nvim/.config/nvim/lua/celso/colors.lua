@@ -1,6 +1,6 @@
 --remove background
 require("transparent").setup({
-	enable = true,
+	enable = false,
 })
 
 --vim.api.nvim_command('autocmd colorscheme * :hi normal guibg=none ')
@@ -11,7 +11,7 @@ vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 --Theme specific customizations
 -- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
 vim.g.sonokai_style = "atlantis"
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 vim.g.material_style = "palenight"
 vim.g.gruvbox_invert_selection = "0"
 vim.g.gruvbox_contrast_dark = "soft"

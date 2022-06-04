@@ -1,4 +1,4 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
+#ck Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
 #
@@ -126,7 +126,7 @@ font:
   # style: Bold Italic
 
   # Point size
-  size: 10
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -162,8 +162,8 @@ font:
 colors:
   primary:
     # background: "#2e3440" #nord
-    #catppuccin -> frappe
-    background: "#303446"
+    # background: "#303446" #catppuccin -> frappe
+    background: "#24273A" #catppuccin -> macchiato
     foreground: "#d8dee9"
     dim_foreground: "#a5abb6"
   cursor:

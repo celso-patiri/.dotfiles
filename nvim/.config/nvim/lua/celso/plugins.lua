@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -38,7 +37,6 @@ packer.init({
 	},
 })
 
--- Install your plugins here
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use({ "github/copilot.vim", opt = true, cmd = "Copilot" })
@@ -58,7 +56,6 @@ return packer.startup(function(use)
 
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
 
 	--Lsp
@@ -93,7 +90,6 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets")
 
 	--Themes ----------------------------
-	-- use("martinsione/darkplus.nvim")
 	-- use("EdenEast/nightfox.nvim")
 	-- use("olimorris/onedarkpro.nvim")
 	-- use("ful1e5/onedark.nvim")
@@ -102,9 +98,8 @@ return packer.startup(function(use)
 
 	use("shaunsingh/nord.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("sainnhe/gruvbox-material")
+	-- use("sainnhe/gruvbox-material")
 	-- use("sainnhe/everforest")
-	-- use("savq/melange")
 
 	-- use({ "gruvbox-community/gruvbox" })
 	-- use("sainnhe/sonokai")
