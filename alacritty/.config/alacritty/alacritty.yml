@@ -102,7 +102,7 @@ window:
 #scrolling:
 # Maximum number of lines in the scrollback buffer.
 # Specifying '0' will disable scrolling.
-#history: 10000
+#history: 10000alac
 
 # Scrolling distance multiplier.
 #multiplier: 3
@@ -110,7 +110,8 @@ window:
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font
+    # family: Hack Nerd Font
+    family: Inconsolata Nerd Font
     style: Regular
 
   # bold:
@@ -118,15 +119,15 @@ font:
   # style: Bold
 
   # italic:
-  # family: Hack Italic Nerd Font Complete
-  # style: Italic
+  family: Hack Italic Nerd Font Complete
+  style: Italic
 
   # bolditalic:
   # family: Hack Bold Italic Nerd Font
   # style: Bold Italic
 
   # Point size
-  size: 9.5
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

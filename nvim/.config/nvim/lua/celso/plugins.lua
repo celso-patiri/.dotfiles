@@ -102,14 +102,18 @@ return packer.startup(function(use)
 	-- use("sainnhe/everforest")
 
 	-- use({ "gruvbox-community/gruvbox" })
+	-- use("luisiacc/gruvbox-baby")
 	-- use("sainnhe/sonokai")
+	-- use("cpea2506/one_monokai.nvim")
 	-- use("Mofiqul/dracula.nvim")
+	-- use({ "mangeshrex/everblush.vim" })
 
 	-- use("tiagovla/tokyodark.nvim")
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
+	-- use("Shatur/neovim-ayu")
 	use("marko-cerovac/material.nvim")
 	use("rebelot/kanagawa.nvim")
-	-- use("Shatur/neovim-ayu")
+
 	--Themes ----------------------------
 
 	--Tree sitter
