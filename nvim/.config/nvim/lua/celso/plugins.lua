@@ -105,7 +105,7 @@ return packer.startup(function(use)
 	-- use("luisiacc/gruvbox-baby")
 	-- use("sainnhe/sonokai")
 	-- use("cpea2506/one_monokai.nvim")
-	-- use("Mofiqul/dracula.nvim")
+	use("Mofiqul/dracula.nvim")
 	-- use({ "mangeshrex/everblush.vim" })
 
 	-- use("tiagovla/tokyodark.nvim")

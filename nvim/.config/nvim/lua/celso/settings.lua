@@ -79,3 +79,6 @@ vim.cmd("resize+1")
 vim.g.vimwiki_markdown_link_ext = 1 -- Makes vimwiki mardown links as [text](text.md)
 vim.g.mkdp_browser = "/usr/bin/firefox"
 vim.g.mkdp_refresh_slow = 0 --default is 0 -> set to 1 so preview will refresh only on save for performance
+
+--disable sql keymaps
+vim.g.omni_sql_no_default_maps = 1
