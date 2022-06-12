@@ -43,6 +43,9 @@ return packer.startup(function(use)
 	use("wakatime/vim-wakatime")
 	use("tpope/vim-fugitive")
 	use("lewis6991/gitsigns.nvim")
+	use("nvim-lualine/lualine.nvim")
+	use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-web-devicons")
 
 	--performance/fix
 	use("lewis6991/impatient.nvim")
@@ -54,15 +57,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
-	use("nvim-lualine/lualine.nvim")
-
 	--Lsp
-	--use("williamboman/nvim-lsp-installer")
-	-- use("glepnir/lspsaga.nvim")
-	-- use("arkav/lualine-lsp-progress")
-	-- use("nvim-lua/lsp-status.nvim")
 	use("neovim/nvim-lspconfig")
 	use({
 		"SmiteshP/nvim-gps",
@@ -75,6 +70,10 @@ return packer.startup(function(use)
 	use("j-hui/fidget.nvim")
 	use("folke/trouble.nvim")
 	use("simrat39/symbols-outline.nvim")
+	--use("williamboman/nvim-lsp-installer")
+	-- use("glepnir/lspsaga.nvim")
+	-- use("arkav/lualine-lsp-progress")
+	-- use("nvim-lua/lsp-status.nvim")
 
 	--cmp
 	use("hrsh7th/cmp-nvim-lsp")
@@ -84,37 +83,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("saadparwaiz1/cmp_luasnip")
-
-	--sippets
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
-
-	--Themes ----------------------------
-	-- use("EdenEast/nightfox.nvim")
-	-- use("olimorris/onedarkpro.nvim")
-	-- use("ful1e5/onedark.nvim")
-	-- use("Rigellute/rigel")
-	-- use("shaunsingh/moonlight.nvim")
-
-	use("shaunsingh/nord.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	-- use("sainnhe/gruvbox-material")
-	-- use("sainnhe/everforest")
-
-	-- use({ "gruvbox-community/gruvbox" })
-	-- use("luisiacc/gruvbox-baby")
-	-- use("sainnhe/sonokai")
-	-- use("cpea2506/one_monokai.nvim")
-	use("Mofiqul/dracula.nvim")
-	-- use({ "mangeshrex/everblush.vim" })
-
-	-- use("tiagovla/tokyodark.nvim")
-	-- use({ "folke/tokyonight.nvim", branch = "main" })
-	-- use("Shatur/neovim-ayu")
-	use("marko-cerovac/material.nvim")
-	use("rebelot/kanagawa.nvim")
-
-	--Themes ----------------------------
 
 	--Tree sitter
 	use("nvim-lua/popup.nvim")
@@ -143,6 +111,46 @@ return packer.startup(function(use)
 		end,
 	})
 
+	--sippets
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
+
+	--Code manipulation and utils
+	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
+	use("andymass/vim-matchup")
+	use("windwp/nvim-autopairs")
+	use("tpope/vim-surround")
+	use("tpope/vim-repeat")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("numToStr/Comment.nvim")
+	use({ "rrethy/vim-hexokinase", run = "make hexokinase" })
+
+	--Themes ----------------------------
+	-- use("EdenEast/nightfox.nvim")
+	-- use("olimorris/onedarkpro.nvim")
+	-- use("ful1e5/onedark.nvim")
+	-- use("Rigellute/rigel")
+	-- use("shaunsingh/moonlight.nvim")
+
+	-- use("shaunsingh/nord.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use("sainnhe/gruvbox-material")
+	-- use("sainnhe/everforest")
+
+	-- use({ "gruvbox-community/gruvbox" })
+	-- use("luisiacc/gruvbox-baby")
+	-- use("sainnhe/sonokai")
+	-- use("cpea2506/one_monokai.nvim")
+	-- use("Mofiqul/dracula.nvim")
+	-- use({ "mangeshrex/everblush.vim" })
+
+	-- use("tiagovla/tokyodark.nvim")
+	-- use({ "folke/tokyonight.nvim", branch = "main" })
+	-- use("Shatur/neovim-ayu")
+	-- use("marko-cerovac/material.nvim")
+	-- use("rebelot/kanagawa.nvim")
+	--Themes ----------------------------
+
 	--Screen
 	use("xiyaowong/nvim-transparent")
 	use({
@@ -155,39 +163,6 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-
-	--Code manipulation and utils
-	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
-	use("andymass/vim-matchup")
-	use("windwp/nvim-autopairs")
-	use("tpope/vim-surround")
-	use("tpope/vim-repeat")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("numToStr/Comment.nvim")
-
-	-- use({
-	-- 	"norcalli/nvim-colorizer.lua",
-	-- 	config = function()
-	-- 		require("colorizer").setup({
-	-- 			"css",
-	-- 			"javascript",
-	-- 			"javascriptreact",
-	-- 			"typescriptreact",
-	-- 			"scss",
-	-- 			"yaml",
-	-- 			html = {
-	-- 				mode = "foreground",
-	-- 			},
-	-- 		})
-	-- 	end,
-	use({ "rrethy/vim-hexokinase", run = "make hexokinase" })
-
-	--use 'leafgarland/typescript-vim'
-	--use 'pangloss/vim-javascript'
-	--use 'maxmellon/vim-jsx-pretty'
-	--use 'peitalin/vim-jsx-typescript'
-	--use 'jparise/vim-graphql'
-	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
 
 	--markdown
 	use({ "ellisonleao/glow.nvim", branchinit = "main", opt = true, cmd = "Glow" }) -- markdown reader
@@ -210,6 +185,13 @@ return packer.startup(function(use)
 		end,
 	})
 	use("tools-life/taskwiki")
+
+	--use 'leafgarland/typescript-vim'
+	--use 'pangloss/vim-javascript'
+	--use 'maxmellon/vim-jsx-pretty'
+	--use 'peitalin/vim-jsx-typescript'
+	--use 'jparise/vim-graphql'
+	--use ( 'styled-components/vim-styled-components', { branch= 'main' } )
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
