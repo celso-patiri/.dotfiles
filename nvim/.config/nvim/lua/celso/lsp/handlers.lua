@@ -79,12 +79,6 @@ M.setup = function()
 	-- 	border = "rounded",
 	-- })
 
-	require("symbols-outline").setup({
-		-- disable if your cpu usage is higher than you want it
-		highlight_hovered_item = true,
-		-- whether to show outline guides
-		show_guides = true,
-	})
 	require("fidget").setup({})
 end
 

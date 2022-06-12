@@ -69,7 +69,19 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/nvim-lsp-ts-utils")
 	use("j-hui/fidget.nvim")
 	use("folke/trouble.nvim")
-	use("simrat39/symbols-outline.nvim")
+	use({
+		"simrat39/symbols-outline.nvim",
+		opt = true,
+		cmd = "SymbolsOutline",
+		config = function()
+			require("symbols-outline").setup({
+				-- disable if your cpu usage is higher than you want it
+				highlight_hovered_item = true,
+				-- whether to show outline guides
+				show_guides = true,
+			})
+		end,
+	})
 	--use("williamboman/nvim-lsp-installer")
 	-- use("glepnir/lspsaga.nvim")
 	-- use("arkav/lualine-lsp-progress")
