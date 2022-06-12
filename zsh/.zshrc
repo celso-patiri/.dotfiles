@@ -101,11 +101,11 @@ setxkbmap -layout us,br
 setxkbmap -option 'grp:win_space_toggle'
 
 alias vim="nvim"
+alias vit='f() {touch $1; nvim $1};f'
 alias v='nvim $(fd --type f | fzf)'
-alias vimf='nvim $(fzf)'
+alias vi='nvim .'
 alias vimw='nvim +VimwikiIndex'
 alias src='source ~/.zshrc'
-alias vit='f() {touch $1; nvim $1};f'
 
 # alias gpush='git add .; git commit -m "$(date)"; git push;'
 alias gpush='~/.dotfiles/push'
