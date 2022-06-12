@@ -26,7 +26,7 @@ map(
 	':lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > ")})<CR>',
 	opts
 )
-map("n", "<leader>fw", ':lua require("telescope.builtin").live_grep({})<CR>', opts)
+map("n", "<leader>fw", ':lua require("telescope.builtin").live_grep()<CR>', opts)
 map("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 --map('n', '<leader>fw', ':lua require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })<CR>', opts)
 
