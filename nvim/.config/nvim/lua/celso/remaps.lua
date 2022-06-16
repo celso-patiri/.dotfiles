@@ -112,7 +112,7 @@ map("n", "gR", ":Trouble lsp_references<cr>", opts)
 map("n", "<leader>Z", ":ZenMode<cr>", opts)
 
 --tmux-sessionizer
-map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
+-- map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
 
 --vim-fugitive
 map("n", "<leader>G", ":0G<CR>", opts)
