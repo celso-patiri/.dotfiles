@@ -144,21 +144,21 @@ return packer.startup(function(use)
 	-- use("Rigellute/rigel")
 	-- use("shaunsingh/moonlight.nvim")
 
-	use("shaunsingh/nord.nvim")
 	-- use("sainnhe/gruvbox-material")
 	-- use("sainnhe/everforest")
 
 	-- use({ "gruvbox-community/gruvbox" })
 	-- use("luisiacc/gruvbox-baby")
-	-- use("cpea2506/one_monokai.nvim")
 	-- use("Mofiqul/dracula.nvim")
 
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use("shaunsingh/nord.nvim")
 	-- use("sainnhe/sonokai")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("cpea2506/one_monokai.nvim")
+	use("tiagovla/tokyodark.nvim")
 
-	-- use("tiagovla/tokyodark.nvim")
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
-	use("Shatur/neovim-ayu")
+	-- use("Shatur/neovim-ayu")
 	-- use("marko-cerovac/material.nvim")
 	-- use("rebelot/kanagawa.nvim")
 	--Themes ----------------------------
