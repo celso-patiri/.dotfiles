@@ -15,7 +15,7 @@ map("v", "<C-A-q>", "gb", { noremap = false })
 map("n", "<esc>", ":noh<cr><esc>", opts)
 --Map ZZ to write quit all buffers
 map("n", "ZZ", ":wqa<cr>", opts)
-map("n", "ZQ", ":qa<cr>", opts)
+map("n", "ZQ", ":qa!<cr>", opts)
 
 --save on ctrl+s
 map("n", "<C-S>", ":w<CR>", opts)
