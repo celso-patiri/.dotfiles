@@ -75,7 +75,8 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-vi-mode
+    vi-mode
+    # zsh-vi-mode
 )
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -94,8 +95,6 @@ export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^h "fzf-history-widget\n"
 
 setxkbmap -layout us,br
 setxkbmap -option 'grp:win_space_toggle'
@@ -107,7 +106,6 @@ alias vi='nvim .'
 alias vimw='nvim +VimwikiIndex'
 alias src='source ~/.zshrc'
 
-# alias gpush='git add .; git commit -m "$(date)"; git push;'
 alias gpush='~/.dotfiles/push'
 alias tasc="rm ~/.task/*.task"
 
@@ -123,7 +121,19 @@ source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Theme
+# autoload -U promptinit; promptinit
+# prompt spaceship
+
+#Plugins
+# source $HOME/personal/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $HOME/personal/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOME/personal/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
+
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "fzf-history-widget\n"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
