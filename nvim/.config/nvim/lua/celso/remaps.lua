@@ -6,16 +6,13 @@ map("i", "<C-l>", "<Right>")
 -- map("i", "jk", "<ESC>")
 
 --comments
-map("n", "<A-q>", "gcc", { noremap = false })
-map("v", "<A-q>", "gc", { noremap = false })
-map("n", "<C-A-q>", "gcA", { noremap = false })
 map("v", "<C-A-q>", "gb", { noremap = false })
 
 --Map 'esc' to 'noh' to remove highlight after search
 map("n", "<esc>", ":noh<cr><esc>", opts)
 --Map ZZ to write quit all buffers
-map("n", "ZZ", ":wqa<cr>", opts)
-map("n", "ZQ", ":qa!<cr>", opts)
+-- map("n", "ZZ", ":wqa<cr>", opts)
+-- map("n", "ZQ", ":qa!<cr>", opts)
 
 --save on ctrl+s
 map("n", "<C-S>", ":w<CR>", opts)
@@ -47,8 +44,8 @@ map("i", "<C-y>", '<esc>"+y', opts) --Ctrl C copy selection to clipboard in visu
 map("n", "<C-x>", 'yyV"+d', opts) --Ctrl C copy whole line in normal mode
 map("v", "<C-x>", '"+d', opts) --Ctrl C copy whole line in normal mode
 --Ctrl a
-map("n", "<C-a>", "ggVG", opts) --Ctrl C copy whole line in normal mode
-map("v", "<C-a>", "gg<esc>VG", opts) --Ctrl C copy whole line in normal mode
+map("n", "<leader><C-a>", "ggVG", opts) --Ctrl C copy whole line in normal mode
+map("v", "<leader><C-a>", "gg<esc>VG", opts) --Ctrl C copy whole line in normal mode
 
 --n4. keep it centered
 map("n", "n", "nzzzv", opts)
@@ -80,7 +77,10 @@ map("n", "<A-h>", ":bprevious<CR>", opts)
 map("v", "<A-h>", ":bprevious<CR>", opts)
 
 --bufferline
-map("n", "<leader><C-w>", ":bdelete<cr>", opts)
+-- map("n", "<leader><C-w>", ":bdelete<cr>", opts)
+-- map("n", "<leader><C-w>", ":q!<CR>", opts)
+map("n", "<leader>q", ":q!<CR>", opts)
+map("n", "<leader>wq", ":wq<CR>", opts)
 map("n", "<A-w>", ":BufferLinePick<cr>", opts)
 
 --toggle terminal
@@ -115,4 +115,15 @@ map("n", "<leader>Z", ":ZenMode<cr>", opts)
 -- map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
 
 --vim-fugitive
-map("n", "<leader>G", ":0G<CR>", opts)
+map("n", "<leader>g", ":0G<CR>", opts)
+
+--neotest
+map("n", "<leader>rtf", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
+map("n", "<leader>rct", ':lua require("neotest").run.run()<CR>', opts)
+map("n", "<leader>rts", ':lua require("neotest").summary.toggle()<CR>', opts)
+
+--undo-tree
+map("n", "<leader>utt", ":UndotreeToggle<CR>", opts)
+
+--Vim wiki - mardkdown - todo notes
+map("n", "<leader>todo", ":e ~/Documents/vimwiki/week/Todo.md<CR>", opts)

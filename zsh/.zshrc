@@ -104,6 +104,7 @@ alias vit='f() {touch $1; nvim $1};f'
 alias v='nvim $(fd --type f -H | fzf)'
 alias vi='nvim .'
 alias vimw='nvim +VimwikiIndex'
+alias vimdo='nvim ~/Documents/vimwiki/week/Todo.md'
 alias src='source ~/.zshrc'
 
 alias gpush='~/.dotfiles/push'

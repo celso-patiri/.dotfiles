@@ -22,19 +22,17 @@ vim.cmd([[silent! colorscheme tokyodark]])
 
 --highlight ColorColumn ctermbg=0 guibg=grey
 --hi Normal guibg=none ctermbg=none
+-- hi ColorColumn guibg=none
+-- hi SignColumn guibg=none
+-- hi CursorLineNR guibg=None
+-- hi CursorLineNR guibg=None
+-- hi LineNr guibg=none
+-- highlight netrwDir guifg=#5eacd3
+-- highlight qfFileName guifg=#aed75f
+-- hi TelescopeBorder guifg=#5eacd3
 vim.cmd([[
-    hi ColorColumn guibg=none
-    hi SignColumn guibg=none
-    hi CursorLineNR guibg=None
-    hi CursorLineNR guibg=None
-
-    hi LineNr guibg=none
     highlight LineNr guifg=#5eacd3
-
-    highlight netrwDir guifg=#5eacd3
-    highlight qfFileName guifg=#aed75f
-    hi TelescopeBorder guifg=#5eacd3
-
+    hi Visual guibg=#51576D 
 ]])
 
 vim.cmd([[
