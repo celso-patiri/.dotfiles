@@ -127,3 +127,41 @@ map("n", "<leader>utt", ":UndotreeToggle<CR>", opts)
 
 --Vim wiki - mardkdown - todo notes
 map("n", "<leader>todo", ":e ~/Documents/vimwiki/week/Todo.md<CR>", opts)
+
+--dap---------------------------------------------------------------------------
+map("n", "<leader>dct", '<cmd>lua require"dap".continue()<CR>', opts)
+map("n", "<leader>dsv", '<cmd>lua require"dap".step_over()<CR>', opts)
+map("n", "<leader>dsi", '<cmd>lua require"dap".step_into()<CR>', opts)
+map("n", "<leader>dso", '<cmd>lua require"dap".step_out()<CR>', opts)
+map("n", "<leader>dtb", '<cmd>lua require"dap".toggle_breakpoint()<CR>', opts)
+
+map("n", "<leader>dsc", '<cmd>lua require"dap.ui.widgets".scopes()<CR>', opts)
+map("n", "<leader>dhh", '<cmd>lua require"dap.ui.widgets".hover()<CR>', opts)
+map("v", "<leader>dhv", '<cmd>lua require"dap.ui.widgets".visual_hover()<CR>', opts)
+
+map("n", "<leader>duh", '<cmd>lua require"dap.ui.widgets".hover()<CR>', opts)
+map("n", "<leader>duf", "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
+
+map("n", "<leader>dsbr", '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
+map(
+	"n",
+	"<leader>dsbm",
+	'<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>',
+	opts
+)
+map("n", "<leader>dro", '<cmd>lua require"dap".repl.open()<CR>', opts)
+map("n", "<leader>drl", '<cmd>lua require"dap".repl.run_last()<CR>', opts)
+
+--DevOnDuty
+map("n", "<leader>dk", ':lua require"dap".up()<CR>zz', opts)
+map("n", "<leader>dj", ':lua require"dap".down()<CR>zz', opts)
+
+map("n", "<leader>dui", '<cmd>lua require"dapui".toggle()<CR>', opts)
+
+-- telescope-dap
+map("n", "<leader>dcc", '<cmd>lua require"telescope".extensions.dap.commands{}<CR>', opts)
+map("n", "<leader>dco", '<cmd>lua require"telescope".extensions.dap.configurations{}<CR>', opts)
+map("n", "<leader>dlb", '<cmd>lua require"telescope".extensions.dap.list_breakpoints{}<CR>', opts)
+map("n", "<leader>dv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
+map("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
+--dap---------------------------------------------------------------------------

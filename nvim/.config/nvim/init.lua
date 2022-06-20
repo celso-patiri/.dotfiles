@@ -20,6 +20,7 @@ require("celso.colors")
 require("celso.lsp.init")
 require("celso.treesitter.treesitter")
 require("celso.cmp")
+require("celso.dap")
 
 require("celso.telescope.main")
 require("celso.nvim-tree")

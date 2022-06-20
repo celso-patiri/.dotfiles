@@ -123,11 +123,32 @@ return packer.startup(function(use)
 		end,
 	})
 
+	--DAP && Tests
+	use("mfussenegger/nvim-dap")
+	use({ "nvim-telescope/telescope-dap.nvim" })
+	use("theHamsta/nvim-dap-virtual-text")
+	use({ "rcarriga/nvim-dap-ui" })
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"haydenmeade/neotest-jest",
+		},
+		config = function()
+			require("neotest").setup({ adapters = {
+				require("neotest-jest"),
+			} })
+		end,
+	})
+
 	--sippets
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
 
 	--Code manipulation and utils
+	use({ "mbbill/undotree", opt = true, cmd = "UndotreeToggle" })
 	use({ "mg979/vim-visual-multi", branch = "master" }) --Multi cursor
 	use("andymass/vim-matchup")
 	use("windwp/nvim-autopairs")
