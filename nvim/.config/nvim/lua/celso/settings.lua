@@ -82,3 +82,6 @@ vim.g.mkdp_refresh_slow = 0 --default is 0 -> set to 1 so preview will refresh o
 
 --disable sql keymaps
 vim.g.omni_sql_no_default_maps = 1
+
+--copilot
+vim.g.copilot_node_command = "/home/celso/.nvm/versions/node/v16.15.0/bin/node"
