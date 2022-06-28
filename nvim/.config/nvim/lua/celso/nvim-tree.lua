@@ -11,6 +11,16 @@ require("nvim-web-devicons").setup({
 			color = "#007acc",
 			name = "TypeScriptTest",
 		},
+		["spec.ts"] = {
+			icon = "ﭧ",
+			color = "#007acc",
+			name = "NestJSTest",
+		},
+		["prisma"] = {
+			icon = "喝",
+			color = "#007acc",
+			name = "Prisma",
+		},
 	},
 	default = true,
 })
