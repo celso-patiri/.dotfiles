@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "javascript", "typescript", "lua", "regex", "json", "html", "dockerfile", "css" },
+	ensure_installed = { "javascript", "typescript", "lua", "regex", "json", "html", "dockerfile", "css", "prisma" },
 	sync_install = false,
 	ignore_install = { "" },
 	highlight = {
