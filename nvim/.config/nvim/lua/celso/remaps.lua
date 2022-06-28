@@ -118,9 +118,10 @@ map("n", "<leader>Z", ":ZenMode<cr>", opts)
 map("n", "<leader>g", ":0G<CR>", opts)
 
 --neotest
-map("n", "<leader>rtf", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
-map("n", "<leader>rct", ':lua require("neotest").run.run()<CR>', opts)
-map("n", "<leader>rts", ':lua require("neotest").summary.toggle()<CR>', opts)
+map("n", "<leader>ttf", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
+map("n", "<leader>tct", ':lua require("neotest").run.run()<CR>', opts)
+map("n", "<leader>tst", ':lua require("neotest").summary.toggle()<CR>', opts)
+map("n", "<leader>tot", ':lua require("neotest").output.open({ enter = true })<CR>', opts)
 
 --undo-tree
 map("n", "<leader>utt", ":UndotreeToggle<CR>", opts)
