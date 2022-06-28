@@ -9,8 +9,7 @@ vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR = 1")
 -- vim.opt.background = "dark"
 
 --Theme specific customizations
--- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
-vim.g.sonokai_style = "atlantis"
+vim.g.sonokai_style = "atlantis" -- Sonokai: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
 vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 vim.g.material_style = "palenight"
 vim.g.gruvbox_invert_selection = "0"

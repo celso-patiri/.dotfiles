@@ -160,8 +160,6 @@ return packer.startup(function(use)
 
 	--Themes ----------------------------
 	-- use("EdenEast/nightfox.nvim")
-	-- use("olimorris/onedarkpro.nvim")
-	-- use("ful1e5/onedark.nvim")
 	-- use("Rigellute/rigel")
 	-- use("shaunsingh/moonlight.nvim")
 
@@ -171,12 +169,13 @@ return packer.startup(function(use)
 	-- use({ "gruvbox-community/gruvbox" })
 	-- use("luisiacc/gruvbox-baby")
 	-- use("Mofiqul/dracula.nvim")
+	-- use("ful1e5/onedark.nvim")
 
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	-- use("shaunsingh/nord.nvim")
 	-- use("sainnhe/sonokai")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("cpea2506/one_monokai.nvim")
-	use("tiagovla/tokyodark.nvim")
+	-- use("cpea2506/one_monokai.nvim")
+	-- use("tiagovla/tokyodark.nvim")
 
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
 	-- use("Shatur/neovim-ayu")
@@ -217,7 +216,7 @@ return packer.startup(function(use)
 			}
 		end,
 	})
-	use("tools-life/taskwiki")
+	-- use("tools-life/taskwiki")
 
 	--use 'leafgarland/typescript-vim'
 	--use 'pangloss/vim-javascript'
