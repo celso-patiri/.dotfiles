@@ -17,6 +17,7 @@ lspconfig.tsserver.setup(handlers.tsconfig())
 lspconfig.tailwindcss.setup({ handlers.config() })
 lspconfig.dockerls.setup({ handlers.config() })
 lspconfig.bashls.setup({ handlers.config() })
+lspconfig.prismals.setup({ handlers.config() })
 
 --jsonlsp---------------------------------------------------------------------------------------------------------------
 lspconfig.jsonls.setup(handlers.config({
