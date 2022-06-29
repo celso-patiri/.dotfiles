@@ -598,7 +598,7 @@ globalkeys = mytable.join(
 	awful.key({ modkey, "Shift" }, "w", function()
 		os.execute("feh --randomize --bg-fill ~/Pictures/feh/*")
 	end, { description = "change wallpaper", group = "hotkeys" }),
-	awful.key({ modkey }, "r", function()
+	awful.key({ altkey }, "Return", function()
 		os.execute("rofi -show run")
 	end, { description = "run rofi", group = "hotkeys" }),
 	awful.key({ modkey, altkey }, "q", function()
@@ -771,7 +771,10 @@ awful.rules.rules = {
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
 
 	--open applications in specif workspaces
-	{ rule = { class = "Brave-browser", instance = "brave-browser" }, properties = { tag = "2" } },
+	{
+		rule = { class = "Brave-browser", instance = "brave-browser" },
+		properties = { tag = "2", maximized = false, floating = false },
+	},
 	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
 	{ rule = { class = "slack", instance = "slack" }, properties = { tag = "7" } },
 
