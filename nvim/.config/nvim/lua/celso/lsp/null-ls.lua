@@ -16,10 +16,10 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.rustywind,
-		formatting.markdownlint,
-		null_ls.builtins.formatting.codespell.with({
-			filetypes = { "markdown", "vimwiki" },
-		}),
+		-- formatting.markdownlint,
+		-- null_ls.builtins.formatting.codespell.with({
+		-- 	filetypes = { "markdown", "vimwiki" },
+		-- }),
 		null_ls.builtins.code_actions.gitsigns,
 		-- code_actions.eslint_d,
 	},
