@@ -1,4 +1,4 @@
---[[
+--[[rclua
      Awesome WM configuration template
      github.com/lcpz
 
@@ -22,6 +22,15 @@ local freedesktop = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
+
+local function toggleStatusbar()
+	for s in screen do
+		s.mywibox.visible = not s.mywibox.visible
+		if s.mybottomwibox then
+			s.mybottomwibox.visible = not s.mybottomwibox.visible
+		end
+	end
+end
 
 -- }}}
 
@@ -97,7 +106,6 @@ local themes = {
 	"steamburn", -- 9
 	"vertex", -- 10
 }
-
 local chosen_theme = themes[7]
 local modkey = "Mod4"
 local altkey = "Mod1"
@@ -495,6 +503,19 @@ globalkeys = mytable.join(
 	end, { description = "-10%", group = "hotkeys" }),
 
 	-- ALSA volume control
+	awful.key({}, "#123", function()
+		os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+		beautiful.volume.update()
+	end, { description = "volume up", group = "hotkeys" }),
+	awful.key({}, "#122", function()
+		os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+		beautiful.volume.update()
+	end, { description = "volume down", group = "hotkeys" }),
+	awful.key({}, "#121", function()
+		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+		beautiful.volume.update()
+	end, { description = "toggle mute", group = "hotkeys" }),
+
 	awful.key({ altkey }, "Up", function()
 		os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
 		beautiful.volume.update()
@@ -776,7 +797,10 @@ awful.rules.rules = {
 		properties = { tag = "2", maximized = false, floating = false },
 	},
 	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
-	{ rule = { class = "slack", instance = "slack" }, properties = { tag = "7" } },
+	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
+	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
+	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6" } },
+	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
@@ -861,10 +885,14 @@ end)
 -- }}}
 
 --Autostart
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell("feh --randomize --bg-fill ~/Pictures/feh/*")
 awful.spawn.with_shell("brave")
 awful.spawn.with_shell("alacritty")
+awful.spawn.with_shell("pomotroid")
+awful.spawn(terminal .. " --class gotop -e gotop", { tag = "10" })
 
--- beautiful.useless_gap = 3
--- beautiful.gap_single_client = true
+awful.spawn.with_shell('xdotool key "Super_L+b"  > /dev/null ') -- Hide statusbar on startup
+
+beautiful.useless_gap = 4
+beautiful.gap_single_client = true
