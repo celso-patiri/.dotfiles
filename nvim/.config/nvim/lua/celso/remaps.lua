@@ -40,9 +40,7 @@ map("v", "p", '"_dP', opts)
 map("n", "<C-y>", 'yyV"+y', opts) --Ctrl C copy whole line in normal mode
 map("v", "<C-y>", '"+y', opts) --Ctrl C copy selection to clipboard in visual mode
 map("i", "<C-y>", '<esc>"+y', opts) --Ctrl C copy selection to clipboard in visual mode
---Ctrl x
-map("n", "<C-x>", 'yyV"+d', opts) --Ctrl C copy whole line in normal mode
-map("v", "<C-x>", '"+d', opts) --Ctrl C copy whole line in normal mode
+
 --Ctrl a
 map("n", "<leader><C-a>", "ggVG", opts) --Ctrl C copy whole line in normal mode
 map("v", "<leader><C-a>", "gg<esc>VG", opts) --Ctrl C copy whole line in normal mode

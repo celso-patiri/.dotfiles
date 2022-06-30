@@ -23,15 +23,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
-local function toggleStatusbar()
-	for s in screen do
-		s.mywibox.visible = not s.mywibox.visible
-		if s.mybottomwibox then
-			s.mybottomwibox.visible = not s.mybottomwibox.visible
-		end
-	end
-end
-
 -- }}}
 
 -- {{{ Error handling
@@ -318,7 +309,7 @@ globalkeys = mytable.join(
 	end, { description = "lock screen", group = "hotkeys" }),
 
 	-- Show help
-	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ modkey, "Shift" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 
 	-- Tag browsing
 	awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
@@ -398,7 +389,7 @@ globalkeys = mytable.join(
 	end, { description = "cycle with previous/go back", group = "client" }),
 
 	-- Show/hide wibox
-	awful.key({ modkey }, "b", function()
+	awful.key({ modkey }, "s", function()
 		for s in screen do
 			s.mywibox.visible = not s.mywibox.visible
 			if s.mybottomwibox then
@@ -615,7 +606,7 @@ globalkeys = mytable.join(
 		})
 	end, { description = "lua execute prompt", group = "awesome" }),
 
-	--Cusom keybings
+	--custom keybinds
 	awful.key({ modkey, "Shift" }, "w", function()
 		os.execute("feh --randomize --bg-fill ~/Pictures/feh/*")
 	end, { description = "change wallpaper", group = "hotkeys" }),
@@ -624,7 +615,10 @@ globalkeys = mytable.join(
 	end, { description = "run rofi", group = "hotkeys" }),
 	awful.key({ modkey, altkey }, "q", function()
 		os.execute("kill -9 $(xdotool getwindowfocus getwindowpid)")
-	end, { description = "terminate window", group = "hotkeys" })
+	end, { description = "terminate window", group = "hotkeys" }),
+	awful.key({ modkey }, "b", function()
+		os.execute("blueberry")
+	end, { description = "open bluetooth config menu", group = "hotkeys" })
 )
 
 clientkeys = mytable.join(
@@ -892,7 +886,7 @@ awful.spawn.with_shell("alacritty")
 awful.spawn.with_shell("pomotroid")
 awful.spawn(terminal .. " --class gotop -e gotop", { tag = "10" })
 
-awful.spawn.with_shell('xdotool key "Super_L+b"  > /dev/null ') -- Hide statusbar on startup
+awful.spawn.with_shell('xdotool key "Super_L+s"  > /dev/null ') -- Hide statusbar on startup
 
-beautiful.useless_gap = 4
+beautiful.useless_gap = 5
 beautiful.gap_single_client = true
