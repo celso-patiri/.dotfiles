@@ -611,7 +611,7 @@ globalkeys = mytable.join(
 		os.execute("feh --randomize --bg-fill ~/Pictures/feh/*")
 	end, { description = "change wallpaper", group = "hotkeys" }),
 	awful.key({ altkey }, "Return", function()
-		os.execute("rofi -show run")
+		os.execute("rofi -show run -show-icons")
 	end, { description = "run rofi", group = "hotkeys" }),
 	awful.key({ modkey, altkey }, "q", function()
 		os.execute("kill -9 $(xdotool getwindowfocus getwindowpid)")
