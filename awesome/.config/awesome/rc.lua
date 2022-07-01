@@ -23,6 +23,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+--toggle keyboard layout
+local toggleLayout = false
+
 -- }}}
 
 -- {{{ Error handling
@@ -618,7 +621,15 @@ globalkeys = mytable.join(
 	end, { description = "terminate window", group = "hotkeys" }),
 	awful.key({ modkey }, "b", function()
 		os.execute("blueberry")
-	end, { description = "open bluetooth config menu", group = "hotkeys" })
+	end, { description = "open bluetooth config menu", group = "hotkeys" }),
+	awful.key({ modkey, altkey }, "Return", function()
+		if toggleLayout then
+			os.execute("setxkbmap -layout us")
+		else
+			os.execute("setxkbmap -layout br")
+		end
+		toggleLayout = not toggleLayout
+	end, { description = "change keyboard layout", group = "hotkeys" })
 )
 
 clientkeys = mytable.join(
@@ -793,7 +804,8 @@ awful.rules.rules = {
 	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
 	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
 	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
-	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6" } },
+	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6", foating = true } },
+	{ rule = { class = "Todoist", instance = "todoist" }, properties = { tag = "3" } },
 	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
@@ -879,14 +891,15 @@ end)
 -- }}}
 
 --Autostart
-awful.spawn.with_shell("picom --experimental-backends")
-awful.spawn.with_shell("feh --randomize --bg-fill ~/Pictures/feh/*")
+awful.spawn.with_shell("picom --experimental-backends") --compositor
+awful.spawn.with_shell("feh --randomize --bg-fill ~/Pictures/feh/*") --random wallpaper
 awful.spawn.with_shell("brave")
 awful.spawn.with_shell("alacritty")
 awful.spawn.with_shell("pomotroid")
+awful.spawn.with_shell("todoist")
 awful.spawn(terminal .. " --class gotop -e gotop", { tag = "10" })
 
-awful.spawn.with_shell('xdotool key "Super_L+s"  > /dev/null ') -- Hide statusbar on startup
+-- awful.spawn.with_shell('xdotool key "Super_L+s"  > /dev/null ') -- Hide statusbar on startup
 
 beautiful.useless_gap = 5
 beautiful.gap_single_client = true
