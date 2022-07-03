@@ -801,7 +801,7 @@ awful.rules.rules = {
 		rule = { class = "Brave-browser", instance = "brave-browser" },
 		properties = { tag = "2", maximized = false, floating = false },
 	},
-	{ rule = { class = "Insomnia", instance = "insomniac" }, properties = { tag = "4" } },
+	{ rule = { class = "Insomnia", instance = "insomnia" }, properties = { tag = "4" } },
 	{ rule = { class = "Todoist", instance = "todoist" }, properties = { tag = "5" } },
 	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6", foating = true } },
 	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
