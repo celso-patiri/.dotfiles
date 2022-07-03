@@ -4,13 +4,13 @@ require("dapui").setup()
 
 local dap = require("dap")
 
-local function get_plaid_path()
-	local plaid_path = os.getenv("PLAID_PATH")
-	if plaid_path ~= nil then
-		return plaid_path
-	end
-	return ""
-end
+-- local function get_plaid_path()
+-- 	local plaid_path = os.getenv("PLAID_PATH")
+-- 	if plaid_path ~= nil then
+-- 		return plaid_path
+-- 	end
+-- 	return ""
+-- end
 
 dap.adapters.node2 = {
 	type = "executable",
