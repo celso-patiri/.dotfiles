@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
-    session=$1
-else
+# if [[ $# -eq 1 ]]; then
+#     session=$1
+# else
     session=$(find ~ ~/.dotfiles ~/.dotfiles/nvim/.config/nvim ~/projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
-fi
+# fi
 
-if [[ -z $session ]]; then
-    exit 0
-fi
+# if [[ -z $session ]]; then
+#     exit 0
+# fi
 
 session_name=$(basename "$session" | tr . _)
 
