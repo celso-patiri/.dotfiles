@@ -297,9 +297,9 @@ root.buttons(mytable.join(
 
 globalkeys = mytable.join(
 	-- Destroy all notifications
-	awful.key({ "Control" }, "space", function()
-		naughty.destroy_all_notifications()
-	end, { description = "destroy all notifications", group = "hotkeys" }),
+	-- awful.key({ "Control" }, "space", function()
+	-- 	naughty.destroy_all_notifications()
+	-- end, { description = "destroy all notifications", group = "hotkeys" }),
 	-- Take  screenshot
 	-- https://github.com/lcpz/dots/blob/master/bin/screenshot
 	awful.key({ altkey }, "p", function()
@@ -433,10 +433,10 @@ globalkeys = mytable.join(
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "p", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
-	awful.key({ modkey, altkey }, "l", function()
+	awful.key({ modkey, altkey }, "Right", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
-	awful.key({ modkey, altkey }, "h", function()
+	awful.key({ modkey, altkey }, "Left", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "h", function()
@@ -801,11 +801,12 @@ awful.rules.rules = {
 		rule = { class = "Brave-browser", instance = "brave-browser" },
 		properties = { tag = "2", maximized = false, floating = false },
 	},
-	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
-	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
-	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
+	{ rule = { class = "Insomnia", instance = "insomniac" }, properties = { tag = "4" } },
+	{ rule = { class = "Todoist", instance = "todoist" }, properties = { tag = "5" } },
 	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6", foating = true } },
-	{ rule = { class = "Todoist", instance = "todoist" }, properties = { tag = "3" } },
+	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
+	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
+	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
 	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
@@ -891,13 +892,15 @@ end)
 -- }}}
 
 --Autostart
+local awful = require("awful")
+
 awful.spawn.with_shell("picom --experimental-backends") --compositor
 awful.spawn.with_shell("feh --randomize --bg-fill ~/Pictures/feh/*") --random wallpaper
 awful.spawn.with_shell("brave")
 awful.spawn.with_shell("alacritty")
 awful.spawn.with_shell("pomotroid")
-awful.spawn.with_shell("todoist")
 awful.spawn(terminal .. " --class gotop -e gotop", { tag = "10" })
+awful.spawn.with_shell("todoist")
 
 -- awful.spawn.with_shell('xdotool key "Super_L+s"  > /dev/null ') -- Hide statusbar on startup
 
