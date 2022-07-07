@@ -805,9 +805,10 @@ awful.rules.rules = {
 	{ rule = { class = "Todoist", instance = "todoist" }, properties = { tag = "5" } },
 	{ rule = { class = "pomotroid", instance = "pomotroid" }, properties = { tag = "6", foating = true } },
 	{ rule = { class = "Slack", instance = "slack" }, properties = { tag = "7" } },
-	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "9" } },
+	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "7" } },
 	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
 	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
+	{ rule = { class = "Trello Desktop", instance = "trello desktop" }, properties = { tag = "6" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
