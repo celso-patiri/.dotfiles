@@ -808,7 +808,7 @@ awful.rules.rules = {
 	{ rule = { class = "discord", instance = "discord" }, properties = { tag = "7" } },
 	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
 	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
-	{ rule = { class = "Trello Desktop", instance = "trello desktop" }, properties = { tag = "6" } },
+	{ rule = { class = "Trello Desktop", instance = "trello desktop" }, properties = { tag = "5" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
@@ -893,12 +893,12 @@ end)
 -- }}}
 
 --Autostart
-local awful = require("awful")
 
 awful.spawn.with_shell("picom --experimental-backends") --compositor
 awful.spawn.with_shell("feh --randomize --bg-fill ~/Pictures/feh/*") --random wallpaper
 awful.spawn.with_shell("brave")
 awful.spawn.with_shell("alacritty")
+awful.spawn.with_shell("trello-desktop")
 awful.spawn.with_shell("pomotroid")
 awful.spawn(terminal .. " --class gotop -e gotop", { tag = "10" })
 awful.spawn.with_shell("todoist")
