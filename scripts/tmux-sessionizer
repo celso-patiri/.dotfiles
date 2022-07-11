@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# if [[ $# -eq 1 ]]; then
+#     session=$1
+# else
+    session=$(find ~ ~/.dotfiles ~/.dotfiles/nvim/.config/nvim ~/projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+# fi
+
+# if [[ -z $session ]]; then
+#     exit 0
+# fi
+
+session_name=$(basename "$session" | tr . _)
+
+if ! tmux has-session -t "$session_name" 2> /dev/null; then
+    tmux new-session -ds "$session_name" -c "$session"
+fi
+
+if ! pgrep -x 'tmux' > /dev/null; then
+    tmux attach-session -t $session_name
+fi
+
+tmux switch-client -t $session_name 
