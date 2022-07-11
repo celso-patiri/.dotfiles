@@ -106,13 +106,13 @@ alias vimw='nvim +VimwikiIndex'
 alias vimdo='nvim ~/Documents/vimwiki/week/Todo.md'
 alias src='source ~/.zshrc'
 
-alias gpush='~/.dotfiles/push'
+alias gpush='~/.dotfiles/scripts/push'
 alias tasc="rm ~/.task/*.task"
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
 export PATH=/home/celso/.cargo/bin:$PATH
-export PATH=/home/celso/.dotfiles/tmux/:$PATH
+export PATH=/home/celso/.dotfiles/scripts/:$PATH
 export PATH=/home/celso/.local/bin/:$PATH
 export PATH=/home/celso/.local/share/flatpak/exports/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
