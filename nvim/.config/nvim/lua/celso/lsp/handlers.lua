@@ -87,7 +87,7 @@ M.config = function(_config)
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			if client.name == "sumneko_lua" then -- resolve null_ls formatting conflict
+			if client.name == "sumneko_lua" or client.name == "volar" then -- resolve null_ls formatting conflict
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 			end
@@ -95,6 +95,13 @@ M.config = function(_config)
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)
 		end,
+	}, _config or {})
+end
+
+M.vuels_config = function(_config)
+	return vim.tbl_deep_extend("force", {
+		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		on_attach = function(client, bufnr) end,
 	}, _config or {})
 end
 

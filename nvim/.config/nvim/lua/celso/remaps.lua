@@ -19,7 +19,6 @@ map("n", "<C-S>", ":w<CR>", opts)
 map("v", "<C-S>", "<C-C>:w<CR>", opts)
 map("i", "<C-S>", "<C-C>:w<CR>", opts)
 
---tab, shift+tab ident support
 map("n", "<Tab>", ">>_")
 map("n", "<S-Tab>", "<<_")
 map("v", "<Tab>", ">gv")
@@ -29,6 +28,7 @@ map("v", "<S-Tab>", "<gv")
 map("n", "<A-k>", ":move .-2<CR>==", opts)
 map("n", "<A-j>", ":move .+1<CR>==", opts)
 map("v", "<A-k>", ":move '<-2<CR>gv=gv", opts)
+--tab, shift+tab ident support
 map("v", "<A-j>", ":move '>+1<CR>gv=gv", opts)
 map("i", "<A-j>", "<C-c>:move .+1<CR>==gi", opts)
 map("i", "<A-k>", "<C-c>:move .-2<CR>==gi", opts)

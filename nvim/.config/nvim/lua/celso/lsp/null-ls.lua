@@ -16,6 +16,12 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.rustywind,
+
+		-- formatting.eslint,
+		-- diagnostics.eslint,
+		-- null_ls.builtins.code_actions.eslint,
+		-- formatting.rubocop,
+		-- diagnostics.rubocop,
 		-- formatting.markdownlint,
 		-- null_ls.builtins.formatting.codespell.with({
 		-- 	filetypes = { "markdown", "vimwiki" },

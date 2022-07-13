@@ -30,8 +30,8 @@ map("n", "<leader>fw", ':lua require("telescope.builtin").live_grep()<CR>', opts
 map("n", "<leader>fp", "<cmd>Telescope projects<cr>", opts)
 --map('n', '<leader>fw', ':lua require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })<CR>', opts)
 
-map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>ff", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<C-p>", "<cmd>Telescope find_files<cr>", opts)
 -- map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 map("n", "<leader>fdi", "<cmd>Telescope diagnostics<cr>", opts)
