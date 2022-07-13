@@ -3,7 +3,7 @@
 # if [[ $# -eq 1 ]]; then
 #     session=$1
 # else
-    session=$(find ~ ~/.dotfiles ~/.dotfiles/nvim/.config/nvim ~/projects ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+    session=$(find ~ ~/.dotfiles ~/projects ~/projects/driven ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
 # fi
 
 # if [[ -z $session ]]; then

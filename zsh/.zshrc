@@ -99,7 +99,7 @@ setxkbmap -layout us,br
 setxkbmap -option 'grp:win_space_toggle'
 
 alias vim="nvim"
-alias vit='f() {touch $1; nvim $1};f'
+alias vit='fn() {touch $1; nvim $1};fn'
 alias v='nvim $(fd --type f -H | fzf)'
 alias vi='nvim .'
 alias vimw='nvim +VimwikiIndex'
@@ -107,7 +107,9 @@ alias vimdo='nvim ~/Documents/vimwiki/week/Todo.md'
 alias src='source ~/.zshrc'
 
 alias gpush='~/.dotfiles/scripts/push'
-alias tasc="rm ~/.task/*.task"
+alias f='nvim +0G'
+alias com='git commit'
+# alias tasc="rm ~/.task/*.task"
 
 alias luamake=/home/celso/Personal/lua-language-server/3rd/luamake/luamake
 
@@ -117,6 +119,9 @@ export PATH=/home/celso/.local/bin/:$PATH
 export PATH=/home/celso/.local/share/flatpak/exports/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=/var/lib/snapd/desktop/applications/:$PATH
+export PATH=/home/celso/.rvm/rubies/default/bin:$PATH
+export PATH=/home/celso/.local/share/gem/ruby/3.0.0/bin:$PATH
+
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
@@ -141,3 +146,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(starship init zsh)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
