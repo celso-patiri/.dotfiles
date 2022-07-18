@@ -1,4 +1,5 @@
 local M = {}
+local navic = require("nvim-navic")
 
 local signs = {
 	{ name = "DiagnosticSignError", text = "" },
@@ -92,6 +93,7 @@ M.config = function(_config)
 				client.resolved_capabilities.document_range_formatting = false
 			end
 
+			navic.attach(client, bufnr)
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)
 		end,
@@ -101,7 +103,49 @@ end
 M.vuels_config = function(_config)
 	return vim.tbl_deep_extend("force", {
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-		on_attach = function(client, bufnr) end,
+		init_options = {
+			config = {
+				css = {},
+				emmet = {},
+				html = {
+					suggest = {},
+				},
+				javascript = {
+					format = {},
+				},
+				stylusSupremacy = {},
+				typescript = {
+					format = {},
+				},
+				vetur = {
+					completion = {
+						autoImport = true,
+						tagCasing = "kebab",
+						useScaffoldSnippets = false,
+					},
+					format = {
+						defaultFormatter = {
+							js = "none",
+							ts = "none",
+						},
+						defaultFormatterOptions = {},
+						scriptInitialIndent = false,
+						styleInitialIndent = false,
+					},
+					useWorkspaceDependencies = true,
+					validation = {
+						script = true,
+						style = true,
+						template = true,
+					},
+				},
+			},
+		},
+
+		on_attach = function(client, bufnr)
+			lsp_keymaps(bufnr)
+			lsp_highlight_document(client)
+		end,
 	}, _config or {})
 end
 
@@ -127,10 +171,12 @@ end
 M.tsconfig = function()
 	return {
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		-- filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", },
 
 		on_attach = function(client, bufnr)
 			client.resolved_capabilities.document_formatting = false
 			client.resolved_capabilities.document_range_formatting = false
+			navic.attach(client, bufnr)
 
 			local ts_utils = require("nvim-lsp-ts-utils")
 			ts_utils.setup({})
