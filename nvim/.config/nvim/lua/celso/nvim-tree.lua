@@ -1,21 +1,21 @@
 -- 
 require("nvim-web-devicons").setup({
 	override = {
-		["test.js"] = {
-			icon = "ﭧ",
-			color = "#cbcb41",
-			name = "JavascriptTest",
-		},
-		["test.ts"] = {
-			icon = "ﭧ",
-			color = "#007acc",
-			name = "TypeScriptTest",
-		},
-		["spec.ts"] = {
-			icon = "ﭧ",
-			color = "#007acc",
-			name = "NestJSTest",
-		},
+		-- ["test.js"] = {
+		-- 	icon = "ﭧ",
+		-- 	color = "#cbcb41",
+		-- 	name = "JavascriptTest",
+		-- },
+		-- ["test.ts"] = {
+		-- 	icon = "ﭧ",
+		-- 	color = "#007acc",
+		-- 	name = "TypeScriptTest",
+		-- },
+		-- ["spec.ts"] = {
+		-- 	icon = "ﭧ",
+		-- 	color = "#007acc",
+		-- 	name = "NestJSTest",
+		-- },
 		["prisma"] = {
 			icon = "喝",
 			color = "#007acc",

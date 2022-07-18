@@ -10,6 +10,7 @@ map("v", "<C-A-q>", "gb", { noremap = false })
 
 --Map 'esc' to 'noh' to remove highlight after search
 map("n", "<esc>", ":noh<cr><esc>", opts)
+map("i", "<C-c>", "<esc>", opts)
 --Map ZZ to write quit all buffers
 -- map("n", "ZZ", ":wqa<cr>", opts)
 -- map("n", "ZQ", ":qa!<cr>", opts)
@@ -113,7 +114,7 @@ map("n", "<leader>Z", ":ZenMode<cr>", opts)
 -- map("n", "<C-f>", ":!tmux neww tmux-sessionizer<CR>", opts)
 
 --vim-fugitive
-map("n", "<leader>g", ":0G<CR>", opts)
+map("n", "<leader>f", ":0G<CR>", opts)
 
 --neotest
 map("n", "<leader>ttf", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)

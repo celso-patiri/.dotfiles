@@ -1,5 +1,3 @@
-local gps = require("nvim-gps")
-
 -- local colors = {
 -- 	yellow = "#ECBE7B",
 -- 	cyan = "#008080",
@@ -54,7 +52,6 @@ local config = {
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
 			{ "filename", fmt = handleTerminalName },
-			{ gps.get_location, cond = gps.is_available },
 			"diagnostics",
 		},
 		lualine_x = { "encoding", "fileformat", "filetype" },

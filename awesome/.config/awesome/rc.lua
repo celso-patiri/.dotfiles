@@ -809,6 +809,8 @@ awful.rules.rules = {
 	{ rule = { class = "zoom", instance = "zoom" }, properties = { tag = "9" } },
 	{ rule = { class = "Alacritty", instance = "gotop" }, properties = { tag = "10" } },
 	{ rule = { class = "Trello Desktop", instance = "trello desktop" }, properties = { tag = "5" } },
+	{ rule = { class = "Google-chrome", instance = "google-chrome" }, properties = { tag = "4" } },
+	{ rule = { class = "firefox", instance = "Navigator" }, properties = { tag = "4" } },
 
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
