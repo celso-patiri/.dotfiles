@@ -118,7 +118,7 @@ map("n", "<leader>f", ":0G<CR>", opts)
 
 --neotest
 map("n", "<leader>ttf", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', opts)
-map("n", "<leader>tct", ':lua require("neotest").run.run()<CR>', opts)
+map("n", "<leader>ttt", ':lua require("neotest").run.run()<CR>', opts)
 map("n", "<leader>tst", ':lua require("neotest").summary.toggle()<CR>', opts)
 map("n", "<leader>tot", ':lua require("neotest").output.open({ enter = true })<CR>', opts)
 
@@ -165,3 +165,5 @@ map("n", "<leader>dlb", '<cmd>lua require"telescope".extensions.dap.list_breakpo
 map("n", "<leader>dv", '<cmd>lua require"telescope".extensions.dap.variables{}<CR>', opts)
 map("n", "<leader>df", '<cmd>lua require"telescope".extensions.dap.frames{}<CR>', opts)
 --dap---------------------------------------------------------------------------
+
+map("n", "<C-b>", "<cmd>CHADopen<CR>")

@@ -1,21 +1,31 @@
 -- 
 require("nvim-web-devicons").setup({
 	override = {
-		-- ["test.js"] = {
-		-- 	icon = "ﭧ",
-		-- 	color = "#cbcb41",
-		-- 	name = "JavascriptTest",
-		-- },
-		-- ["test.ts"] = {
-		-- 	icon = "ﭧ",
-		-- 	color = "#007acc",
-		-- 	name = "TypeScriptTest",
-		-- },
-		-- ["spec.ts"] = {
-		-- 	icon = "ﭧ",
-		-- 	color = "#007acc",
-		-- 	name = "NestJSTest",
-		-- },
+		["test.js"] = {
+			icon = "ﭧ",
+			color = "#cbcb41",
+			name = "JavascriptTest",
+		},
+		["test.ts"] = {
+			icon = "ﭧ",
+			color = "#007acc",
+			name = "TypeScriptTest",
+		},
+		["test.ts"] = {
+			icon = "ﭧ",
+			color = "#007acc",
+			name = "TypeScriptTest",
+		},
+		["Dockerfile"] = {
+			icon = "",
+			color = "#007acc",
+			name = "dockerfile",
+		},
+		["docker-compose.yml"] = {
+			icon = "",
+			color = "#cbcb41",
+			name = "dockercompose",
+		},
 		["prisma"] = {
 			icon = "喝",
 			color = "#007acc",
@@ -25,8 +35,15 @@ require("nvim-web-devicons").setup({
 	default = true,
 })
 
-local nvim_tree_config = require("nvim-tree.config")
+local present, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not present then
+	return
+end
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
+if not tree_cb then
+	return
+end
 
 require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	auto_reload_on_write = true,
@@ -169,4 +186,4 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 	},
 }) -- END_DEFAULT_OPTS
 
-map("n", "<C-b>", "<cmd>NvimTreeToggle<CR>")
+-- map("n", "<C-b>", "<cmd>NvimTreeToggle<CR>")

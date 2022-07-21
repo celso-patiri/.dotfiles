@@ -45,6 +45,8 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-tree.lua")
+	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
+
 	use("kyazdani42/nvim-web-devicons")
 
 	--performance/fix
@@ -142,7 +144,7 @@ return packer.startup(function(use)
 	})
 
 	--sippets
-	use("L3MON4D3/LuaSnip")
+	use({ "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets" }, after = "cmp_luasnip" })
 	use("rafamadriz/friendly-snippets")
 
 	--Code manipulation and utils
@@ -170,10 +172,10 @@ return packer.startup(function(use)
 	-- use("ful1e5/onedark.nvim")
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	-- use("shaunsingh/nord.nvim")
 	-- use("sainnhe/sonokai")
-	-- use("cpea2506/one_monokai.nvim")
+	-- use("shaunsingh/nord.nvim")
 	-- use("tiagovla/tokyodark.nvim")
+	-- use("cpea2506/one_monokai.nvim")
 
 	-- use({ "folke/tokyonight.nvim", branch = "main" })
 	-- use("Shatur/neovim-ayu")
