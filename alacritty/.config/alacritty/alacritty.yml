@@ -111,23 +111,25 @@ window:
 font:
   normal:
     # family: Hack Nerd Font
-    family: Inconsolata Nerd Font
+    # family: Inconsolata Nerd Font
+    family: JetBrainsMonoNL Nerd Font Mono
     style: Regular
 
-  # bold:
-  # family: Hack Bold Nerd Font
-  # style: Bold
+  bold:
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Bold
 
-  # italic:
-  family: Hack Italic Nerd Font Complete
-  style: Italic
+  italic:
+    # family: Hack Italic Nerd Font Complete
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Italic
 
   # bolditalic:
   # family: Hack Bold Italic Nerd Font
   # style: Bold Italic
 
   # Point size
-  size: 10
+  size: 9
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

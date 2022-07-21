@@ -22,8 +22,8 @@ require("celso.treesitter.treesitter")
 require("celso.cmp")
 require("celso.dap")
 
+require("celso.devicons")
 require("celso.telescope.main")
-require("celso.nvim-tree")
 
 require("celso.lualine")
 require("celso.gitsigns")

@@ -14,9 +14,7 @@ lspconfig.tailwindcss.setup({ handlers.config() })
 lspconfig.vuels.setup(handlers.vuels_config())
 -- lspconfig.vuels.setup(handlers.config())
 
-lspconfig.emmet_ls.setup(
-	handlers.config({ filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" } })
-)
+lspconfig.emmet_ls.setup(handlers.config({ filetypes = { "html", "javascriptreact", "typescriptreact" } }))
 
 -- lspconfig.eslint.setup(handlers.config())lsp
 

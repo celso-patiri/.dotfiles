@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 #["passion",'oxide,"headline"]
-# ZSH_THEME="spaceship"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -121,6 +121,7 @@ export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=/var/lib/snapd/desktop/applications/:$PATH
 export PATH=/home/celso/.rvm/rubies/default/bin:$PATH
 export PATH=/home/celso/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH=/home/celso/.rvm/gems/ruby-3.0.0/bin:$PATH
 
 
 source ~/.fzf/shell/key-bindings.zsh
@@ -128,8 +129,7 @@ source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Theme
-# autoload -U promptinit; promptinit
-# prompt spaceship
+autoload -U promptinit; promptinit prompt spaceship
 
 #Plugins
 # source $HOME/personal/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -145,7 +145,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
