@@ -207,7 +207,7 @@ tabnine:setup({
 --snippets
 local snippets_paths = function()
 	local plugins = { "friendly-snippets" }
-	local paths = {}
+	local paths = { "./snippets/react.lua" }
 	local path
 	local root_path = vim.env.HOME .. "/.vim/plugged/"
 	for _, plug in ipairs(plugins) do

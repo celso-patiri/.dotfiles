@@ -15,18 +15,18 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
-		formatting.rustywind,
+		-- formatting.rustywind,
 
 		-- formatting.eslint,
 		-- diagnostics.eslint,
 		-- null_ls.builtins.code_actions.eslint,
-		-- formatting.rubocop,
-		-- diagnostics.rubocop,
+		formatting.rubocop,
+		diagnostics.rubocop,
 		-- formatting.markdownlint,
 		-- null_ls.builtins.formatting.codespell.with({
 		-- 	filetypes = { "markdown", "vimwiki" },
 		-- }),
-		null_ls.builtins.code_actions.gitsigns,
+		-- null_ls.builtins.code_actions.gitsigns,
 		-- code_actions.eslint_d,
 	},
 	on_attach = function(client, bufnr)

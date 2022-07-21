@@ -88,12 +88,16 @@ M.config = function(_config)
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			if client.name == "sumneko_lua" or client.name == "volar" then -- resolve null_ls formatting conflict
+			print(client.name)
+			if client.name == "sumneko_lua" or client.name == "solargraph" then -- resolve null_ls formatting conflict
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 			end
 
-			navic.attach(client, bufnr)
+			if not client.name == "solargraph" then
+				navic.attach(client, bufnr)
+			end
+
 			lsp_keymaps(bufnr)
 			lsp_highlight_document(client)
 		end,
