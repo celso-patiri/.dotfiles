@@ -15,7 +15,7 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.stylua,
-		-- formatting.rustywind,
+		formatting.rustywind,
 
 		-- formatting.eslint,
 		-- diagnostics.eslint,

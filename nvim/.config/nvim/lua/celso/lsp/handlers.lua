@@ -88,8 +88,8 @@ M.config = function(_config)
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 
 		on_attach = function(client, bufnr)
-			print(client.name)
-			if client.name == "sumneko_lua" or client.name == "solargraph" then -- resolve null_ls formatting conflict
+			-- client.name == "solargraph"
+			if client.name == "sumneko_lua" then -- resolve null_ls formatting conflict
 				client.resolved_capabilities.document_formatting = false
 				client.resolved_capabilities.document_range_formatting = false
 			end

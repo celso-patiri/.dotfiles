@@ -101,7 +101,7 @@ setxkbmap -option 'grp:win_space_toggle'
 alias vim="nvim"
 alias vit='fn() {touch $1; nvim $1};fn'
 alias v='nvim $(fd --type f -H | fzf)'
-alias vi='nvim .'
+alias vi='nvim +CHADopen'
 alias vimw='nvim +VimwikiIndex'
 alias vimdo='nvim ~/Documents/vimwiki/week/Todo.md'
 alias src='source ~/.zshrc'

@@ -7,6 +7,7 @@ local handlers = require("celso.lsp.handlers")
 
 lspconfig.tsserver.setup(handlers.tsconfig())
 lspconfig.solargraph.setup(handlers.config())
+-- lspconfig.sorbet.setup(handlers.config())
 
 lspconfig.cssls.setup(handlers.config({ filetypes = { "css", "scss" } }))
 lspconfig.tailwindcss.setup({ handlers.config() })

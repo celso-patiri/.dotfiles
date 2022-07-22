@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-tree.lua")
-	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
+	use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps", opt = true, cmd = "CHADopen" })
 
 	use("kyazdani42/nvim-web-devicons")
 
